@@ -1,138 +1,304 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensch Robotics - Shaping Society with Physical AI</title>
-    <meta name="description" content="Mensch Robotics is a Coimbatore-based startup building robots for various sectors. Our mission is to bring the good side of AI into society with our physical AI products.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
-    <style>
-        /* Optional: Add a subtle background pattern for a more 'tech' feel */
-        body {
-            background-color: #0f172a; /* bg-slate-900 */
-            background-image: radial-gradient(#475569 0.5px, transparent 0.5px);
-            background-size: 15px 15px;
-        }
-    </style>
-</head>
-<body class="bg-slate-900 text-slate-200 font-sans">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Mensch Robotics — Physical AI</title>
+        <meta name="description" content="Mensch Robotics builds premium Physical AI robots for education, retail, healthcare, and enterprise automation." />
 
-    <header class="bg-slate-900/80 backdrop-blur-sm sticky top-0 z-50 border-b border-slate-700">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-bold text-white">Mensch <span class="text-cyan-400">Robotics</span></a>
-            <div class="hidden md:flex space-x-6">
-                <a href="#about" class="hover:text-cyan-400 transition-colors duration-300">About</a>
-                <a href="#products" class="hover:text-cyan-400 transition-colors duration-300">Products</a>
-                <a href="#contact" class="hover:text-cyan-400 transition-colors duration-300">Contact</a>
+        <!-- Tailwind CSS CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            dark: '#0f172a',
+                            neon: '#22d3ee',
+                            sky: '#38bdf8'
+                        },
+                        boxShadow: {
+                            glow: '0 0 30px rgba(34, 211, 238, 0.35)',
+                            glowSky: '0 0 30px rgba(56, 189, 248, 0.35)'
+                        }
+                    }
+                }
+            }
+        </script>
+
+        <!-- GSAP -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+        <style>
+            :root { color-scheme: dark; }
+            body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+            .glass { background: radial-gradient(120% 120% at 0% 0%, rgba(255,255,255,0.06) 0%, rgba(34, 211, 238, 0.08) 100%); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
+            .bg-grid { background-image: radial-gradient(rgba(56,189,248,0.12) 1px, transparent 1px); background-size: 24px 24px; mask-image: radial-gradient(ellipse at center, black 40%, transparent 100%); }
+            #orbCanvas { width: 100%; height: 100%; display: block; }
+            .tilt { transform-style: preserve-3d; transition: transform 300ms ease, box-shadow 300ms ease; }
+            .tilt:hover { box-shadow: 0 0 40px rgba(56,189,248,0.25); }
+            .tilt .tilt-inner { transform: translateZ(20px); }
+            .no-scrollbar::-webkit-scrollbar { display: none; }
+            .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        </style>
+    </head>
+    <body class="bg-dark text-white tracking-wide">
+        <div class="fixed inset-0 -z-10 bg-grid opacity-40"></div>
+
+        <!-- Nav -->
+        <header class="sticky top-0 z-30 bg-dark/70 backdrop-blur border-b border-white/10">
+            <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                      <img src="public/images/LOGO.jpg" alt="Mensch Robotics Logo" class="w-8 h-8 rounded-full" />
+                    <span class="font-semibold text-white">Mensch Robotics</span>
+                </div>
+                <nav class="hidden md:flex gap-6 text-white/80">
+                    <a href="#products" class="hover:text-sky transition">Products</a>
+                    <a href="#upcoming" class="hover:text-sky transition">Upcoming</a>
+                    <a href="#about" class="hover:text-sky transition">About</a>
+                    <a href="#contact" class="hover:text-sky transition">Contact</a>
+                </nav>
+                <a href="#contact" class="glass px-4 py-2 rounded-md text-sky hover:shadow-glowSky transition">Get in touch</a>
             </div>
-            <div class="md:hidden">
-                <button class="text-white focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
+        </header>
+
+        <!-- HERO -->
+        <section id="hero" class="relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight">Building the Future with <span class="bg-gradient-to-r from-neon to-sky bg-clip-text text-transparent">Physical AI</span></h1>
+                    <p class="mt-4 text-white/80 md:text-lg">Premium robotics blending advanced autonomy, human-centric design, and delightful micro-interactions.</p>
+                    <div class="mt-6 flex flex-wrap gap-4">
+                        <a href="#products" class="glass px-5 py-3 rounded-md text-white hover:text-dark hover:bg-sky hover:shadow-glowSky transition">Explore Products</a>
+                        <a href="#robi" class="px-5 py-3 rounded-md border border-sky text-sky hover:bg-sky hover:text-dark transition">Meet Robi</a>
+                    </div>
+                    <p class="mt-8 text-white/70 italic">“Shaping Society with Physical AI”</p>
+                </div>
+                <div class="relative h-[360px] md:h-[480px]">
+                    <canvas id="orbCanvas" class="absolute inset-0"></canvas>
+                    <div class="absolute inset-0 rounded-full blur-3xl" style="background: radial-gradient(closest-side, rgba(34,211,238,0.25), transparent)"></div>
+                </div>
             </div>
-        </nav>
-    </header>
+            <div id="particles" class="pointer-events-none absolute inset-0 -z-10"></div>
+        </section>
 
-    <main>
+        <!-- PRODUCTS -->
+        <section id="products" class="py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-semibold">Flagship Robots</h2>
+                <p class="text-white/70 mt-2">A curated lineup engineered for real-world impact.</p>
 
-        <section id="home" class="min-h-screen flex items-center bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 1)), url('https://images.unsplash.com/photo-1518314916383-1d07c3ab6043?q=80&w=2070&auto=format&fit=crop');">
-            <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">Shaping Society with <span class="text-cyan-400">Physical AI</span></h1>
-                <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">Welcome to Mensch Robotics. We build intelligent robots to enhance your life.</p>
-                <a href="#products" class="bg-cyan-500 hover:bg-cyan-400 text-white font-bold py-3 px-8 rounded-full transition-transform duration-300 ease-in-out transform hover:scale-105">Explore Our Products</a>
+                <div class="mt-10 grid md:grid-cols-3 gap-6">
+                    <article id="robi" class="tilt glass rounded-xl p-4">
+                        <div class="tilt-inner">
+                              <img src="public/images/Robi – AI Teaching Assistant Robot.jpg" alt="Robi AI Teaching Assistant Robot" class="w-full h-52 md:h-64 object-cover rounded-lg" />
+                            <h3 class="mt-4 text-xl font-semibold">Robi – AI Teaching Assistant Robot</h3>
+                            <p class="text-white/70">Deployed in ALIF School, Malappuram</p>
+                            <p class="text-white/60 mt-1">Designed for schools, engagement, interaction, and classroom AI assistance.</p>
+                        </div>
+                    </article>
+
+                    <article class="tilt glass rounded-xl p-4">
+                        <div class="tilt-inner">
+                              <img src="public/images/Reception & Visitor Guidance Robot.jpg" alt="Robi Reception & Visitor Guidance Robot" class="w-full h-52 md:h-64 object-cover rounded-lg" />
+                            <h3 class="mt-4 text-xl font-semibold">Reception & Visitor Guidance Robot</h3>
+                            <p class="text-white/70">Guiding visitors with intelligence and personality.</p>
+                        </div>
+                    </article>
+
+                    <article class="tilt glass rounded-xl p-4">
+                        <div class="tilt-inner">
+                              <img src="public/images/Research & Engineering Robot.jpg" alt="Robi Research & Engineering Robot" class="w-full h-52 md:h-64 object-cover rounded-lg" />
+                            <h3 class="mt-4 text-xl font-semibold">Research & Engineering Robot</h3>
+                            <p class="text-white/70">Advanced R&D platform for autonomy, manipulation, and perception.</p>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <section id="about" class="py-20 sm:py-32">
-            <div class="container mx-auto px-6">
-                <div class="max-w-4xl mx-auto text-center">
-                    <h2 class="text-3xl font-bold text-white mb-4">About <span class="text-cyan-400">Mensch Robotics</span></h2>
-                    <div class="w-24 h-1 bg-cyan-500 mx-auto mb-6"></div>
-                    <p class="text-slate-300 text-lg leading-relaxed">
-                        We are a Coimbatore-based robotics startup building robots for different sectors like schools, colleges, supermarkets, shopping malls, museums, events, etc. Our mission is to bring the good side of AI into society with our physical AI products.
-                    </p>
-                </div>
-            </div>
-        </section>
+        <!-- UPCOMING ROBOTS -->
+        <section id="upcoming" class="py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-semibold">Upcoming Robots</h2>
+                <p class="text-white/70 mt-2">A preview of what's next.</p>
 
-        <section id="products" class="py-20 sm:py-32 bg-slate-800/50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-white">Our Products</h2>
-                    <p class="text-slate-400 mt-2">Innovative solutions for a smarter future.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <div class="bg-slate-800 p-8 rounded-lg border border-slate-700 hover:border-cyan-500 hover:shadow-2xl hover:shadow-cyan-500/10 transition-all duration-300 transform hover:-translate-y-2">
-                        <div class="text-cyan-400 mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v11.494m-9-5.747h18M5.455 5.455A9.004 9.004 0 0012 3c2.372 0 4.54-.863 6.136-2.276M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <div class="mt-8 overflow-x-auto no-scrollbar flex gap-6 pb-4">
+                    <div class="min-w-[280px] md:min-w-[320px] tilt glass rounded-xl p-4">
+                        <div class="tilt-inner">
+                              <img src="public/images/Research & Engineering Robot.jpg" alt="Robi Research & Engineering Robot" class="w-full h-48 object-cover rounded-lg" />
+                            <h4 class="mt-3 font-semibold">Next-Gen Service Robot</h4>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Teaching Assistant Robot</h3>
-                        <p class="text-slate-400">Designed to assist educators and engage students in a modern learning environment.</p>
-                        <p class="text-sm text-cyan-400 mt-4 font-semibold">Deployed in Alif School, Malappuram.</p>
                     </div>
-
-                    <div class="bg-slate-800 p-8 rounded-lg border border-slate-700 hover:border-cyan-500 hover:shadow-2xl hover:shadow-cyan-500/10 transition-all duration-300 transform hover:-translate-y-2">
-                        <div class="text-cyan-400 mb-4">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+                    <div class="min-w-[280px] md:min-w-[320px] tilt glass rounded-xl p-4">
+                        <div class="tilt-inner">
+                              <img src="public/images/robi-reception-robot.jpg" alt="Robi Reception & Visitor Guidance Robot" class="w-full h-48 object-cover rounded-lg" />
+                            <h4 class="mt-3 font-semibold">Companion Robot</h4>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Educational & Research Robot</h3>
-                        <p class="text-slate-400">A versatile platform for students and researchers to explore the frontiers of robotics and AI.</p>
                     </div>
-
-                    <div class="bg-slate-800 p-8 rounded-lg border border-slate-700 hover:border-cyan-500 hover:shadow-2xl hover:shadow-cyan-500/10 transition-all duration-300 transform hover:-translate-y-2">
-                        <div class="text-cyan-400 mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                    <div class="min-w-[280px] md:min-w-[320px] tilt glass rounded-xl p-4">
+                        <div class="tilt-inner">
+                              <img src="public/images/robi-teaching-assistant.jpg" alt="Robi AI Teaching Assistant Robot" class="w-full h-48 object-cover rounded-lg" />
+                            <h4 class="mt-3 font-semibold">AI Classroom Buddy</h4>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Reception & Guidance Robot</h3>
-                        <p class="text-slate-400">Enhance visitor experiences in malls, museums, and events with a friendly, intelligent guide.</p>
+                    </div>
+                    <div class="min-w-[280px] md:min-w-[320px] tilt glass rounded-xl p-4">
+                        <div class="tilt-inner">
+                            <img src="retail-assistant-robot.jpg" alt="Retail Assistant Robot" class="w-full h-48 object-cover rounded-lg" />
+                            <h4 class="mt-3 font-semibold">Retail Assistant Robot</h4>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="py-20 sm:py-32">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-white">Get In Touch</h2>
-                    <p class="text-slate-400 mt-2">We'd love to hear from you. Let's build the future together.</p>
+        <!-- ABOUT -->
+        <section id="about" class="py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+                <div class="glass rounded-xl p-6">
+                      <img src="public/images/LOGO.jpg" alt="Mensch Robotics Logo" class="w-48 h-48 object-contain" />
                 </div>
-                <div class="max-w-4xl mx-auto bg-slate-800/50 p-8 rounded-lg border border-slate-700">
-                    <div class="flex flex-wrap -mx-4">
-                        <div class="w-full md:w-1/3 px-4 mb-8 md:mb-0 text-center">
-                            <div class="mb-3 text-cyan-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-semibold">About Mensch Robotics</h2>
+                    <p class="mt-4 text-white/80">Mensch Robotics is a Coimbatore-based startup building Physical AI robots for education, retail, healthcare, and enterprise automation.</p>
+                    <p class="mt-3 text-white/70">We design and engineer premium robots with a focus on human-centric interaction, reliable autonomy, and a refined, futuristic aesthetic.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY PHYSICAL AI -->
+        <section id="why" class="py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-semibold">Why Physical AI?</h2>
+                <div class="mt-10 grid md:grid-cols-3 gap-6">
+                    <div class="glass rounded-xl p-6 tilt">
+                        <div class="tilt-inner">
+                            <div class="w-12 h-12 rounded-full bg-neon/20 border border-neon flex items-center justify-center"><span class="text-neon">🤖</span></div>
+                            <h3 class="mt-4 text-xl font-semibold">AI-Driven Interaction</h3>
+                            <p class="text-white/70">Context-aware conversations and assistance tailored to your environment.</p>
+                        </div>
+                    </div>
+                    <div class="glass rounded-xl p-6 tilt">
+                        <div class="tilt-inner">
+                            <div class="w-12 h-12 rounded-full bg-sky/20 border border-sky flex items-center justify-center"><span class="text-sky">🛞</span></div>
+                            <h3 class="mt-4 text-xl font-semibold">Smart Mobility</h3>
+                            <p class="text-white/70">Autonomous navigation with safety, efficiency, and reliability.</p>
+                        </div>
+                    </div>
+                    <div class="glass rounded-xl p-6 tilt">
+                        <div class="tilt-inner">
+                            <div class="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center"><span class="text-white">🫱🏻‍🫲🏽</span></div>
+                            <h3 class="mt-4 text-xl font-semibold">Human-Centric Robotics</h3>
+                            <p class="text-white/70">Designed to collaborate, assist, and enhance human workflows.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-semibold">Contact</h2>
+                <p class="text-white/70 mt-2">Let’s build with Physical AI.</p>
+                <div class="mt-8 grid md:grid-cols-3 gap-6">
+                    <div class="glass rounded-xl p-6 hover:shadow-glow transition">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-neon/20 border border-neon flex items-center justify-center">📧</div>
+                            <div>
+                                <div class="font-semibold">Email</div>
+                                <a href="mailto:menschroboticsll@gmail.com" class="text-white/80 hover:text-sky">menschroboticsll@gmail.com</a>
                             </div>
-                            <h4 class="text-lg font-semibold text-white mb-1">Email</h4>
-                            <a href="mailto:menschrobotics11@gmail.com" class="text-slate-300 hover:text-cyan-400">menschrobotics11@gmail.com</a>
                         </div>
-                        <div class="w-full md:w-1/3 px-4 mb-8 md:mb-0 text-center">
-                            <div class="mb-3 text-cyan-400">
-                               <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                    </div>
+                    <div class="glass rounded-xl p-6 hover:shadow-glowSky transition">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-sky/20 border border-sky flex items-center justify-center">📞</div>
+                            <div>
+                                <div class="font-semibold">Phone</div>
+                                <a href="tel:+917907362027" class="text-white/80 hover:text-sky">+91 7907362027</a>
                             </div>
-                            <h4 class="text-lg font-semibold text-white mb-1">Phone</h4>
-                            <a href="tel:+917994083168" class="text-slate-300 hover:text-cyan-400">+91 79940 83168</a>
                         </div>
-                        <div class="w-full md:w-1/3 px-4 text-center">
-                            <div class="mb-3 text-cyan-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                    </div>
+                    <div class="glass rounded-xl p-6 hover:shadow-glow transition">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center">📍</div>
+                            <div>
+                                <div class="font-semibold">Location</div>
+                                <div class="text-white/80">Coimbatore, India</div>
                             </div>
-                            <h4 class="text-lg font-semibold text-white mb-1">Address</h4>
-                            <p class="text-slate-300">Karunya Business Incubation Park,<br>Pudur, Coimbatore,<br>Tamil Nadu 641045</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-    </main>
+        <!-- FOOTER -->
+        <footer class="border-t border-white/10">
+            <div class="max-w-7xl mx-auto px-4 py-8 text-white/70 text-sm">© 2025 Mensch Robotics — Building the Future with Physical AI</div>
+        </footer>
 
-    <footer class="bg-slate-800/50 border-t border-slate-700">
-        <div class="container mx-auto px-6 py-4 text-center text-slate-400">
-            <p>&copy; 2025 Mensch Robotics. All rights reserved.</p>
-        </div>
-    </footer>
+        <!-- Scripts -->
+        <script>
+            gsap.registerPlugin(ScrollTrigger);
+            gsap.utils.toArray('section').forEach((sec) => {
+                gsap.from(sec, { opacity: 0, y: 24, duration: 0.8, ease: 'power2.out', scrollTrigger: { trigger: sec, start: 'top 80%' } });
+            });
 
-</body>
+            const tiltCards = document.querySelectorAll('.tilt');
+            tiltCards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left; const y = e.clientY - rect.top;
+                    const rx = -(y - rect.height/2) / 30; const ry = (x - rect.width/2) / 30;
+                    card.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+                });
+                card.addEventListener('mouseleave', () => { card.style.transform = 'rotateX(0deg) rotateY(0deg)'; });
+            });
+
+            const particlesEl = document.getElementById('particles');
+            const particleCount = 60; const particles = [];
+            for (let i = 0; i < particleCount; i++) {
+                const p = document.createElement('div');
+                p.style.position = 'absolute'; p.style.width = '3px'; p.style.height = '3px'; p.style.borderRadius = '50%';
+                p.style.background = 'rgba(56,189,248,0.7)'; p.style.boxShadow = '0 0 10px rgba(56,189,248,0.6)';
+                p.style.left = Math.random()*100 + '%'; p.style.top = Math.random()*100 + '%';
+                particlesEl.appendChild(p); particles.push({ el: p, vx: (Math.random()-0.5)*0.3, vy: (Math.random()-0.5)*0.3 });
+            }
+            function animateParticles() {
+                particles.forEach(pt => {
+                    const rect = particlesEl.getBoundingClientRect();
+                    let x = pt.el.offsetLeft + pt.vx; let y = pt.el.offsetTop + pt.vy;
+                    if (x < 0 || x > rect.width) pt.vx *= -1; if (y < 0 || y > rect.height) pt.vy *= -1;
+                    pt.el.style.left = `${pt.el.offsetLeft + pt.vx}px`; pt.el.style.top = `${pt.el.offsetTop + pt.vy}px`;
+                }); requestAnimationFrame(animateParticles);
+            } animateParticles();
+
+            const canvas = document.getElementById('orbCanvas'); const ctx = canvas.getContext('2d');
+            function resize() { const rect = canvas.getBoundingClientRect(); canvas.width = Math.floor(rect.width * window.devicePixelRatio); canvas.height = Math.floor(rect.height * window.devicePixelRatio); }
+            resize(); window.addEventListener('resize', resize);
+            let t = 0; function draw() {
+                ctx.clearRect(0,0,canvas.width,canvas.height);
+                const cx = canvas.width/2; const cy = canvas.height/2; const R = Math.min(cx, cy) * 0.75;
+                const gradient = ctx.createRadialGradient(cx, cy, R*0.2, cx, cy, R);
+                gradient.addColorStop(0, 'rgba(34,211,238,0.25)'); gradient.addColorStop(1, 'rgba(34,211,238,0.02)');
+                ctx.fillStyle = gradient; ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI*2); ctx.fill();
+                ctx.save(); ctx.translate(cx, cy); ctx.rotate(t*0.01);
+                for (let i = 0; i < 220; i++) {
+                    const a = i * 0.12 + t*0.02; const r = R*0.6 * (0.6 + 0.4*Math.sin(i*0.08 + t*0.03));
+                    const x = Math.cos(a) * r; const y = Math.sin(a) * r; const s = 1 + 0.6*Math.sin(i*0.05 + t*0.02);
+                    ctx.fillStyle = `rgba(56,189,248,${0.8 - i/300})`; ctx.beginPath(); ctx.arc(x, y, s, 0, Math.PI*2); ctx.fill();
+                }
+                ctx.restore(); t += 1; requestAnimationFrame(draw);
+            } draw();
+            canvas.addEventListener('mouseenter', () => { gsap.to(canvas, { duration: 0.6, scale: 1.03, ease: 'power2.out' }); });
+            canvas.addEventListener('mouseleave', () => { gsap.to(canvas, { duration: 0.6, scale: 1.0, ease: 'power2.out' }); });
+        </script>
+    </body>
 </html>
