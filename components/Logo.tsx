@@ -1,6 +1,5 @@
 import React from 'react';
 import logoTransparent from '../MENSCH_Transperant.png';
-import logoSymbol from '../Logo_symbol.jpeg';
 
 export const Logo: React.FC<{ className?: string; imgClassName?: string }> = ({
     className = "",
@@ -13,9 +12,6 @@ export const Logo: React.FC<{ className?: string; imgClassName?: string }> = ({
                 alt="Mensch Robotics"
                 className={`${imgClassName} object-contain drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]`}
                 decoding="async"
-                onError={(e) => {
-                    e.currentTarget.src = logoSymbol;
-                }}
             />
         </div>
     );
