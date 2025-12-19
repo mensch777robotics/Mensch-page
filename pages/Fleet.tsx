@@ -91,7 +91,7 @@ export const Fleet: React.FC = () => {
                                     <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-surface-dark border border-white/10 shadow-2xl">
                                         <img 
                                             alt={bot.name}
-                                            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                                            className="h-full w-full object-contain bg-surface-dark transition-transform duration-700 group-hover:scale-105" 
                                             src={bot.image}
                                         />
                                         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-8">

@@ -8,20 +8,20 @@ export const Home: React.FC = () => {
             <div className="w-full flex flex-col gap-16 md:gap-32 pb-10 px-0">
                 
                 {/* Hero Section */}
-                <section className="relative w-full overflow-hidden min-h-[calc(100vh-5rem)] flex items-end opacity-0 animate-fade-in-up [animation-delay:200ms]">
+                <section className="relative w-full overflow-hidden min-h-[calc(100vh-5rem)] flex items-end opacity-0 animate-fade-in-up [animation-delay:200ms] bg-black">
                     <div 
-                        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 hover:scale-105" 
+                        className="absolute inset-0 bg-contain bg-center bg-no-repeat transition-transform duration-1000 hover:scale-105" 
                         style={{backgroundImage: `url(${heroRobi4k})`}}
                     ></div>
 
                     <div className="relative z-10 w-full px-4 sm:px-6 md:px-10 lg:px-16 pb-8 md:pb-12">
                         <div className="inline-block max-w-[92vw] sm:max-w-xl md:max-w-2xl bg-black/25 backdrop-blur-xl border border-white/10 rounded-[2rem] p-5 sm:p-6 md:p-8">
                             <div className="flex flex-col gap-4">
-                                <h1 className="text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tighter drop-shadow-lg">
+                                <h1 className="text-white text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tighter drop-shadow-lg">
                                     Physical AI <br/>
                                     <span className="text-slate-200">For Every Space</span>
                                 </h1>
-                                <p className="text-slate-200 text-base sm:text-lg md:text-xl font-light max-w-lg leading-relaxed drop-shadow-md">
+                                <p className="text-slate-200 text-sm sm:text-lg md:text-xl font-light max-w-lg leading-relaxed drop-shadow-md">
                                     Enhancing lives and driving positive change through advanced robotics integrated seamlessly into human environments.
                                 </p>
                             </div>
@@ -66,8 +66,8 @@ export const Home: React.FC = () => {
                                 img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAQ9cpGX-p05Fy7rgo3IVNN442fQKGUAeEZ3heuM3Ps3AsNWQmbJBDQBbCb4JRYZ_dngHfOZf78qMhcnVqWJDY33A-zcegFaKjnVdftPGAo3NCVIjsSbkvCiOQjBdCleaqjYBAnRF056UovHTY07vNPSYRDeMu2f7QpJB_spjQG4K8Yld1UMg4GX6Wl63NcHbV3luceKN7IR-4g1luJNpZk0ULKFc09NaTX9opO72-0e-coKpbLI7IxsEfyMYnZGj-k6gvcqwJrDg'
                             }
                         ].map(bot => (
-                            <div key={bot.id} className="group relative flex flex-col min-h-[500px] overflow-hidden">
-                                <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-40" style={{backgroundImage: `url("${bot.img}")`}}></div>
+                            <div key={bot.id} className="group relative flex flex-col min-h-[500px] overflow-hidden bg-surface-dark">
+                                <div className="absolute inset-0 bg-contain bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-40" style={{backgroundImage: `url("${bot.img}")`}}></div>
                                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
                                 <div className="relative z-10 flex flex-col h-full justify-end p-8 gap-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                                     <span className="text-primary font-bold text-xs tracking-widest uppercase mb-2 opacity-80 group-hover:opacity-100 transition-opacity">{bot.id} — {bot.cat}</span>
