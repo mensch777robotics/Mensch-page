@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export const Home: React.FC = () => {
-    const heroSrc = `${import.meta.env.BASE_URL}about-us-hero.png`;
+    const heroSrc = `${import.meta.env.BASE_URL}Reception_Hero.png`;
     return (
         <div className="flex flex-col items-center">
             <div className="w-full flex flex-col gap-16 md:gap-32 pb-10 px-0">
@@ -10,10 +10,11 @@ export const Home: React.FC = () => {
                 {/* Hero Section */}
                 <section className="relative w-full flex flex-col md:block min-h-0 md:min-h-[calc(100vh-5rem)] opacity-0 animate-fade-in-up [animation-delay:200ms]">
                     <div className="relative h-[50vh] w-full md:absolute md:inset-0 md:h-full overflow-hidden">
-                        <div 
-                            className="absolute inset-0 bg-cover bg-top md:bg-center bg-no-repeat transition-transform duration-1000 hover:scale-105" 
-                            style={{backgroundImage: `url(${heroSrc})`}}
-                        ></div>
+                        <img 
+                            src={heroSrc}
+                            alt="Hero"
+                            className="absolute inset-0 h-full w-full object-cover object-right md:object-center transition-transform duration-1000 hover:scale-105"
+                        />
                     </div>
 
                     <div className="relative z-10 w-full px-4 py-10 sm:px-6 md:px-10 lg:px-16 md:absolute md:bottom-0 md:pb-12">
