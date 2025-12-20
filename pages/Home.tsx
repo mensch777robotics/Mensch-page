@@ -62,7 +62,7 @@ export const Home: React.FC = () => {
                                 cat: 'Service', 
                                 title: 'Reception & Guidance', 
                                 sub: 'The Future of First Impressions',
-                                img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBYuAgKmDldufveoV1ULGMPxHTGNU1QekO7k_igRgxpsI7jO2Wiwdl-59ZHw7vr5twsmp56H2HVA57qh3I2dimXP2kF9eh1zNfkh18D0xKIRDKO1fea_qGmen4fIIdi5sMHGtZwMy5HdZDCGIBnNhP2diospoun7bIWBNsKQn_Q-s8MAYtX29EwuY-C1TlbxPcwZpwL7NBPYKIG_UoDcC2OMonrWGE6gY0-e95uToU5dQcr3JjsJCGt2I08z5nwQIIadXOLGwJpVA'
+                                img: `${import.meta.env.BASE_URL}reception-guidance.jpeg`
                             },
                             {
                                 id: '02', 
@@ -74,7 +74,7 @@ export const Home: React.FC = () => {
                             {
                                 id: '03', 
                                 cat: 'Research', 
-                                title: 'Max Robot', 
+                                title: 'Max - Edu & Research', 
                                 sub: 'The Open Source Platform',
                                 img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAQ9cpGX-p05Fy7rgo3IVNN442fQKGUAeEZ3heuM3Ps3AsNWQmbJBDQBbCb4JRYZ_dngHfOZf78qMhcnVqWJDY33A-zcegFaKjnVdftPGAo3NCVIjsSbkvCiOQjBdCleaqjYBAnRF056UovHTY07vNPSYRDeMu2f7QpJB_spjQG4K8Yld1UMg4GX6Wl63NcHbV3luceKN7IR-4g1luJNpZk0ULKFc09NaTX9opO72-0e-coKpbLI7IxsEfyMYnZGj-k6gvcqwJrDg'
                             }

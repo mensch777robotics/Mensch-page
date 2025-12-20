@@ -13,14 +13,6 @@ export const Footer: React.FC = () => {
                     </div>
                     <div className="flex gap-16 flex-wrap">
                         <div>
-                            <h4 className="text-slate-900 font-bold text-xs uppercase tracking-widest mb-6">Robots</h4>
-                            <ul className="space-y-3 text-sm text-slate-600">
-                                <li><Link to="/fleet" className="hover:text-primary transition-colors">Reception</Link></li>
-                                <li><Link to="/fleet" className="hover:text-primary transition-colors">Robi (Education)</Link></li>
-                                <li><Link to="/fleet" className="hover:text-primary transition-colors">Max (Research)</Link></li>
-                            </ul>
-                        </div>
-                        <div>
                             <h4 className="text-slate-900 font-bold text-xs uppercase tracking-widest mb-6">Company</h4>
                             <ul className="space-y-3 text-sm text-slate-600">
                                 <li><Link to="/about-us" className="hover:text-slate-900 transition-colors">About Us</Link></li>
