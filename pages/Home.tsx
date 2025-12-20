@@ -8,20 +8,22 @@ export const Home: React.FC = () => {
             <div className="w-full flex flex-col gap-16 md:gap-32 pb-10 px-0">
                 
                 {/* Hero Section */}
-                <section className="relative w-full overflow-hidden min-h-[65vh] md:min-h-[calc(100vh-5rem)] flex items-end opacity-0 animate-fade-in-up [animation-delay:200ms]">
-                    <div 
-                        className="absolute inset-0 bg-cover bg-top md:bg-center bg-no-repeat transition-transform duration-1000 hover:scale-105" 
-                        style={{backgroundImage: `url(${heroSrc})`}}
-                    ></div>
+                <section className="relative w-full flex flex-col md:block min-h-0 md:min-h-[calc(100vh-5rem)] opacity-0 animate-fade-in-up [animation-delay:200ms]">
+                    <div className="relative h-[50vh] w-full md:absolute md:inset-0 md:h-full overflow-hidden">
+                        <div 
+                            className="absolute inset-0 bg-cover bg-top md:bg-center bg-no-repeat transition-transform duration-1000 hover:scale-105" 
+                            style={{backgroundImage: `url(${heroSrc})`}}
+                        ></div>
+                    </div>
 
-                    <div className="relative z-10 w-full px-4 sm:px-6 md:px-10 lg:px-16 pb-8 md:pb-12">
-                        <div className="inline-block max-w-[92vw] sm:max-w-xl md:max-w-2xl bg-black/25 backdrop-blur-xl border border-white/10 rounded-[2rem] p-5 sm:p-6 md:p-8">
+                    <div className="relative z-10 w-full px-4 py-10 sm:px-6 md:px-10 lg:px-16 md:absolute md:bottom-0 md:pb-12">
+                        <div className="inline-block w-full md:w-auto max-w-none md:max-w-2xl md:bg-black/25 md:backdrop-blur-xl md:border md:border-white/10 rounded-[2rem] md:p-8">
                             <div className="flex flex-col gap-4">
-                                <h1 className="text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tighter drop-shadow-lg">
+                                <h1 className="text-slate-900 md:text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tighter md:drop-shadow-lg">
                                     Physical AI <br/>
-                                    <span className="text-slate-200">For Every Space</span>
+                                    <span className="text-slate-600 md:text-slate-200">For Every Space</span>
                                 </h1>
-                                <p className="text-slate-200 text-base sm:text-lg md:text-xl font-light max-w-lg leading-relaxed drop-shadow-md">
+                                <p className="text-slate-600 md:text-slate-200 text-base sm:text-lg md:text-xl font-light max-w-lg leading-relaxed md:drop-shadow-md">
                                     Enhancing lives and driving positive change through advanced robotics integrated seamlessly into human environments.
                                 </p>
                             </div>
