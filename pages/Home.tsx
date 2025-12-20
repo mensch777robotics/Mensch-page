@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export const Home: React.FC = () => {
+    const [isLoaded, setIsLoaded] = useState(false);
     const heroSrc = `${import.meta.env.BASE_URL}Reception_Hero.png`;
     return (
         <div className="flex flex-col items-center">
@@ -9,11 +10,20 @@ export const Home: React.FC = () => {
                 
                 {/* Hero Section */}
                 <section className="relative w-full flex flex-col md:block min-h-0 md:min-h-[calc(100vh-5rem)] opacity-0 animate-fade-in-up [animation-delay:200ms]">
-                    <div className="relative h-[50vh] w-full md:absolute md:inset-0 md:h-full overflow-hidden">
+                    <div className="relative h-[50vh] w-full md:absolute md:inset-0 md:h-full overflow-hidden bg-gray-50">
+                        {!isLoaded && (
+                            <div className="absolute inset-0 flex items-center justify-center z-10">
+                                <div className="relative flex items-center justify-center">
+                                    <div className="absolute w-20 h-20 bg-primary/30 rounded-full animate-orb-pulse blur-xl"></div>
+                                    <div className="w-12 h-12 bg-primary rounded-full animate-orb-pulse shadow-[0_0_30px_rgba(19,91,236,0.6)]"></div>
+                                </div>
+                            </div>
+                        )}
                         <img 
                             src={heroSrc}
                             alt="Hero"
-                            className="absolute inset-0 h-full w-full object-cover object-right md:object-center transition-transform duration-1000 hover:scale-105"
+                            className={`absolute inset-0 h-full w-full object-cover object-right md:object-center transition-all duration-1000 hover:scale-105 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+                            onLoad={() => setIsLoaded(true)}
                         />
                     </div>
 
