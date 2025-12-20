@@ -10,7 +10,7 @@ export const AboutUs: React.FC = () => {
                 <img
                     src={heroSrc}
                     alt="About us hero"
-                    className="absolute inset-0 h-full w-full object-cover"
+                    className="absolute inset-0 h-full w-full object-cover object-top md:object-center"
                     decoding="async"
                 />
                 <div className="relative z-10 w-full px-4 sm:px-6 md:px-10 lg:px-16 pb-10 md:pb-14">

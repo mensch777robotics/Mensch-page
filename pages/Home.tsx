@@ -10,7 +10,7 @@ export const Home: React.FC = () => {
                 {/* Hero Section */}
                 <section className="relative w-full overflow-hidden min-h-[calc(100vh-5rem)] flex items-end opacity-0 animate-fade-in-up [animation-delay:200ms]">
                     <div 
-                        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 hover:scale-105" 
+                        className="absolute inset-0 bg-cover bg-top md:bg-center bg-no-repeat transition-transform duration-1000 hover:scale-105" 
                         style={{backgroundImage: `url(${heroRobi4k})`}}
                     ></div>
 
