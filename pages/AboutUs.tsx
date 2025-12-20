@@ -1,7 +1,8 @@
 import React from 'react';
+import heroRobi4k from '../Robi_4k.png';
 
 export const AboutUs: React.FC = () => {
-    const heroSrc = `${import.meta.env.BASE_URL}about-us-hero.png`;
+    const heroSrc = heroRobi4k;
 
     return (
         <div className="flex flex-col">

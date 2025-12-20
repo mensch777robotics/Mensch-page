@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import heroRobi4k from '../Robi_4k.png';
 
 export const Home: React.FC = () => {
+    const heroSrc = `${import.meta.env.BASE_URL}about-us-hero.png`;
     return (
         <div className="flex flex-col items-center">
             <div className="w-full flex flex-col gap-16 md:gap-32 pb-10 px-0">
@@ -11,7 +11,7 @@ export const Home: React.FC = () => {
                 <section className="relative w-full overflow-hidden min-h-[65vh] md:min-h-[calc(100vh-5rem)] flex items-end opacity-0 animate-fade-in-up [animation-delay:200ms]">
                     <div 
                         className="absolute inset-0 bg-cover bg-top md:bg-center bg-no-repeat transition-transform duration-1000 hover:scale-105" 
-                        style={{backgroundImage: `url(${heroRobi4k})`}}
+                        style={{backgroundImage: `url(${heroSrc})`}}
                     ></div>
 
                     <div className="relative z-10 w-full px-4 sm:px-6 md:px-10 lg:px-16 pb-8 md:pb-12">
