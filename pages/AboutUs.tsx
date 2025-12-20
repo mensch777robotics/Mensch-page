@@ -6,7 +6,7 @@ export const AboutUs: React.FC = () => {
     return (
         <div className="flex flex-col">
             {/* Hero */}
-            <section className="relative w-full overflow-hidden min-h-[calc(100vh-5rem)] flex items-end opacity-0 animate-fade-in-up">
+            <section className="relative w-full overflow-hidden min-h-[65vh] md:min-h-[calc(100vh-5rem)] flex items-end opacity-0 animate-fade-in-up">
                 <img
                     src={heroSrc}
                     alt="About us hero"
