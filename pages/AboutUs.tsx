@@ -1,8 +1,7 @@
 import React from 'react';
-import heroRobi4k from '../Robi_4k.png';
 
 export const AboutUs: React.FC = () => {
-    const heroSrc = heroRobi4k;
+    const heroSrc = `${import.meta.env.BASE_URL}Robi_hero.png`;
 
     return (
         <div className="flex flex-col">
@@ -12,7 +11,7 @@ export const AboutUs: React.FC = () => {
                     <img
                         src={heroSrc}
                         alt="About us hero"
-                        className="h-full w-full object-cover object-right md:object-center"
+                        className="h-full w-full object-cover object-[75%_center] md:object-center"
                         decoding="async"
                     />
                 </div>
