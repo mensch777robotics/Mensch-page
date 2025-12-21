@@ -27,7 +27,7 @@ const robots = [
         name: "ROBI - AI Teacher",
         tagline: "Your Partner in Modern Education",
         description: "Enhancing education through adaptive AI tutoring and interactive engagement. ROBI isn't just a screen; it's a physical companion that makes abstract concepts tangible and fun for students of all ages.",
-        image: "/Robi_childrens.jpeg",
+        image: "/Robi_cbse_stdt.png",
         specs: [
             { label: "Focus", value: "K-12" },
             { label: "Display", value: "10\" Touch" }

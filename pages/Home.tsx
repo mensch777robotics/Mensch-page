@@ -69,7 +69,7 @@ export const Home: React.FC = () => {
                                 cat: 'Education', 
                                 title: 'ROBI - AI Teacher', 
                                 sub: 'Your Partner in Modern Education',
-                                img: `${import.meta.env.BASE_URL}Robi_childrens.jpeg`,
+                                img: `${import.meta.env.BASE_URL}Robi_cbse_stdt.png`,
                                 fit: 'contain'
                             },
                             {
