@@ -19,7 +19,7 @@ export const Contact: React.FC = () => {
                             {[
                                 {icon: "call", title: "Call Us", val: "+91 7907362027", link: "tel:+917907362027"},
                                 {icon: "mail", title: "Email Us", val: "menschrobotics11@gmail.com", link: "mailto:menschrobotics11@gmail.com"},
-                                {icon: "location_on", title: "Location", val: "Kerala, India", link: "#"}
+                                {icon: "location_on", title: "Location", val: "Coimbatore, Tamil Nadu", link: "#"}
                             ].map((item) => (
                                 <div key={item.title} className="flex items-center gap-6 group">
                                     <div className="w-12 h-12 rounded-full bg-[#1a1f2e] flex items-center justify-center text-primary transition-colors group-hover:bg-primary group-hover:text-white">
@@ -42,32 +42,20 @@ export const Contact: React.FC = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                 <div className="flex flex-col gap-2">
                                     <label className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">First Name</label>
-                                    <input className="w-full bg-black border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="John" type="text" />
+                                    <input className="w-full bg-black border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" type="text" />
                                 </div>
                                 <div className="flex flex-col gap-2">
                                     <label className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Last Name</label>
-                                    <input className="w-full bg-black border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Doe" type="text" />
+                                    <input className="w-full bg-black border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" type="text" />
                                 </div>
                             </div>
                             <div className="flex flex-col gap-2">
                                 <label className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Email</label>
-                                <input className="w-full bg-black border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="john@example.com" type="email" />
-                            </div>
-                            <div className="flex flex-col gap-2">
-                                <label className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Interest</label>
-                                <div className="relative">
-                                    <select className="w-full bg-black border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all appearance-none cursor-pointer">
-                                        <option>Education (Robi/Max)</option>
-                                        <option>Service Robots</option>
-                                        <option>Research & Development</option>
-                                        <option>General Inquiry</option>
-                                    </select>
-                                    <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none text-xl">expand_more</span>
-                                </div>
+                                <input className="w-full bg-black border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" type="email" />
                             </div>
                             <div className="flex flex-col gap-2">
                                 <label className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Message</label>
-                                <textarea className="w-full bg-black border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none" placeholder="How can we help you?" rows={4}></textarea>
+                                <textarea className="w-full bg-black border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none" rows={4}></textarea>
                             </div>
                             <button className="mt-4 w-full bg-white hover:bg-slate-200 text-black font-bold text-sm tracking-[0.05em] uppercase rounded-xl py-4 flex items-center justify-center gap-2 transition-colors">
                                 Send Message
