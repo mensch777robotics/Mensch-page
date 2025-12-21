@@ -92,9 +92,9 @@ export const Home: React.FC = () => {
                                 <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
                                 <div className="relative z-10 flex flex-col h-full justify-end p-8 gap-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                                     <span className="text-primary font-bold text-xs tracking-widest uppercase mb-2 opacity-80 group-hover:opacity-100 transition-opacity">{bot.id} — {bot.cat}</span>
-                                    <h3 className="text-white text-3xl font-bold leading-tight">{bot.title}</h3>
-                                    <p className="text-slate-400 text-sm mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">{bot.sub}</p>
-                                    <Link to="/fleet" className="inline-flex items-center text-white text-xs font-bold tracking-wider uppercase hover:text-primary transition-colors mt-auto">
+                                    <h3 className="text-white text-3xl font-bold leading-tight mb-2">{bot.title}</h3>
+                                    <p className="text-slate-400 text-sm mb-6 opacity-80">{bot.sub}</p>
+                                    <Link to="/fleet" className="inline-flex items-center text-white text-xs font-bold tracking-wider uppercase hover:text-primary transition-colors">
                                         Discover <span className="material-symbols-outlined text-sm ml-1 -rotate-45 group-hover:rotate-0 transition-transform">arrow_forward</span>
                                     </Link>
                                 </div>
