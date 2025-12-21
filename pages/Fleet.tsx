@@ -7,7 +7,7 @@ const robots = [
         name: "Reception & Guidance Robot",
         tagline: "The Future of First Impressions",
         description: "Seamlessly guiding visitors with advanced autonomous navigation and warm, human-like interaction. It transforms lobbies into intelligent spaces where guests feel immediately welcomed and directed with precision.",
-        image: "/Reception_Hero.png",
+        image: "/reception-guidance.jpeg",
         specs: [
             { label: "Height", value: "5 feet" },
             { label: "Battery", value: "12 Hr" }
