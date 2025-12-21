@@ -13,7 +13,7 @@ export const Contact: React.FC = () => {
         try {
             // REPLACE "YOUR_FORM_ID" WITH YOUR ACTUAL FORMSPREE FORM ID
             // Get one for free at https://formspree.io/
-            const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+            const response = await fetch("https://formspree.io/f/maqwjank", {
                 method: "POST",
                 body: data,
                 headers: {
