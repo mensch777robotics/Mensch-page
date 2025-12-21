@@ -7,7 +7,7 @@ const robots = [
         name: "Reception & Guidance Robot",
         tagline: "The Future of First Impressions",
         description: "At Mensch Robotics, we believes in building robots to enhance your environment and customer experience",
-        image: "/reception-guidance.jpeg",
+        image: "/Reception-Guidance.jpeg",
         specs: [
             { label: "Height", value: "5 feet" },
             { label: "Battery", value: "12 Hr" }
