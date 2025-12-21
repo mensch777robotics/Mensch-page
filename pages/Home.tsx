@@ -62,7 +62,8 @@ export const Home: React.FC = () => {
                                 cat: 'Service', 
                                 title: 'Reception & Guidance', 
                                 sub: 'The Future of First Impressions',
-                                img: `${import.meta.env.BASE_URL}Reception-Guidance.jpeg`
+                                img: `${import.meta.env.BASE_URL}Reception-Guidance.jpeg`,
+                                fit: 'contain'
                             },
                             {
                                 id: '02', 
