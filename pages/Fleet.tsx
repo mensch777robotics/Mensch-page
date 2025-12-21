@@ -17,9 +17,10 @@ const robots = [
             { title: "LiDAR Navigation", desc: "Moves gracefully through crowded spaces without collisions." },
             { title: "Multi-modal Interface", desc: "Voice interaction coupled with a responsive touch display for complex queries." }
         ],
-        accent: "text-accent-blue",
-        bgAccent: "bg-accent-blue",
-        gradient: "from-accent-blue/20 to-blue-600/20"
+        accent: "text-cyan-400",
+        bgAccent: "bg-cyan-400",
+        gradient: "from-cyan-400/20 to-blue-600/20",
+        imagePosition: "object-top"
     },
     {
         id: "02",
@@ -57,9 +58,9 @@ const robots = [
             { title: "Modular Design", desc: "Swap end-effectors, sensors, and compute modules effortlessly to suit specific experiments.", icon: "terminal" },
             { title: "Precision Control", desc: "High-torque servos allow for manipulation tasks requiring sub-millimeter accuracy.", icon: "terminal" }
         ],
-        accent: "text-accent-teal",
-        bgAccent: "bg-accent-teal",
-        gradient: "from-accent-teal/20 to-emerald-600/20"
+        accent: "text-cyan-400",
+        bgAccent: "bg-cyan-400",
+        gradient: "from-cyan-400/20 to-blue-600/20"
     }
 ];
 
@@ -91,20 +92,9 @@ export const Fleet: React.FC = () => {
                                     <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-surface-dark border border-white/10 shadow-2xl">
                                         <img 
                                             alt={bot.name}
-                                            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                                            className={`h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 ${bot.imagePosition || ''}`}
                                             src={bot.image}
                                         />
-                                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-8">
-                                            <div className="flex gap-4">
-                                                {bot.specs.map(spec => (
-                                                    <div key={spec.label} className="flex flex-col">
-                                                        <span className="text-xs text-slate-400 uppercase tracking-wider mb-1">{spec.label}</span>
-                                                        <span className="font-mono text-white">{spec.value}</span>
-                                                    </div>
-                                                ))}
-                                                <div className="w-px bg-white/20 h-10 mx-2 hidden sm:block"></div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
 
@@ -136,6 +126,12 @@ export const Fleet: React.FC = () => {
                                             Request Specs 
                                             <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform text-lg">arrow_forward</span>
                                         </button>
+                                        {bot.id === "02" && (
+                                            <button className={`group flex items-center gap-2 text-white font-bold uppercase tracking-wider text-sm hover:${bot.accent} transition-colors`}>
+                                                Watch Video
+                                                <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform text-lg">play_circle</span>
+                                            </button>
+                                        )}
                                     </div>
                                 </div>
                             </div>
