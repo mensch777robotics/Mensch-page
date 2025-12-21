@@ -77,7 +77,7 @@ export const Home: React.FC = () => {
                                 cat: 'Research', 
                                 title: 'Max - Edu & Research', 
                                 sub: 'The Open Source Platform',
-                                img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAQ9cpGX-p05Fy7rgo3IVNN442fQKGUAeEZ3heuM3Ps3AsNWQmbJBDQBbCb4JRYZ_dngHfOZf78qMhcnVqWJDY33A-zcegFaKjnVdftPGAo3NCVIjsSbkvCiOQjBdCleaqjYBAnRF056UovHTY07vNPSYRDeMu2f7QpJB_spjQG4K8Yld1UMg4GX6Wl63NcHbV3luceKN7IR-4g1luJNpZk0ULKFc09NaTX9opO72-0e-coKpbLI7IxsEfyMYnZGj-k6gvcqwJrDg'
+                                img: `${import.meta.env.BASE_URL}MAX_Robot.png`
                             }
                         ].map(bot => (
                             <div key={bot.id} className="group relative flex flex-col min-h-[500px] overflow-hidden bg-black">

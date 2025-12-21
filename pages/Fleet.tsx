@@ -7,10 +7,10 @@ const robots = [
         name: "Reception & Guidance Robot",
         tagline: "The Future of First Impressions",
         description: "Seamlessly guiding visitors with advanced autonomous navigation and warm, human-like interaction. It transforms lobbies into intelligent spaces where guests feel immediately welcomed and directed with precision.",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDXwiKEUl4BDDK5YVlO_yHad1sq9ZL5UW976dyWrw5rviha0NnDNqJo_YcnGd3BP2FyWDgyj2_g1RIpFWPl408sP_ldQbQShVaKrNXGJSA5cXXYJSRpUnOMOAWsU-EbvV1R7_lgFMrViqId6Wrzq6jP1Tw_ZyYMNdTcUuRBNixHNBphIlFxFd4u7NhfzfGElY2EH9Bo7MVpmPXOXKuhnEqY3ALwnQLTk8q-I3M_toHoRvWrfuefqS_VIJ2Q5emhwlHjKSU5wGGomw",
+        image: "/Reception_Hero.png",
         specs: [
-            { label: "Height", value: "160 cm" },
-            { label: "Battery", value: "12 Hrs" }
+            { label: "Height", value: "5 feet" },
+            { label: "Battery", value: "12 Hr" }
         ],
         features: [
             { title: "Facial Recognition", desc: "Greets returning guests by name for a personalized experience." },
@@ -47,7 +47,7 @@ const robots = [
         name: "Max Robot",
         tagline: "The Open Source Platform for Innovation",
         description: "An open architecture system designed for universities and labs to push the boundaries of physical AI. Max is the ultimate canvas for roboticists, offering industrial-grade components with a hacker-friendly soul.",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBBsC4CApLnBv-0JazfIzSciJYvAE3DPV3i5hYS6NS8Bidqy8nLLP85nAfesD-M2wTiCBKIzpCQ14cXnfONP0nXxv1Z6Q4tDhnw9g6I24nV1kw9Uhu_MfiyaspcWl_oMUx2B3e49d8wQGEvA20MpU3F459cNkThJkl-KoYxhhqyGgD-CJklw_JHZ-pxCSzfPGT1yGIL-EiylMcNtnMHpEw1DFsEz_kzEFBTcc6Cqs7RHZi08ZKAL2vGsM8cEcBzaRe3efa-Jnw5VA",
+        image: "/MAX_Robot.png",
         specs: [
             { label: "OS", value: "Ubuntu/ROS2" },
             { label: "Payload", value: "5 kg" }
