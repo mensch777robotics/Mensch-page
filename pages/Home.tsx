@@ -69,7 +69,7 @@ export const Home: React.FC = () => {
                                 cat: 'Education', 
                                 title: 'ROBI - AI Teacher', 
                                 sub: 'Your Partner in Modern Education',
-                                img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAnwR8mmdUFFsiulq24Xx672WdPYkDE2naaQJQ59033lwK_AMw1t60CJO_fLQPrdSSVyXXH8i2R3EtAILTzN_yQhVgSov-ySlK5vCWQQBMDvDBzi3gp-5MyEcNfuPG6fOQRUao-FG3Kw4J5aCQF1DlpefkN-e6ZTDLqFXQ4F3Hm3tlAjgQetNBukyKEeYjQYIDtRK5IlAYitBhiSa12hVBf01M0VCsrThgg0aqzc9GjGSoOJi0AhNZiIj8PESmyYhkoYWdVRMsv7w'
+                                img: `${import.meta.env.BASE_URL}Robi_childrens.jpeg`
                             },
                             {
                                 id: '03', 

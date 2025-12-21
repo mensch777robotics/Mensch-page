@@ -27,7 +27,7 @@ const robots = [
         name: "ROBI - AI Teacher",
         tagline: "Your Partner in Modern Education",
         description: "Enhancing education through adaptive AI tutoring and interactive engagement. ROBI isn't just a screen; it's a physical companion that makes abstract concepts tangible and fun for students of all ages.",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCaP3eQC9P0vyEFLZvCliyfoxePCwyTKCzR7mYnLUA7uMqMKBnSpSegz9IAGsBxPLX0vXfX-0TPqzWFEBpyvvXEIHqgnwG9-se1A89pPiHVP4uO1c6ATuujN0xbH3XkZ9vhQ9kXky1hDycTDiE7Mxb5uybRfiT4RHuxPHyq0UzcB7jKlXS9k77NKlYsBVoSPkE5Q-bek9N2eXRY177OJdK_afoDdzzB_4MizI3PdCPhHD3HgdQb5zC3PXATgyPmo55mPtsXgiFlKg",
+        image: "/Robi_childrens.jpeg",
         specs: [
             { label: "Focus", value: "K-12" },
             { label: "Display", value: "10\" Touch" }
