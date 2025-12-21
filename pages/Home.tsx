@@ -69,7 +69,8 @@ export const Home: React.FC = () => {
                                 cat: 'Education', 
                                 title: 'ROBI - AI Teacher', 
                                 sub: 'Your Partner in Modern Education',
-                                img: `${import.meta.env.BASE_URL}Robi_childrens.jpeg`
+                                img: `${import.meta.env.BASE_URL}Robi_childrens.jpeg`,
+                                fit: 'contain'
                             },
                             {
                                 id: '03', 
@@ -79,8 +80,15 @@ export const Home: React.FC = () => {
                                 img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAQ9cpGX-p05Fy7rgo3IVNN442fQKGUAeEZ3heuM3Ps3AsNWQmbJBDQBbCb4JRYZ_dngHfOZf78qMhcnVqWJDY33A-zcegFaKjnVdftPGAo3NCVIjsSbkvCiOQjBdCleaqjYBAnRF056UovHTY07vNPSYRDeMu2f7QpJB_spjQG4K8Yld1UMg4GX6Wl63NcHbV3luceKN7IR-4g1luJNpZk0ULKFc09NaTX9opO72-0e-coKpbLI7IxsEfyMYnZGj-k6gvcqwJrDg'
                             }
                         ].map(bot => (
-                            <div key={bot.id} className="group relative flex flex-col min-h-[500px] overflow-hidden">
-                                <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{backgroundImage: `url("${bot.img}")`}}></div>
+                            <div key={bot.id} className="group relative flex flex-col min-h-[500px] overflow-hidden bg-black">
+                                {bot.fit === 'contain' ? (
+                                    <>
+                                        <div className="absolute inset-0 bg-cover bg-center blur-xl opacity-50 scale-110" style={{backgroundImage: `url("${bot.img}")`}}></div>
+                                        <div className="absolute inset-0 bg-contain bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-105" style={{backgroundImage: `url("${bot.img}")`}}></div>
+                                    </>
+                                ) : (
+                                    <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{backgroundImage: `url("${bot.img}")`}}></div>
+                                )}
                                 <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
                                 <div className="relative z-10 flex flex-col h-full justify-end p-8 gap-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                                     <span className="text-primary font-bold text-xs tracking-widest uppercase mb-2 opacity-80 group-hover:opacity-100 transition-opacity">{bot.id} — {bot.cat}</span>
