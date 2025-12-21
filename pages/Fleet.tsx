@@ -88,21 +88,12 @@ export const Fleet: React.FC = () => {
                                 {/* Image Column */}
                                 <div className={`relative group ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>
                                     <div className={`absolute -inset-1 bg-gradient-to-r ${bot.gradient} rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000`}></div>
-                                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-surface-dark border border-white/10 shadow-2xl bg-black">
-                                        {/* Blurred Background */}
-                                        <div 
-                                            className="absolute inset-0 bg-cover bg-center blur-xl opacity-50 scale-110"
-                                            style={{ backgroundImage: `url(${bot.image})` }}
-                                        ></div>
-                                        
-                                        {/* Main Image */}
-                                        <div 
-                                            className="absolute inset-0 bg-contain bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-105"
-                                            style={{ backgroundImage: `url(${bot.image})` }}
-                                            role="img"
-                                            aria-label={bot.name}
-                                        ></div>
-                                        
+                                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-surface-dark border border-white/10 shadow-2xl">
+                                        <img 
+                                            alt={bot.name}
+                                            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                                            src={bot.image}
+                                        />
                                         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-8">
                                             <div className="flex gap-4">
                                                 {bot.specs.map(spec => (

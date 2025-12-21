@@ -77,15 +77,14 @@ export const Home: React.FC = () => {
                                 cat: 'Research', 
                                 title: 'Max - Edu & Research', 
                                 sub: 'The Open Source Platform',
-                                img: `${import.meta.env.BASE_URL}MAX_Robot.png`,
-                                fit: 'contain'
+                                img: `${import.meta.env.BASE_URL}MAX_Robot.png`
                             }
                         ].map(bot => (
                             <div key={bot.id} className="group relative flex flex-col min-h-[500px] overflow-hidden bg-black">
                                 {bot.fit === 'contain' ? (
                                     <>
                                         <div className="absolute inset-0 bg-cover bg-center blur-xl opacity-50 scale-110" style={{backgroundImage: `url("${bot.img}")`}}></div>
-                                        <div className={`absolute inset-0 bg-contain ${bot.position || 'bg-center'} bg-no-repeat transition-transform duration-700 group-hover:scale-105`} style={{backgroundImage: `url("${bot.img}")`}}></div>
+                                        <div className="absolute inset-0 bg-contain bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-105" style={{backgroundImage: `url("${bot.img}")`}}></div>
                                     </>
                                 ) : (
                                     <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{backgroundImage: `url("${bot.img}")`}}></div>
