@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const robots = [
     {
@@ -17,10 +17,10 @@ const robots = [
             { title: "LiDAR Navigation", desc: "Moves gracefully through crowded spaces without collisions." },
             { title: "Multi-modal Interface", desc: "Voice interaction coupled with a responsive touch display for complex queries." }
         ],
-        accent: "text-cyan-400",
-        bgAccent: "bg-cyan-400",
-        gradient: "from-cyan-400/20 to-blue-600/20",
-        imagePosition: "object-top"
+        accent: "text-blue-500",
+        bgAccent: "bg-blue-500",
+        gradient: "from-blue-500/20 to-blue-600/20",
+        imagePosition: "object-bottom"
     },
     {
         id: "02",
@@ -58,18 +58,20 @@ const robots = [
             { title: "Modular Design", desc: "Swap end-effectors, sensors, and compute modules effortlessly to suit specific experiments.", icon: "terminal" },
             { title: "Precision Control", desc: "High-torque servos allow for manipulation tasks requiring sub-millimeter accuracy.", icon: "terminal" }
         ],
-        accent: "text-cyan-400",
-        bgAccent: "bg-cyan-400",
-        gradient: "from-cyan-400/20 to-blue-600/20"
+        accent: "text-blue-500",
+        bgAccent: "bg-blue-500",
+        gradient: "from-blue-500/20 to-blue-600/20"
     }
 ];
 
 export const Fleet: React.FC = () => {
+    const [showVideo, setShowVideo] = useState(false);
+
     return (
         <div className="flex flex-col">
             {/* Hero */}
             <section className="relative pt-32 pb-20 px-6 overflow-hidden opacity-0 animate-fade-in-up">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-primary/10 blur-[120px] rounded-full -z-10"></div>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-black blur-[120px] rounded-full -z-10"></div>
                 <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 text-center">
                     <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-6 text-white">
                         The <span className="text-transparent bg-clip-text bg-gradient-to-br from-white to-slate-500">Fleet</span>
@@ -127,9 +129,12 @@ export const Fleet: React.FC = () => {
                                             <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform text-lg">arrow_forward</span>
                                         </button>
                                         {bot.id === "02" && (
-                                            <button className={`group flex items-center gap-2 text-white font-bold uppercase tracking-wider text-sm hover:${bot.accent} transition-colors`}>
+                                            <button 
+                                                onClick={() => setShowVideo(true)}
+                                                className={`group flex items-center gap-2 text-white font-bold uppercase tracking-wider text-sm border border-white/20 hover:border-${bot.accent.split('-')[1]}-500 bg-white/5 hover:bg-white/10 px-6 py-3 rounded-full transition-all`}
+                                            >
                                                 Watch Video
-                                                <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform text-lg">play_circle</span>
+                                                <span className="material-symbols-outlined group-hover:scale-110 transition-transform text-lg">play_circle</span>
                                             </button>
                                         )}
                                     </div>
@@ -139,6 +144,29 @@ export const Fleet: React.FC = () => {
                     </section>
                 ))}
             </div>
+
+            {/* Video Modal */}
+            {showVideo && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 animate-in fade-in duration-200">
+                    <div className="relative w-full max-w-5xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                        <button 
+                            onClick={() => setShowVideo(false)}
+                            className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-white/20 rounded-full text-white transition-colors"
+                        >
+                            <span className="material-symbols-outlined">close</span>
+                        </button>
+                        <iframe 
+                            width="100%" 
+                            height="100%" 
+                            src="https://www.youtube.com/embed/1jvTKcio1Ts?autoplay=1&rel=0" 
+                            title="ROBI - AI Teacher" 
+                            frameBorder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowFullScreen
+                        ></iframe>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
