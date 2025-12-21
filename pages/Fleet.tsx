@@ -6,37 +6,37 @@ const robots = [
         category: "Service & Hospitality",
         name: "Reception & Guidance Robot",
         tagline: "The Future of First Impressions",
-        description: "Seamlessly guiding visitors with advanced autonomous navigation and warm, human-like interaction. It transforms lobbies into intelligent spaces where guests feel immediately welcomed and directed with precision.",
+        description: "At Mensch Robotics, we believes in building robots to enhance your environment and customer experience",
         image: "/reception-guidance.jpeg",
         specs: [
             { label: "Height", value: "5 feet" },
             { label: "Battery", value: "12 Hr" }
         ],
         features: [
-            { title: "Facial Recognition", desc: "Greets returning guests by name for a personalized experience." },
-            { title: "LiDAR Navigation", desc: "Moves gracefully through crowded spaces without collisions." },
-            { title: "Multi-modal Interface", desc: "Voice interaction coupled with a responsive touch display for complex queries." }
+            { title: "Customer Service", desc: "Let the robot handles your Customer enquiries like a perfect salesman or a receptionist." },
+            { title: "Navigation", desc: "He autonomously navigate to guide the customer to the right product or conference hall." },
+            { title: "Personalization", desc: "He could gives personalized response and smart suggestions based on the customer preference." }
         ],
         accent: "text-blue-500",
         bgAccent: "bg-blue-500",
         gradient: "from-blue-500/20 to-blue-600/20",
-        imagePosition: "object-bottom"
+        imagePosition: "object-top"
     },
     {
         id: "02",
         category: "Education",
-        name: "ROBI - AI Teacher",
+        name: "Teaching Assistant Robot",
         tagline: "Your Partner in Modern Education",
-        description: "Enhancing education through adaptive AI tutoring and interactive engagement. ROBI isn't just a screen; it's a physical companion that makes abstract concepts tangible and fun for students of all ages.",
+        description: "An advanced teaching assistant who provides personalized learning plans, student progress reports and insights for each student",
         image: "/Robi_cbse_stdt.png",
         specs: [
             { label: "Focus", value: "K-12" },
             { label: "Display", value: "10\" Touch" }
         ],
         features: [
-            { title: "Adaptive Learning", desc: "Adjusts teaching pace in real-time based on student comprehension.", icon: "auto_awesome" },
-            { title: "Gamification", desc: "Turns difficult subjects into interactive games displayed on its chest screen.", icon: "auto_awesome" },
-            { title: "Emotion Sensing", desc: "Detects frustration or boredom and switches teaching strategies to re-engage the learner.", icon: "auto_awesome" }
+            { title: "Adaptive Explanations", desc: "Explains complex concepts based on student grade.", icon: "auto_awesome" },
+            { title: "Visual Learning", desc: "Visualizes concepts with seamless YouTube video integration.", icon: "auto_awesome" },
+            { title: "Teacher Support", desc: "LMS integrated to support and empower teachers.", icon: "auto_awesome" }
         ],
         accent: "text-accent-emerald",
         bgAccent: "bg-accent-emerald",
@@ -45,18 +45,18 @@ const robots = [
     {
         id: "03",
         category: "Research & Development",
-        name: "Max Robot",
-        tagline: "The Open Source Platform for Innovation",
-        description: "An open architecture system designed for universities and labs to push the boundaries of physical AI. Max is the ultimate canvas for roboticists, offering industrial-grade components with a hacker-friendly soul.",
+        name: "Educational & Research Robot",
+        tagline: "The Platform for Innovation",
+        description: "A modular learning robot for schools, enabling hands-on STEM, AI exploration, and student-driven reconfiguration.",
         image: "/MAX_Robot.png",
         specs: [
             { label: "OS", value: "Ubuntu/ROS2" },
             { label: "Payload", value: "5 kg" }
         ],
         features: [
-            { title: "Fully Hackable OS", desc: "Root access provided. Native ROS 2 support for seamless integration with existing research stacks.", icon: "terminal" },
-            { title: "Modular Design", desc: "Swap end-effectors, sensors, and compute modules effortlessly to suit specific experiments.", icon: "terminal" },
-            { title: "Precision Control", desc: "High-torque servos allow for manipulation tasks requiring sub-millimeter accuracy.", icon: "terminal" }
+            { title: "Versatile Variants", desc: "Automatic and Autonomous varients designed for schools and institutions.", icon: "check_circle" },
+            { title: "STEM & AI", desc: "Offers hands on STEM and AI learning experience.", icon: "check_circle" },
+            { title: "Modular Design", desc: "Modular design, students can reconfigure and repurpose for their own applications.", icon: "check_circle" }
         ],
         accent: "text-blue-500",
         bgAccent: "bg-blue-500",
@@ -72,11 +72,12 @@ export const Fleet: React.FC = () => {
             {/* Hero */}
             <section className="relative pt-32 pb-20 px-6 overflow-hidden opacity-0 animate-fade-in-up">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-black blur-[120px] rounded-full -z-10"></div>
-                <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 text-center">
-                    <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-6 text-white">
-                        The <span className="text-transparent bg-clip-text bg-gradient-to-br from-white to-slate-500">Fleet</span>
+                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-soft-light pointer-events-none"></div>
+                <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 text-center relative z-10">
+                    <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-6 text-white drop-shadow-2xl">
+                        The <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-slate-200 to-slate-500">Fleet</span>
                     </h1>
-                    <p className="text-xl text-slate-400 font-body max-w-2xl mx-auto mb-12">
+                    <p className="text-xl text-slate-400 font-body max-w-2xl mx-auto mb-12 font-light tracking-wide">
                         Advanced robotics for specialized applications. Engineered for compassion, education, and innovation.
                     </p>
                 </div>
