@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const robots = [
     {
@@ -125,10 +126,10 @@ export const Fleet: React.FC = () => {
                                     </div>
                                     
                                     <div className="flex gap-4">
-                                        <button className={`group flex items-center gap-2 text-white font-bold uppercase tracking-wider text-sm hover:${bot.accent} transition-colors`}>
+                                        <Link to="/contact" className={`group flex items-center gap-2 text-white font-bold uppercase tracking-wider text-sm hover:${bot.accent} transition-colors`}>
                                             Request Specs 
                                             <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform text-lg">arrow_forward</span>
-                                        </button>
+                                        </Link>
                                         {bot.id === "02" && (
                                             <button 
                                                 onClick={() => setShowVideo(true)}
