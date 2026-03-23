@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
                     <div className="flex flex-wrap items-center justify-start gap-12 md:gap-16">
                         <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-4 rounded-lg border border-slate-200 hover:border-slate-400 hover:shadow-md transition-all duration-300">
                             <img 
-                                src={`${import.meta.env.BASE_URL}kerala startup mission.png`}
+                                src={`${import.meta.env.BASE_URL}kerala startup mission logo.jpeg`}
                                 alt="Kerala Startup Mission"
                                 className="h-14 w-auto opacity-80 hover:opacity-100 transition-opacity"
                             />
@@ -42,7 +42,7 @@ export const Footer: React.FC = () => {
                         </div>
                         <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-4 rounded-lg border border-slate-200 hover:border-slate-400 hover:shadow-md transition-all duration-300">
                             <img 
-                                src={`${import.meta.env.BASE_URL}startup india.png`}
+                                src={`${import.meta.env.BASE_URL}DPIIT-startup india.png`}
                                 alt="Startup India"
                                 className="h-14 w-auto opacity-80 hover:opacity-100 transition-opacity"
                             />
