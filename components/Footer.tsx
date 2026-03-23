@@ -21,7 +21,30 @@ export const Footer: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div className="border-t border-black/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                
+                {/* Supported By Section */}
+                <div className="border-t border-black/10 mt-16 pt-8 mb-12">
+                    <h4 className="text-slate-900 font-bold text-xs uppercase tracking-widest mb-4">Supported By</h4>
+                    <div className="flex flex-wrap items-center gap-8">
+                        <img 
+                            src={`${import.meta.env.BASE_URL}kerala startup mission.png`}
+                            alt="Kerala Startup Mission"
+                            className="h-8 opacity-70 hover:opacity-100 transition-opacity"
+                        />
+                        <img 
+                            src={`${import.meta.env.BASE_URL}IHFC Logo.png`}
+                            alt="IHFC"
+                            className="h-8 opacity-70 hover:opacity-100 transition-opacity"
+                        />
+                        <img 
+                            src={`${import.meta.env.BASE_URL}startup india.png`}
+                            alt="Startup India"
+                            className="h-8 opacity-70 hover:opacity-100 transition-opacity"
+                        />
+                    </div>
+                </div>
+
+                <div className="border-t border-black/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-slate-500 text-xs">© 2024 Mensch Robotics Inc. All rights reserved.</p>
                     <div className="flex gap-6">
                         <a href="https://www.linkedin.com/company/mensch-robotics/" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-900 transition-colors">
