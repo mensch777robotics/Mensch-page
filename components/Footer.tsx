@@ -23,24 +23,30 @@ export const Footer: React.FC = () => {
                 </div>
                 
                 {/* Supported By Section */}
-                <div className="border-t border-black/10 mt-16 pt-8 mb-12">
-                    <h4 className="text-slate-900 font-bold text-xs uppercase tracking-widest mb-4">Supported By</h4>
-                    <div className="flex flex-wrap items-center gap-8">
-                        <img 
-                            src={`${import.meta.env.BASE_URL}kerala startup mission.png`}
-                            alt="Kerala Startup Mission"
-                            className="h-8 opacity-70 hover:opacity-100 transition-opacity"
-                        />
-                        <img 
-                            src={`${import.meta.env.BASE_URL}IHFC Logo.png`}
-                            alt="IHFC"
-                            className="h-8 opacity-70 hover:opacity-100 transition-opacity"
-                        />
-                        <img 
-                            src={`${import.meta.env.BASE_URL}startup india.png`}
-                            alt="Startup India"
-                            className="h-8 opacity-70 hover:opacity-100 transition-opacity"
-                        />
+                <div className="border-t border-black/10 mt-16 pt-12 mb-12">
+                    <h4 className="text-slate-900 font-bold text-xs uppercase tracking-widest mb-8">Supported By</h4>
+                    <div className="flex flex-wrap items-center justify-start gap-12 md:gap-16">
+                        <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-4 rounded-lg border border-slate-200 hover:border-slate-400 hover:shadow-md transition-all duration-300">
+                            <img 
+                                src={`${import.meta.env.BASE_URL}kerala startup mission.png`}
+                                alt="Kerala Startup Mission"
+                                className="h-14 w-auto opacity-80 hover:opacity-100 transition-opacity"
+                            />
+                        </div>
+                        <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-4 rounded-lg border border-slate-200 hover:border-slate-400 hover:shadow-md transition-all duration-300">
+                            <img 
+                                src={`${import.meta.env.BASE_URL}IHFC Logo.png`}
+                                alt="IHFC"
+                                className="h-14 w-auto opacity-80 hover:opacity-100 transition-opacity"
+                            />
+                        </div>
+                        <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-4 rounded-lg border border-slate-200 hover:border-slate-400 hover:shadow-md transition-all duration-300">
+                            <img 
+                                src={`${import.meta.env.BASE_URL}startup india.png`}
+                                alt="Startup India"
+                                className="h-14 w-auto opacity-80 hover:opacity-100 transition-opacity"
+                            />
+                        </div>
                     </div>
                 </div>
 
