@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 export const AboutUs: React.FC = () => {
     const [isLoaded, setIsLoaded] = useState(false);
-    const heroSrc = `${import.meta.env.BASE_URL}Robi_hero.png`;
+    const heroSrc = `${import.meta.env.BASE_URL}Robi_4k.png`;
 
     return (
         <div className="flex flex-col">
