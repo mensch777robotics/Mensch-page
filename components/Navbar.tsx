@@ -6,7 +6,8 @@ import { Logo } from './Logo';
 const navItems: NavItem[] = [
     { label: 'Home', path: '/' },
     { label: 'About Us', path: '/about-us' },
-    { label: 'The Fleet', path: '/fleet' },
+    { label: 'Products', path: '/fleet' },
+    { label: 'Careers', path: '/careers' },
     { label: 'Contact', path: '/contact' },
 ];
 
