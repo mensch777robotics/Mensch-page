@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import heroImage from '../public/Robi_4k.png';
 
 export const AboutUs: React.FC = () => {
     const [isLoaded, setIsLoaded] = useState(false);
-    const heroSrc = `${import.meta.env.BASE_URL}Robi_4k.png`;
 
     return (
         <div className="flex flex-col">
@@ -18,7 +18,7 @@ export const AboutUs: React.FC = () => {
                         </div>
                     )}
                     <img
-                        src={heroSrc}
+                        src={heroImage}
                         alt="About us hero"
                         className={`h-full w-full object-cover object-[75%_center] md:object-center transition-opacity duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
                         decoding="async"
