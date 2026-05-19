@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const Careers: React.FC = () => {
     const [isLoaded, setIsLoaded] = useState(false);
-    const heroSrc = `${import.meta.env.BASE_URL}Robot in forest mistical.png`;
+    const heroSrc = `${import.meta.env.BASE_URL}Robo in forest.png`;
 
     const positions = [
         {
