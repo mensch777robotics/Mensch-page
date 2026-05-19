@@ -42,17 +42,23 @@ export const Home: React.FC = () => {
                     </div>
                 </section>
 
-                {/* The Fleet Preview */}
+                {/* Products Preview */}
                 <section className="w-full flex flex-col gap-12 py-10 opacity-0 animate-fade-in-up [animation-delay:800ms] px-4 sm:px-6 md:px-10 lg:px-16">
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                         <div className="flex flex-col gap-2">
-                            <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter">The Fleet</h2>
+                            <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter">Products</h2>
                             <p className="text-slate-400 text-lg md:text-xl font-light max-w-md">Advanced robotics for specialized applications.</p>
                         </div>
-                        <Link to="/fleet" className="text-white font-bold text-sm tracking-widest uppercase hover:text-primary transition-colors flex items-center gap-2 group">
-                            View All Specifications
-                            <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
-                        </Link>
+                        <div className="flex flex-col sm:flex-row gap-4">
+                            <Link to="/careers" className="text-white font-bold text-sm tracking-widest uppercase hover:text-primary transition-colors flex items-center gap-2 group">
+                                Careers
+                                <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+                            </Link>
+                            <Link to="/fleet" className="text-white font-bold text-sm tracking-widest uppercase hover:text-primary transition-colors flex items-center gap-2 group">
+                                View All Specifications
+                                <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+                            </Link>
+                        </div>
                     </div>
                     
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-0 w-full bg-surface-dark rounded-[2rem] overflow-hidden border border-white/5 divide-y md:divide-y-0 md:divide-x divide-white/10 shadow-2xl">
