@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import heroImage from '../public/Robo in forest.png';
 
 export const Careers: React.FC = () => {
     const [isLoaded, setIsLoaded] = useState(false);
-    const heroSrc = `${import.meta.env.BASE_URL}Robo in forest.png`;
 
     const positions = [
         {
@@ -39,7 +39,7 @@ export const Careers: React.FC = () => {
                             </div>
                         )}
                         <img 
-                            src={heroSrc}
+                            src={heroImage}
                             alt="Careers hero"
                             className={`absolute inset-0 h-full w-full object-cover transition-all duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
                             onLoad={() => setIsLoaded(true)}
