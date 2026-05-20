@@ -1,6 +1,17 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+const placesOfApplication = [
+    { title: 'Administrative Assistant', location: 'Hotels', icon: 'key' },
+    { title: 'Medical Assistant', location: 'Clinics', icon: 'local_hospital' },
+    { title: 'Consultant', location: 'Banks', icon: 'account_balance' },
+    { title: 'Tour Guide', location: 'Museums', icon: 'museum' },
+    { title: 'Robot Concierge', location: 'Business centres', icon: 'business_center' },
+    { title: 'Promoter', location: 'Forums and conferences', icon: 'groups' },
+    { title: 'Educational Platform', location: 'Colleges and schools', icon: 'school' },
+    { title: 'Security', location: 'Restricted areas and Industrial facilities', icon: 'shield' },
+];
+
 export const Home: React.FC = () => {
     const [isLoaded, setIsLoaded] = useState(false);
     const heroSrc = `${import.meta.env.BASE_URL}Reception_Hero.png`;
@@ -38,6 +49,31 @@ export const Home: React.FC = () => {
                                     Learn More
                                 </Link>
                             </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Places of Application */}
+                <section className="w-full px-4 sm:px-6 md:px-10 lg:px-16 py-16 md:py-24 opacity-0 animate-fade-in-up [animation-delay:600ms]">
+                    <div className="max-w-6xl mx-auto">
+                        <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 md:mb-16 tracking-tight">
+                            Places of Application
+                        </h2>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {placesOfApplication.map((place) => (
+                                <div
+                                    key={place.title}
+                                    className="flex flex-col items-center text-center gap-4 p-8 bg-white border border-primary/30 rounded-xl hover:border-primary/60 hover:shadow-md transition-all duration-300"
+                                >
+                                    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white">
+                                        <span className="material-symbols-outlined text-3xl">{place.icon}</span>
+                                    </div>
+                                    <h3 className="text-slate-900 text-lg font-bold leading-snug">{place.title}</h3>
+                                    <p className="text-slate-600 text-sm leading-relaxed">
+                                        Location: {place.location}
+                                    </p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </section>

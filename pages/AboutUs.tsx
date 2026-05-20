@@ -42,7 +42,7 @@ export const AboutUs: React.FC = () => {
             <section className="w-full px-4 sm:px-6 md:px-10 lg:px-16 py-16 md:py-24 opacity-0 animate-fade-in-up [animation-delay:200ms]">
                 <div className="max-w-6xl mx-auto">
                     <p className="text-slate-700 text-center text-lg md:text-xl font-light leading-relaxed mb-16 max-w-4xl mx-auto">
-                        We are a deeptech robotics startup incorporated in 2024 and supported by IHFC, Kerala Startup Mission, and Startup India.
+                        We are a deeptech robotics startup incorporated in 2024 and supported by Kerala Startup Mission, IHFC and Startup India.
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
