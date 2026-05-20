@@ -45,7 +45,12 @@ export const Home: React.FC = () => {
                 {/* Deployments */}
                 <section className="w-full flex flex-col gap-12 py-10 opacity-0 animate-fade-in-up [animation-delay:800ms] px-4 sm:px-6 md:px-10 lg:px-16">
                     <div className="flex flex-col gap-2">
-                        <h2 className="text-6xl md:text-8xl font-bold text-white tracking-tighter leading-tight">Mensch Robotics <span className="text-primary">in action</span></h2>
+                        <div className="relative">
+                            <h2 className="text-6xl md:text-8xl font-black text-white tracking-tighter leading-tight">
+                                Mensch Robotics
+                            </h2>
+                            <p className="text-4xl md:text-6xl font-bold text-primary tracking-tight mt-2">in action</p>
+                        </div>
                     </div>
                     
                     <style>{`
@@ -73,8 +78,8 @@ export const Home: React.FC = () => {
                                     alt: 'Team at TN Global Summit'
                                 },
                                 {
-                                    img: `${import.meta.env.BASE_URL}deployments/TN Startup Summit.jpg`,
-                                    alt: 'TN Startup Summit'
+                                    img: `${import.meta.env.BASE_URL}deployments/Founder at TN Startup Summit.jpg`,
+                                    alt: 'Founder at TN Startup Summit'
                                 },
                                 {
                                     img: `${import.meta.env.BASE_URL}deployments/Robi_childrens.jpeg`,
@@ -103,8 +108,8 @@ export const Home: React.FC = () => {
                                     alt: 'Team at TN Global Summit'
                                 },
                                 {
-                                    img: `${import.meta.env.BASE_URL}deployments/TN Startup Summit.jpg`,
-                                    alt: 'TN Startup Summit'
+                                    img: `${import.meta.env.BASE_URL}deployments/Founder at TN Startup Summit.jpg`,
+                                    alt: 'Founder at TN Startup Summit'
                                 },
                                 {
                                     img: `${import.meta.env.BASE_URL}deployments/Robi_childrens.jpeg`,
