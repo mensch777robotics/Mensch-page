@@ -45,8 +45,7 @@ export const Home: React.FC = () => {
                 {/* Deployments */}
                 <section className="w-full flex flex-col gap-12 py-10 opacity-0 animate-fade-in-up [animation-delay:800ms] px-4 sm:px-6 md:px-10 lg:px-16">
                     <div className="flex flex-col gap-2">
-                        <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter">Deployments</h2>
-                        <p className="text-slate-400 text-lg md:text-xl font-light max-w-md">Mensch Robotics in action across sectors</p>
+                        <h2 className="text-6xl md:text-8xl font-bold text-white tracking-tighter leading-tight">Mensch Robotics <span className="text-primary">in action</span></h2>
                     </div>
                     
                     <style>{`
@@ -74,16 +73,12 @@ export const Home: React.FC = () => {
                                     alt: 'Team at TN Global Summit'
                                 },
                                 {
-                                    img: `${import.meta.env.BASE_URL}deployments/Robot At TN golbal Summit.png`,
-                                    alt: 'Robot at TN Global Summit'
+                                    img: `${import.meta.env.BASE_URL}deployments/TN Startup Summit.jpg`,
+                                    alt: 'TN Startup Summit'
                                 },
                                 {
                                     img: `${import.meta.env.BASE_URL}deployments/Robi_childrens.jpeg`,
                                     alt: 'Robot with children'
-                                },
-                                {
-                                    img: `${import.meta.env.BASE_URL}deployments/Team at Karunya.jpeg`,
-                                    alt: 'Team at Karunya'
                                 },
                                 {
                                     img: `${import.meta.env.BASE_URL}deployments/with Chairman.jpg`,
@@ -108,16 +103,12 @@ export const Home: React.FC = () => {
                                     alt: 'Team at TN Global Summit'
                                 },
                                 {
-                                    img: `${import.meta.env.BASE_URL}deployments/Robot At TN golbal Summit.png`,
-                                    alt: 'Robot at TN Global Summit'
+                                    img: `${import.meta.env.BASE_URL}deployments/TN Startup Summit.jpg`,
+                                    alt: 'TN Startup Summit'
                                 },
                                 {
                                     img: `${import.meta.env.BASE_URL}deployments/Robi_childrens.jpeg`,
                                     alt: 'Robot with children'
-                                },
-                                {
-                                    img: `${import.meta.env.BASE_URL}deployments/Team at Karunya.jpeg`,
-                                    alt: 'Team at Karunya'
                                 },
                                 {
                                     img: `${import.meta.env.BASE_URL}deployments/with Chairman.jpg`,
