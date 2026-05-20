@@ -191,10 +191,6 @@ export const Home: React.FC = () => {
                                 Why Mensch Robotics?
                             </h2>
                         </div>
-                        <p className="text-slate-600 text-center text-lg md:text-xl font-light leading-relaxed max-w-3xl">
-                            <span className="font-semibold text-slate-800">New technology.</span>{' '}
-                            Automation of menial tasks is the future of service. Pioneer the trends of tomorrow.
-                        </p>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
                             {whyMenschReasons.map((reason) => (
                                 <div
