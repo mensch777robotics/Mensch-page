@@ -42,6 +42,17 @@ export const Home: React.FC = () => {
                     </div>
                 </section>
 
+                                {/* Company Description */}
+                <section className="w-full px-4 sm:px-6 md:px-10 lg:px-16 py-16 md:py-24 opacity-0 animate-fade-in-up [animation-delay:600ms]">
+                    <div className="max-w-4xl mx-auto">
+                        <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-white/10 rounded-[2rem] p-8 md:p-12 backdrop-blur-sm">
+                            <p className="text-slate-200 text-lg md:text-xl font-light leading-relaxed">
+                                <span className="text-white font-bold text-xl md:text-2xl">Mensch Robotics Pvt Ltd</span> is a deep-tech startup dedicated to building semi-humanoid robotic platforms for societal advancement. Founded in October 2024, the company focuses on creating versatile robots for the education, research, hospitality, and logistics sectors. With a successful deployment of a robotic development platform and backing from <span className="text-primary font-semibold">Startup India, Kerala Startup Mission, and IHFC (IIT Delhi)</span>, we are currently scaling our pilot programs.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
                 {/* Deployments */}
                 <section className="w-full flex flex-col gap-12 py-10 opacity-0 animate-fade-in-up [animation-delay:800ms] px-4 sm:px-6 md:px-10 lg:px-16">
                     <div className="flex flex-col gap-2">
