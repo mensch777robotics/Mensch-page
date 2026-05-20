@@ -46,13 +46,13 @@ export const AboutUs: React.FC = () => {
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {/* Box 1: Excellence Through Care */}
+                        {/* Box 1: Efficiency Through Care */}
                         <div className="group bg-slate-50 border border-slate-200 rounded-[2rem] p-8 hover:bg-primary hover:border-primary transition-all duration-300 cursor-pointer">
                             <h3 className="text-slate-900 group-hover:text-white text-2xl font-bold mb-4 transition-colors">
-                                Excellence Through Care
+                                Efficiency Through Care
                             </h3>
                             <p className="text-slate-600 group-hover:text-blue-50 text-lg leading-relaxed transition-colors">
-                                We achieve the highest level of efficiency when our team is driven by genuine passion for their work and deep respect for the people they collaborate with.
+                                Highest level of efficiency when people hold highest level of love towards what they do and people they work with.
                             </p>
                         </div>
 
@@ -62,7 +62,7 @@ export const AboutUs: React.FC = () => {
                                 Human Potential
                             </h3>
                             <p className="text-slate-600 group-hover:text-blue-50 text-lg leading-relaxed transition-colors">
-                                A human being is not a resource—they are a tremendous possibility. We believe in unlocking the inherent potential within every individual.
+                                A human being is not a resource—they are a tremendous possibility. We believe in nurturing each individual to reach their ultimate potential.
                             </p>
                         </div>
 
@@ -72,17 +72,17 @@ export const AboutUs: React.FC = () => {
                                 AI-Driven Innovation
                             </h3>
                             <p className="text-slate-600 group-hover:text-blue-50 text-lg leading-relaxed transition-colors">
-                                We harness artificial intelligence to revolutionize our robotics solutions. By leveraging advanced AI, our robots adapt and learn from their environments, enabling us to deliver next-generation solutions that push the boundaries of what is possible.
+                                We harness artificial intelligence to enhance the efficiency and bring a measurable impact on all the sectors we work with.
                             </p>
                         </div>
 
-                        {/* Box 4: Passion-Fuelled Purpose */}
+                        {/* Box 4: Purpose Driven */}
                         <div className="group bg-slate-50 border border-slate-200 rounded-[2rem] p-8 hover:bg-primary hover:border-primary transition-all duration-300 cursor-pointer">
                             <h3 className="text-slate-900 group-hover:text-white text-2xl font-bold mb-4 transition-colors">
-                                Passion-Fuelled Purpose
+                                Purpose Driven
                             </h3>
                             <p className="text-slate-600 group-hover:text-blue-50 text-lg leading-relaxed transition-colors">
-                                Every individual is driven by a passion for robotics and innovation. We create an environment where each team member takes ownership, drives accountability, and works towards a shared vision of transforming the future.
+                                Every individual works with a sense of ownership towards a common purpose.
                             </p>
                         </div>
                     </div>
