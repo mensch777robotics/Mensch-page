@@ -1,6 +1,21 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+const whyMenschReasons = [
+    {
+        title: 'Made in India',
+        description: 'Most affordable with high end features.',
+    },
+    {
+        title: 'Custom Solutions',
+        description: 'Develop custom robots from scratch for special sector requirements.',
+    },
+    {
+        title: 'Expert Support',
+        description: 'Expert Engineers support for custom integration.',
+    },
+];
+
 const placesOfApplication = [
     { title: 'Administrative Assistant', location: 'Hotels', icon: 'key' },
     { title: 'Medical Assistant', location: 'Clinics', icon: 'local_hospital' },
@@ -168,20 +183,29 @@ export const Home: React.FC = () => {
                 </section>
 
 
-                {/* CTA Section */}
-                <section className="relative w-full rounded-[2.5rem] bg-primary overflow-hidden px-4 sm:px-6 md:px-10 lg:px-16 py-20 md:py-24 text-center opacity-0 animate-fade-in-up [animation-delay:1000ms]">
-                    <div className="absolute inset-0 opacity-20 bg-cover bg-center" style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDJgJQ8cBZ-dIBTM0BcW8DV-e1BaNCCxdRyNZeCO9j4sX6BIkTMMS7SySvwgcEMq4PRaS8s6zzblC7sw6eQXlyc1jb9N23-bGNR5FVJ_YxIlgqjCuIHna1nmJ0gdprte8VGFrbRF1Wn0JwRV4VATq145geELCRMjiAKW4VfFmkXoOlKjVVHKGRMJ1IbRKwj765jxknMx3Qjwyw05iKpv14AUAD5rqXG17lXssDjeLQPIlKKRWlPFCgSFKuyAGQ2kt1bh7AJjLX6BQ")'}}></div>
-                    <div className="relative z-10 flex flex-col items-center gap-8 max-w-2xl mx-auto">
-                        <h2 className="text-white text-4xl md:text-6xl font-bold tracking-tight leading-tight">
-                            Ready to Transform Your Space?
-                        </h2>
-                        <p className="text-blue-100 text-lg md:text-xl">
-                            Join the future of automation. Discover how Mensch Robotics can elevate your daily operations.
+                {/* Why Mensch Robotics */}
+                <section className="w-full px-4 sm:px-6 md:px-10 lg:px-16 py-16 md:py-24 opacity-0 animate-fade-in-up [animation-delay:1000ms]">
+                    <div className="max-w-6xl mx-auto flex flex-col items-center gap-10 md:gap-14">
+                        <div className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-primary/10 border border-primary/25 shadow-sm">
+                            <h2 className="text-2xl md:text-3xl font-bold text-primary tracking-tight">
+                                Why Mensch Robotics?
+                            </h2>
+                        </div>
+                        <p className="text-slate-600 text-center text-lg md:text-xl font-light leading-relaxed max-w-3xl">
+                            <span className="font-semibold text-slate-800">New technology.</span>{' '}
+                            Automation of menial tasks is the future of service. Pioneer the trends of tomorrow.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 mt-4 w-full justify-center">
-                            <Link to="/contact" className="h-14 px-8 rounded-full bg-white text-primary font-bold text-lg hover:bg-blue-50 hover:scale-105 transition-all w-full sm:w-auto flex items-center justify-center">
-                                Contact Sales
-                            </Link>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+                            {whyMenschReasons.map((reason) => (
+                                <div
+                                    key={reason.title}
+                                    className="relative bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden"
+                                >
+                                    <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-primary rounded-l-2xl" />
+                                    <h3 className="text-slate-900 text-xl font-bold mb-3 pl-2">{reason.title}</h3>
+                                    <p className="text-slate-600 text-base leading-relaxed pl-2">{reason.description}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </section>
