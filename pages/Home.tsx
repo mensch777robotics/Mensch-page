@@ -47,7 +47,7 @@ export const Home: React.FC = () => {
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                         <div className="flex flex-col gap-2">
                             <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter">Products</h2>
-                            <p className="text-slate-400 text-lg md:text-xl font-light max-w-md">Advanced robotics for specialized applications.</p>
+
                         </div>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <Link to="/careers" className="text-white font-bold text-sm tracking-widest uppercase hover:text-primary transition-colors flex items-center gap-2 group">
@@ -109,6 +109,51 @@ export const Home: React.FC = () => {
                         ))}
                     </div>
                 </section>
+                {/* Deployments */}
+                <section className="w-full flex flex-col gap-12 py-10 opacity-0 animate-fade-in-up [animation-delay:900ms] px-4 sm:px-6 md:px-10 lg:px-16">
+                    <div className="flex flex-col gap-2">
+                        <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter">Deployments</h2>
+                        <p className="text-slate-400 text-lg md:text-xl font-light max-w-md">Mensch Robotics in action across sectors</p>
+                    </div>
+                    
+                    <div className="flex flex-col gap-6 w-full">
+                        {[
+                            {
+                                img: `${import.meta.env.BASE_URL}deployments/Team at TN Global summit.jpg`,
+                                alt: 'Team at TN Global Summit'
+                            },
+                            {
+                                img: `${import.meta.env.BASE_URL}deployments/Robot At TN golbal Summit.png`,
+                                alt: 'Robot at TN Global Summit'
+                            },
+                            {
+                                img: `${import.meta.env.BASE_URL}deployments/Robi_childrens.jpeg`,
+                                alt: 'Robot with children'
+                            },
+                            {
+                                img: `${import.meta.env.BASE_URL}deployments/Team at Karunya.jpeg`,
+                                alt: 'Team at Karunya'
+                            },
+                            {
+                                img: `${import.meta.env.BASE_URL}deployments/with Chairman.jpg`,
+                                alt: 'With Chairman'
+                            },
+                            {
+                                img: `${import.meta.env.BASE_URL}deployments/St Joseph Deployed_2.jpg`,
+                                alt: 'Deployment at St Joseph'
+                            }
+                        ].map((deployment, idx) => (
+                            <div key={idx} className="w-full h-[300px] md:h-[400px] rounded-[2rem] overflow-hidden border border-white/10">
+                                <img 
+                                    src={deployment.img}
+                                    alt={deployment.alt}
+                                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                />
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
 
                 {/* CTA Section */}
                 <section className="relative w-full rounded-[2.5rem] bg-primary overflow-hidden px-4 sm:px-6 md:px-10 lg:px-16 py-20 md:py-24 text-center opacity-0 animate-fade-in-up [animation-delay:1000ms]">
