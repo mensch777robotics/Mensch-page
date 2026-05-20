@@ -32,7 +32,7 @@ export const AboutUs: React.FC = () => {
                             The Mission
                         </h1>
                         <p className="text-slate-600 md:text-slate-200 text-lg md:text-2xl font-light leading-relaxed md:drop-shadow-md">
-                            To create human-centric robots for societal advancement.
+                            Our mission is simple: to create human-centric robots for societal advancement. In this mission, we are ambitious. Like a corporate giant, we constantly seek innovative ways to bring the power of AI & Robotics into different sectors.
                         </p>
                     </div>
                 </div>
