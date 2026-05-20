@@ -34,9 +34,9 @@ export const Home: React.FC = () => {
                                     Physical AI <br/>
                                     <span className="text-slate-600 md:text-slate-200">For Every Space</span>
                                 </h1>
-                                <button className="h-12 px-8 rounded-full bg-gray-300 text-gray-800 font-bold text-base hover:bg-primary hover:text-white transition-all w-fit md:drop-shadow-md">
+                                <Link to="/fleet" className="h-12 px-8 rounded-full bg-gray-400 text-gray-900 font-bold text-base hover:bg-primary hover:text-white transition-all w-fit md:drop-shadow-md flex items-center justify-center">
                                     Learn More
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
