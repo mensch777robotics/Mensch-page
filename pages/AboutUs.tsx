@@ -31,7 +31,7 @@ export const AboutUs: React.FC = () => {
                             The Mission
                         </h1>
                         <p className="text-slate-600 md:text-slate-200 text-lg md:text-2xl font-light leading-relaxed md:drop-shadow-md">
-                            Our mission is to create personality-driven, socially aware robots designed with a human-centered approach to enhance lives and drive positive change in society
+                            To Create human centric robots for socital advancement.
                         </p>
                     </div>
                 </div>
