@@ -38,7 +38,58 @@ export const AboutUs: React.FC = () => {
                 </div>
             </section>
 
-                        {/* Founder */}
+                                    {/* Company Info & Values */}
+            <section className="w-full px-4 sm:px-6 md:px-10 lg:px-16 py-16 md:py-24 opacity-0 animate-fade-in-up [animation-delay:200ms]">
+                <div className="max-w-6xl mx-auto">
+                    <p className="text-slate-700 text-center text-lg md:text-xl font-light leading-relaxed mb-16 max-w-4xl mx-auto">
+                        We are a deeptech robotics startup incorporated in 2024 and supported by IHFC, Kerala Startup Mission, and Startup India.
+                    </p>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {/* Box 1: Excellence Through Care */}
+                        <div className="group bg-slate-50 border border-slate-200 rounded-[2rem] p-8 hover:bg-primary hover:border-primary transition-all duration-300 cursor-pointer">
+                            <h3 className="text-slate-900 group-hover:text-white text-2xl font-bold mb-4 transition-colors">
+                                Excellence Through Care
+                            </h3>
+                            <p className="text-slate-600 group-hover:text-blue-50 text-lg leading-relaxed transition-colors">
+                                We achieve the highest level of efficiency when our team is driven by genuine passion for their work and deep respect for the people they collaborate with.
+                            </p>
+                        </div>
+
+                        {/* Box 2: Human Potential */}
+                        <div className="group bg-slate-50 border border-slate-200 rounded-[2rem] p-8 hover:bg-primary hover:border-primary transition-all duration-300 cursor-pointer">
+                            <h3 className="text-slate-900 group-hover:text-white text-2xl font-bold mb-4 transition-colors">
+                                Human Potential
+                            </h3>
+                            <p className="text-slate-600 group-hover:text-blue-50 text-lg leading-relaxed transition-colors">
+                                A human being is not a resource—they are a tremendous possibility. We believe in unlocking the inherent potential within every individual.
+                            </p>
+                        </div>
+
+                        {/* Box 3: AI-Driven Innovation */}
+                        <div className="group bg-slate-50 border border-slate-200 rounded-[2rem] p-8 hover:bg-primary hover:border-primary transition-all duration-300 cursor-pointer">
+                            <h3 className="text-slate-900 group-hover:text-white text-2xl font-bold mb-4 transition-colors">
+                                AI-Driven Innovation
+                            </h3>
+                            <p className="text-slate-600 group-hover:text-blue-50 text-lg leading-relaxed transition-colors">
+                                We harness artificial intelligence to revolutionize our robotics solutions. By leveraging advanced AI, our robots adapt and learn from their environments, enabling us to deliver next-generation solutions that push the boundaries of what is possible.
+                            </p>
+                        </div>
+
+                        {/* Box 4: Passion-Fuelled Purpose */}
+                        <div className="group bg-slate-50 border border-slate-200 rounded-[2rem] p-8 hover:bg-primary hover:border-primary transition-all duration-300 cursor-pointer">
+                            <h3 className="text-slate-900 group-hover:text-white text-2xl font-bold mb-4 transition-colors">
+                                Passion-Fuelled Purpose
+                            </h3>
+                            <p className="text-slate-600 group-hover:text-blue-50 text-lg leading-relaxed transition-colors">
+                                Every individual is driven by a passion for robotics and innovation. We create an environment where each team member takes ownership, drives accountability, and works towards a shared vision of transforming the future.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Founder */}
             <section className="w-full px-4 sm:px-6 md:px-10 lg:px-16 py-16 md:py-24 opacity-0 animate-fade-in-up [animation-delay:200ms]">
                 <div className="max-w-6xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
