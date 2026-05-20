@@ -29,10 +29,10 @@ export const AboutUs: React.FC = () => {
                 <div className="relative z-10 w-full px-4 py-10 sm:px-6 md:px-10 lg:px-16 md:absolute md:bottom-0 md:pb-14">
                     <div className="max-w-3xl flex flex-col gap-5 md:bg-black/25 md:backdrop-blur-xl md:border md:border-white/10 rounded-[2rem] md:p-8">
                         <h1 className="text-slate-900 md:text-white text-4xl sm:text-5xl md:text-7xl font-bold leading-[0.95] tracking-tighter md:drop-shadow-lg">
-                            The Mission
+                            The Vision
                         </h1>
                         <p className="text-slate-600 md:text-slate-200 text-lg md:text-2xl font-light leading-relaxed md:drop-shadow-md">
-                            Our mission is simple: to create human-centric robots for societal advancement. In this mission, we are ambitious. Like a corporate giant, we constantly seek innovative ways to bring the power of AI & Robotics into different sectors.
+                            Our vision is simple: to create human-centric robots for societal advancement. In this vision, we are ambitious. Like a corporate giant, we constantly seek innovative ways to leverage the power of physical AI to enhance and uplift critical sectors.
                         </p>
                     </div>
                 </div>
