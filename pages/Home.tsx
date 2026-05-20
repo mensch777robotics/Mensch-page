@@ -42,115 +42,101 @@ export const Home: React.FC = () => {
                     </div>
                 </section>
 
-                {/* Products Preview */}
-                <section className="w-full flex flex-col gap-12 py-10 opacity-0 animate-fade-in-up [animation-delay:800ms] px-4 sm:px-6 md:px-10 lg:px-16">
-                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-                        <div className="flex flex-col gap-2">
-                            <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter">Products</h2>
-
-                        </div>
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <Link to="/careers" className="text-white font-bold text-sm tracking-widest uppercase hover:text-primary transition-colors flex items-center gap-2 group">
-                                Careers
-                                <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
-                            </Link>
-                            <Link to="/fleet" className="text-white font-bold text-sm tracking-widest uppercase hover:text-primary transition-colors flex items-center gap-2 group">
-                                View All Specifications
-                                <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
-                            </Link>
-                        </div>
-                    </div>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-0 w-full bg-surface-dark rounded-[2rem] overflow-hidden border border-white/5 divide-y md:divide-y-0 md:divide-x divide-white/10 shadow-2xl">
-                        {[
-                            {
-                                id: '01', 
-                                cat: 'Service', 
-                                title: 'Reception & Guidance', 
-                                sub: 'The Future of First Impressions',
-                                img: `${import.meta.env.BASE_URL}Reception-Guidance.jpeg`,
-                                fit: 'contain'
-                            },
-                            {
-                                id: '02', 
-                                cat: 'Education', 
-                                title: 'ROBI - AI Teacher', 
-                                sub: 'Your Partner in Modern Education',
-                                img: `${import.meta.env.BASE_URL}Robi_cbse_stdt.png`,
-                                fit: 'contain'
-                            },
-                            {
-                                id: '03', 
-                                cat: 'Research', 
-                                title: 'Max - Edu & Research', 
-                                sub: 'The Open Source Platform',
-                                img: `${import.meta.env.BASE_URL}MAX_Robot.png`
-                            }
-                        ].map(bot => (
-                            <div key={bot.id} className="group relative flex flex-col min-h-[500px] overflow-hidden bg-black">
-                                {bot.fit === 'contain' ? (
-                                    <>
-                                        <div className="absolute inset-0 bg-cover bg-center blur-xl opacity-50 scale-110" style={{backgroundImage: `url("${bot.img}")`}}></div>
-                                        <div className="absolute inset-0 bg-contain bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-105" style={{backgroundImage: `url("${bot.img}")`}}></div>
-                                    </>
-                                ) : (
-                                    <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{backgroundImage: `url("${bot.img}")`}}></div>
-                                )}
-                                <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
-                                <div className="relative z-10 flex flex-col h-full justify-end p-8 gap-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                    <span className="text-primary font-bold text-xs tracking-widest uppercase mb-2 opacity-80 group-hover:opacity-100 transition-opacity">{bot.id} — {bot.cat}</span>
-                                    <h3 className="text-white text-3xl font-bold leading-tight mb-2">{bot.title}</h3>
-                                    <p className="text-slate-400 text-sm mb-6 opacity-80">{bot.sub}</p>
-                                    <Link to="/fleet" className="inline-flex items-center text-white text-xs font-bold tracking-wider uppercase hover:text-primary transition-colors">
-                                        Discover <span className="material-symbols-outlined text-sm ml-1 -rotate-45 group-hover:rotate-0 transition-transform">arrow_forward</span>
-                                    </Link>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </section>
                 {/* Deployments */}
-                <section className="w-full flex flex-col gap-12 py-10 opacity-0 animate-fade-in-up [animation-delay:900ms] px-4 sm:px-6 md:px-10 lg:px-16">
+                <section className="w-full flex flex-col gap-12 py-10 opacity-0 animate-fade-in-up [animation-delay:800ms] px-4 sm:px-6 md:px-10 lg:px-16">
                     <div className="flex flex-col gap-2">
                         <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter">Deployments</h2>
                         <p className="text-slate-400 text-lg md:text-xl font-light max-w-md">Mensch Robotics in action across sectors</p>
                     </div>
                     
-                    <div className="flex flex-col gap-6 w-full">
-                        {[
-                            {
-                                img: `${import.meta.env.BASE_URL}deployments/Team at TN Global summit.jpg`,
-                                alt: 'Team at TN Global Summit'
-                            },
-                            {
-                                img: `${import.meta.env.BASE_URL}deployments/Robot At TN golbal Summit.png`,
-                                alt: 'Robot at TN Global Summit'
-                            },
-                            {
-                                img: `${import.meta.env.BASE_URL}deployments/Robi_childrens.jpeg`,
-                                alt: 'Robot with children'
-                            },
-                            {
-                                img: `${import.meta.env.BASE_URL}deployments/Team at Karunya.jpeg`,
-                                alt: 'Team at Karunya'
-                            },
-                            {
-                                img: `${import.meta.env.BASE_URL}deployments/with Chairman.jpg`,
-                                alt: 'With Chairman'
-                            },
-                            {
-                                img: `${import.meta.env.BASE_URL}deployments/St Joseph Deployed_2.jpg`,
-                                alt: 'Deployment at St Joseph'
+                    <style>{`
+                        @keyframes scroll {
+                            0% {
+                                transform: translateX(0);
                             }
-                        ].map((deployment, idx) => (
-                            <div key={idx} className="w-full h-[300px] md:h-[400px] rounded-[2rem] overflow-hidden border border-white/10">
-                                <img 
-                                    src={deployment.img}
-                                    alt={deployment.alt}
-                                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                                />
-                            </div>
-                        ))}
+                            100% {
+                                transform: translateX(-50%);
+                            }
+                        }
+                        .marquee {
+                            animation: scroll 40s linear infinite;
+                        }
+                        .marquee:hover {
+                            animation-play-state: paused;
+                        }
+                    `}</style>
+                    
+                    <div className="w-full overflow-hidden">
+                        <div className="marquee flex gap-6 w-fit">
+                            {[
+                                {
+                                    img: `${import.meta.env.BASE_URL}deployments/Team at TN Global summit.jpg`,
+                                    alt: 'Team at TN Global Summit'
+                                },
+                                {
+                                    img: `${import.meta.env.BASE_URL}deployments/Robot At TN golbal Summit.png`,
+                                    alt: 'Robot at TN Global Summit'
+                                },
+                                {
+                                    img: `${import.meta.env.BASE_URL}deployments/Robi_childrens.jpeg`,
+                                    alt: 'Robot with children'
+                                },
+                                {
+                                    img: `${import.meta.env.BASE_URL}deployments/Team at Karunya.jpeg`,
+                                    alt: 'Team at Karunya'
+                                },
+                                {
+                                    img: `${import.meta.env.BASE_URL}deployments/with Chairman.jpg`,
+                                    alt: 'With Chairman'
+                                },
+                                {
+                                    img: `${import.meta.env.BASE_URL}deployments/St Joseph Deployed_2.jpg`,
+                                    alt: 'Deployment at St Joseph'
+                                }
+                            ].map((deployment, idx) => (
+                                <div key={idx} className="flex-shrink-0 h-[250px] md:h-[300px] rounded-[1rem] overflow-hidden border border-white/10 min-w-[350px] md:min-w-[450px]">
+                                    <img 
+                                        src={deployment.img}
+                                        alt={deployment.alt}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                            ))}
+                            {[
+                                {
+                                    img: `${import.meta.env.BASE_URL}deployments/Team at TN Global summit.jpg`,
+                                    alt: 'Team at TN Global Summit'
+                                },
+                                {
+                                    img: `${import.meta.env.BASE_URL}deployments/Robot At TN golbal Summit.png`,
+                                    alt: 'Robot at TN Global Summit'
+                                },
+                                {
+                                    img: `${import.meta.env.BASE_URL}deployments/Robi_childrens.jpeg`,
+                                    alt: 'Robot with children'
+                                },
+                                {
+                                    img: `${import.meta.env.BASE_URL}deployments/Team at Karunya.jpeg`,
+                                    alt: 'Team at Karunya'
+                                },
+                                {
+                                    img: `${import.meta.env.BASE_URL}deployments/with Chairman.jpg`,
+                                    alt: 'With Chairman'
+                                },
+                                {
+                                    img: `${import.meta.env.BASE_URL}deployments/St Joseph Deployed_2.jpg`,
+                                    alt: 'Deployment at St Joseph'
+                                }
+                            ].map((deployment, idx) => (
+                                <div key={`dup-${idx}`} className="flex-shrink-0 h-[250px] md:h-[300px] rounded-[1rem] overflow-hidden border border-white/10 min-w-[350px] md:min-w-[450px]">
+                                    <img 
+                                        src={deployment.img}
+                                        alt={deployment.alt}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </section>
 
