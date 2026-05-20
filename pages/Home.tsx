@@ -80,12 +80,10 @@ export const Home: React.FC = () => {
 
                 {/* Deployments */}
                 <section className="w-full flex flex-col gap-12 py-10 opacity-0 animate-fade-in-up [animation-delay:800ms] px-4 sm:px-6 md:px-10 lg:px-16">
-                    <div className="flex flex-col gap-2">
-                        <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-tight">
-                            Mensch robotics in action
-                        </h2>
-                    </div>
-                    
+                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
+                        Mensch Robotics in action
+                    </h2>
+
                     <style>{`
                         @keyframes scroll {
                             0% {
