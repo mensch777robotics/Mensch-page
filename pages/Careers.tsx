@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { CareerGeneralApplication } from '../components/CareerGeneralApplication';
 import heroImage from '../public/Robo in forest.png';
 import { careerPositions } from '../data/careerPositions';
 
@@ -91,6 +92,8 @@ export const Careers: React.FC = () => {
                         </div>
                     </div>
                 </section>
+
+                <CareerGeneralApplication />
             </div>
         </div>
     );
