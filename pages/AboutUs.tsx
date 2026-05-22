@@ -103,11 +103,11 @@ export const AboutUs: React.FC = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="order-1 md:order-2">
+                        <div className="order-1 md:order-2 flex justify-center md:justify-end">
                             <img
                                 src={bibinImage}
                                 alt="Bibin Thomas, Founder & CEO"
-                                className="w-full h-auto rounded-[2rem] object-cover"
+                                className="w-full max-w-xs sm:max-w-sm md:max-w-[280px] h-auto rounded-[2rem] object-cover"
                             />
                         </div>
                     </div>

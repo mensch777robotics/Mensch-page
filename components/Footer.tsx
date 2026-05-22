@@ -1,17 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { COMPANY_CIN, COMPANY_GSTIN, COMPANY_OFFICE } from '../constants/company';
+import { Logo } from './Logo';
 
 export const Footer: React.FC = () => {
     return (
         <footer className="border-t border-black/10 bg-white py-16">
             <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16">
                 <div className="flex flex-col lg:flex-row justify-between items-start gap-10 lg:gap-16">
-                    <div className="max-w-sm">
-                        <p className="text-slate-600 text-sm font-body leading-relaxed">
-                            Pioneering the future of physical AI with robots that serve, teach, and innovate. Designed to elevate human potential.
-                        </p>
-                    </div>
+                    <Link to="/" className="inline-flex hover:opacity-90 transition-opacity h-16 md:h-20">
+                        <Logo imgClassName="h-full w-auto max-h-16 md:max-h-20" />
+                    </Link>
                     <div className="flex flex-col sm:flex-row gap-10 sm:gap-16 flex-wrap">
                         <div>
                             <h4 className="text-slate-900 font-bold text-xs uppercase tracking-widest mb-4">Office</h4>
@@ -43,25 +42,25 @@ export const Footer: React.FC = () => {
                 <div className="border-t border-black/10 mt-16 pt-12 mb-12">
                     <h4 className="text-slate-900 font-bold text-xs uppercase tracking-widest mb-8">Supported By</h4>
                     <div className="flex flex-wrap items-center justify-start gap-12 md:gap-16">
-                        <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-4 rounded-lg border border-slate-200 hover:border-slate-400 hover:shadow-md transition-all duration-300">
+                        <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-5 md:p-6 rounded-lg border border-slate-200 hover:border-slate-400 hover:shadow-md transition-all duration-300">
                             <img 
                                 src={`${import.meta.env.BASE_URL}kerala-startup-mission-cropped (1).svg`}
                                 alt="Kerala Startup Mission"
-                                className="h-14 w-auto opacity-80 hover:opacity-100 transition-opacity"
+                                className="h-20 md:h-24 w-auto opacity-80 hover:opacity-100 transition-opacity"
                             />
                         </div>
-                        <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-4 rounded-lg border border-slate-200 hover:border-slate-400 hover:shadow-md transition-all duration-300">
+                        <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-5 md:p-6 rounded-lg border border-slate-200 hover:border-slate-400 hover:shadow-md transition-all duration-300">
                             <img 
                                 src={`${import.meta.env.BASE_URL}IHFC Logo.png`}
                                 alt="IHFC"
-                                className="h-14 w-auto opacity-80 hover:opacity-100 transition-opacity"
+                                className="h-20 md:h-24 w-auto opacity-80 hover:opacity-100 transition-opacity"
                             />
                         </div>
-                        <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-4 rounded-lg border border-slate-200 hover:border-slate-400 hover:shadow-md transition-all duration-300">
+                        <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-5 md:p-6 rounded-lg border border-slate-200 hover:border-slate-400 hover:shadow-md transition-all duration-300">
                             <img 
                                 src={`${import.meta.env.BASE_URL}DPIIT-startup india.png`}
                                 alt="Startup India"
-                                className="h-14 w-auto opacity-80 hover:opacity-100 transition-opacity"
+                                className="h-20 md:h-24 w-auto opacity-80 hover:opacity-100 transition-opacity"
                             />
                         </div>
                     </div>
