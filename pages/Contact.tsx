@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { COMPANY_OFFICE, FORMSPREE_ENDPOINT } from '../constants/company';
 
 export const Contact: React.FC = () => {
     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -13,7 +14,7 @@ export const Contact: React.FC = () => {
         try {
             // REPLACE "YOUR_FORM_ID" WITH YOUR ACTUAL FORMSPREE FORM ID
             // Get one for free at https://formspree.io/
-            const response = await fetch("https://formspree.io/f/maqwjank", {
+            const response = await fetch(FORMSPREE_ENDPOINT, {
                 method: "POST",
                 body: data,
                 headers: {
@@ -51,7 +52,7 @@ export const Contact: React.FC = () => {
                             {[
                                 {icon: "call", title: "Call Us", val: "+91 7907362027", link: "tel:+917907362027"},
                                 {icon: "mail", title: "Email Us", val: "menschrobotics11@gmail.com", link: "mailto:menschrobotics11@gmail.com"},
-                                {icon: "location_on", title: "Location", val: "Coimbatore, Tamil Nadu", link: "#"}
+                                {icon: "location_on", title: "Office", val: COMPANY_OFFICE, link: "#"}
                             ].map((item) => (
                                 <div key={item.title} className="flex items-center gap-6 group">
                                     <div className="w-12 h-12 rounded-full bg-[#1a1f2e] flex items-center justify-center text-primary transition-colors group-hover:bg-primary group-hover:text-white">

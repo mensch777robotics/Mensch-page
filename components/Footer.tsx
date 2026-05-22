@@ -1,21 +1,38 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { COMPANY_CIN, COMPANY_GSTIN, COMPANY_OFFICE } from '../constants/company';
 
 export const Footer: React.FC = () => {
     return (
         <footer className="border-t border-black/10 bg-white py-16">
             <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16">
-                <div className="flex flex-col md:flex-row justify-between items-start gap-10">
+                <div className="flex flex-col lg:flex-row justify-between items-start gap-10 lg:gap-16">
                     <div className="max-w-sm">
                         <p className="text-slate-600 text-sm font-body leading-relaxed">
                             Pioneering the future of physical AI with robots that serve, teach, and innovate. Designed to elevate human potential.
                         </p>
                     </div>
-                    <div className="flex gap-16 flex-wrap">
+                    <div className="flex flex-col sm:flex-row gap-10 sm:gap-16 flex-wrap">
+                        <div>
+                            <h4 className="text-slate-900 font-bold text-xs uppercase tracking-widest mb-4">Office</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed max-w-xs">{COMPANY_OFFICE}</p>
+                        </div>
+                        <div>
+                            <h4 className="text-slate-900 font-bold text-xs uppercase tracking-widest mb-4">Company Details</h4>
+                            <ul className="space-y-2 text-sm text-slate-600">
+                                <li>
+                                    <span className="font-medium text-slate-800">CIN:</span> {COMPANY_CIN}
+                                </li>
+                                <li>
+                                    <span className="font-medium text-slate-800">GSTIN:</span> {COMPANY_GSTIN}
+                                </li>
+                            </ul>
+                        </div>
                         <div>
                             <h4 className="text-slate-900 font-bold text-xs uppercase tracking-widest mb-6">Company</h4>
                             <ul className="space-y-3 text-sm text-slate-600">
                                 <li><Link to="/about-us" className="hover:text-slate-900 transition-colors">About Us</Link></li>
+                                <li><Link to="/careers" className="hover:text-slate-900 transition-colors">Careers</Link></li>
                                 <li><Link to="/contact" className="hover:text-slate-900 transition-colors">Contact</Link></li>
                             </ul>
                         </div>

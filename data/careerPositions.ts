@@ -51,14 +51,14 @@ export const careerPositions: CareerPosition[] = [
         ],
     },
     {
-        slug: 'operations-manager-intern',
-        title: 'Operations Manager Intern',
+        slug: 'operations-manager',
+        title: 'Operations Manager',
         department: 'Growth & Operations',
-        type: 'Internship',
+        type: 'Full-Time',
         teaser:
             'Fundraising, strategy, compliance, marketing, and more. Highly adaptable pragmatist and people person.',
         overview:
-            'Behind every great robot is a finely-tuned operational engine. We are seeking a dynamic Operations Intern to work directly with the leadership team, engaging with everything from startup compliance to market strategy and fundraising initiatives.',
+            'Behind every great robot is a finely-tuned operational engine. We are seeking a dynamic Operations Manager to work directly with the leadership team, engaging with everything from startup compliance to market strategy and fundraising initiatives.',
         responsibilities: [
             'Assist in preparing strategy documents, pitch decks, and materials for fundraising/grants.',
             'Support company compliance, administrative tasks, and daily operational workflows.',
@@ -72,5 +72,11 @@ export const careerPositions: CareerPosition[] = [
     },
 ];
 
-export const getCareerBySlug = (slug: string): CareerPosition | undefined =>
-    careerPositions.find((position) => position.slug === slug);
+const slugAliases: Record<string, string> = {
+    'operations-manager-intern': 'operations-manager',
+};
+
+export const getCareerBySlug = (slug: string): CareerPosition | undefined => {
+    const resolved = slugAliases[slug] ?? slug;
+    return careerPositions.find((position) => position.slug === resolved);
+};
