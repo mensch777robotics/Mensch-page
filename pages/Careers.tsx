@@ -61,11 +61,17 @@ export const Careers: React.FC = () => {
                     </div>
                 </section>
 
+                {/* About Section */}
+                <section className="w-full flex flex-col gap-8 py-10 opacity-0 animate-fade-in-up [animation-delay:400ms] px-4 sm:px-6 md:px-10 lg:px-16">
+                    <p className="text-slate-300 text-lg md:text-xl font-light max-w-4xl leading-relaxed">
+                        Mensch Robotics is a fast-growing physical AI startup building semi-humanoid service robots for hotels, schools, banks and clinics. We're looking for talented individuals to join our ambitious journey. If you're ready to handle the startup chaos, work with a sense of ownership and contribute to shape the future of service robotics, we want to hear from you.
+                    </p>
+                </section>
+
                 {/* Open Positions */}
-                <section className="w-full flex flex-col gap-12 py-10 opacity-0 animate-fade-in-up [animation-delay:400ms] px-4 sm:px-6 md:px-10 lg:px-16">
+                <section className="w-full flex flex-col gap-12 py-10 opacity-0 animate-fade-in-up [animation-delay:500ms] px-4 sm:px-6 md:px-10 lg:px-16">
                     <div className="flex flex-col gap-2">
                         <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter">Open Positions</h2>
-                        <p className="text-slate-400 text-lg md:text-xl font-light max-w-md">We're looking for talented individuals to join our team.</p>
                     </div>
                     
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
