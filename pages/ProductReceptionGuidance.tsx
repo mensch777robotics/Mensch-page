@@ -125,7 +125,7 @@ export const ProductReceptionGuidance: React.FC = () => {
                         {[
                             { icon: "store", title: "Hotels & Resorts", desc: "Greet guests and enhance their stay" },
                             { icon: "business", title: "Corporate Offices", desc: "Professional front desk operations" },
-                            { icon: "shopping_mall", title: "Malls & Retail", desc: "Customer guidance and information" },
+                            { icon: "local_mall", title: "Malls & Retail", desc: "Customer guidance and information" },
                             { icon: "apartment", title: "Hospitals & Clinics", desc: "Patient check-in and navigation" }
                         ].map((useCase, idx) => (
                             <div key={idx} className="flex flex-col gap-3 p-6 rounded-xl bg-white border border-slate-200 hover:shadow-md transition-shadow">
@@ -178,11 +178,11 @@ export const ProductReceptionGuidance: React.FC = () => {
                                 to={`/products/${relatedProduct.slug}`}
                                 className="group flex flex-col rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all bg-white"
                             >
-                                <div className="relative h-40 overflow-hidden bg-slate-100">
+                                <div className="relative h-56 overflow-hidden bg-slate-100">
                                     <img 
                                         src={relatedProduct.image}
                                         alt={relatedProduct.name}
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
                                     />
                                 </div>
                                 <div className="flex-1 flex flex-col gap-3 p-6">

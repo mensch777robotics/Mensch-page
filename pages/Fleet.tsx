@@ -133,22 +133,13 @@ export const Fleet: React.FC = () => {
                     <p className="text-lg text-slate-600 mb-8">
                         Discover how our robots can make a difference in your organization.
                     </p>
-                    <div className="flex flex-wrap justify-center gap-4">
-                        <Link 
-                            to="/contact"
-                            className="flex items-center gap-2 px-10 py-4 rounded-lg bg-primary text-white font-bold uppercase tracking-wider text-sm hover:bg-primary/90 transition-colors shadow-md hover:shadow-lg"
-                        >
-                            Get in Touch
-                            <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                        </Link>
-                        <a 
-                            href="#products"
-                            className="flex items-center gap-2 px-10 py-4 rounded-lg border border-slate-200 text-slate-900 font-bold uppercase tracking-wider text-sm hover:bg-slate-50 transition-colors"
-                        >
-                            Explore More
-                            <span className="material-symbols-outlined text-lg">expand_more</span>
-                        </a>
-                    </div>
+                    <Link 
+                        to="/contact"
+                        className="inline-flex items-center gap-2 px-10 py-4 rounded-lg bg-primary text-white font-bold uppercase tracking-wider text-sm hover:bg-primary/90 transition-colors shadow-md hover:shadow-lg"
+                    >
+                        Get in Touch
+                        <span className="material-symbols-outlined text-lg">arrow_forward</span>
+                    </Link>
                 </div>
             </section>
         </div>

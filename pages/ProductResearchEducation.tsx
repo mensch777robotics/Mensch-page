@@ -238,11 +238,11 @@ export const ProductResearchEducation: React.FC = () => {
                                 to={`/products/${relatedProduct.slug}`}
                                 className="group flex flex-col rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all bg-slate-50"
                             >
-                                <div className="relative h-40 overflow-hidden bg-slate-100">
+                                <div className="relative h-56 overflow-hidden bg-slate-100">
                                     <img 
                                         src={relatedProduct.image}
                                         alt={relatedProduct.name}
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
                                     />
                                 </div>
                                 <div className="flex-1 flex flex-col gap-3 p-6">
