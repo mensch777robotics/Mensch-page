@@ -65,8 +65,7 @@ export const products: Product[] = [
         shortDescription: "Modular platform for hands-on STEM and AI learning, empowering students to explore and create.",
         image: "/MAX_Robot.png",
         specs: [
-            { label: "OS", value: "Ubuntu/ROS2" },
-            { label: "Payload", value: "5 kg" }
+            { label: "OS", value: "Ubuntu/ROS2" }
         ],
         features: [
             { title: "Modular Design", desc: "Students reconfigure components for custom applications." },

@@ -235,7 +235,7 @@ export const ProductResearchEducation: React.FC = () => {
                         {products.filter((p) => p.id !== product.id).map((relatedProduct) => (
                             <Link 
                                 key={relatedProduct.id}
-                                to={"/contact"}
+                                to={`/products/${relatedProduct.slug}`}
                                 className="group flex flex-col rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all bg-slate-50"
                             >
                                 <div className="relative h-56 overflow-hidden bg-slate-100">
