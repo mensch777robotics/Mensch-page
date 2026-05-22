@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FORMSPREE_ENDPOINT } from '../constants/company';
 
 const inputClass =
-    'w-full bg-[#1a1a1f] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder:text-slate-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all';
+    'w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all';
 
 export const CareerGeneralApplication: React.FC = () => {
     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -38,22 +38,21 @@ export const CareerGeneralApplication: React.FC = () => {
 
     return (
         <section className="w-full px-4 sm:px-6 md:px-10 lg:px-16 pb-16 md:pb-24">
-            <div className="mx-auto max-w-4xl rounded-[2rem] border border-white/10 bg-[#0f0f11] px-6 py-10 md:px-12 md:py-14 shadow-2xl">
+            <div className="mx-auto max-w-4xl rounded-2xl border border-slate-200 bg-slate-50 px-6 py-10 md:px-12 md:py-14 shadow-sm">
                 <div className="text-center mb-10 md:mb-12">
-                    <p className="text-slate-400 text-sm md:text-base mb-2">
-                        Don&apos;t see a role that fits? Send us your story anyway — we hire for potential, not just
-                        titles.
+                    <p className="text-slate-600 text-sm md:text-base mb-3">
+                        Couldn&apos;t find the perfect role? We&apos;re always interested in exceptional talent. Tell us about yourself and how you could contribute to Mensch Robotics.
                     </p>
-                    <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tight">
-                        Submit your Application
+                    <h2 className="text-slate-900 text-3xl md:text-4xl font-bold tracking-tight">
+                        Open Application
                     </h2>
                 </div>
 
                 <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div className="flex flex-col gap-2">
-                            <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">
-                                First Name <span className="text-white">*</span>
+                            <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                First Name <span className="text-red-500">*</span>
                             </label>
                             <input
                                 className={inputClass}
@@ -64,8 +63,8 @@ export const CareerGeneralApplication: React.FC = () => {
                             />
                         </div>
                         <div className="flex flex-col gap-2">
-                            <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">
-                                Last Name <span className="text-white">*</span>
+                            <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                Last Name <span className="text-red-500">*</span>
                             </label>
                             <input
                                 className={inputClass}
@@ -79,8 +78,8 @@ export const CareerGeneralApplication: React.FC = () => {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div className="flex flex-col gap-2">
-                            <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">
-                                Email <span className="text-white">*</span>
+                            <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                Email <span className="text-red-500">*</span>
                             </label>
                             <input
                                 className={inputClass}
@@ -91,8 +90,8 @@ export const CareerGeneralApplication: React.FC = () => {
                             />
                         </div>
                         <div className="flex flex-col gap-2">
-                            <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">
-                                Phone <span className="text-white">*</span>
+                            <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">
+                                Phone <span className="text-red-500">*</span>
                             </label>
                             <input
                                 className={inputClass}
@@ -105,8 +104,8 @@ export const CareerGeneralApplication: React.FC = () => {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">
-                            LinkedIn URL <span className="text-white">*</span>
+                        <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">
+                            LinkedIn URL <span className="text-red-500">*</span>
                         </label>
                         <input
                             className={inputClass}
@@ -118,8 +117,8 @@ export const CareerGeneralApplication: React.FC = () => {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">
-                            Upload your CV <span className="text-white">*</span>
+                        <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">
+                            Upload your CV <span className="text-red-500">*</span>
                         </label>
                         <input
                             className={inputClass}
@@ -131,8 +130,8 @@ export const CareerGeneralApplication: React.FC = () => {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">
-                            Message <span className="text-white">*</span>
+                        <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">
+                            Message <span className="text-red-500">*</span>
                         </label>
                         <textarea
                             className={`${inputClass} resize-none`}
@@ -147,17 +146,17 @@ export const CareerGeneralApplication: React.FC = () => {
                         <button
                             type="submit"
                             disabled={status === 'submitting'}
-                            className="relative h-14 px-12 rounded-full bg-black border border-white/20 text-white font-bold text-sm tracking-[0.2em] uppercase hover:border-primary/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_8px_32px_rgba(19,91,236,0.35)]"
+                            className="relative h-12 px-10 rounded-xl bg-primary text-white font-bold text-sm tracking-[0.1em] uppercase hover:bg-primary/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg"
                         >
                             {status === 'submitting' ? 'Submitting...' : 'Submit Now'}
                         </button>
                         {status === 'success' && (
-                            <p className="text-green-400 text-sm font-semibold text-center">
+                            <p className="text-green-600 text-sm font-semibold text-center">
                                 Application sent successfully! We&apos;ll be in touch soon.
                             </p>
                         )}
                         {status === 'error' && (
-                            <p className="text-red-400 text-sm font-semibold text-center">
+                            <p className="text-red-600 text-sm font-semibold text-center">
                                 Failed to send application. Please try again.
                             </p>
                         )}
