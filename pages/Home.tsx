@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { SupportedBy } from '../components/SupportedBy';
 
 const whyMenschReasons = [
     {
@@ -205,6 +206,8 @@ export const Home: React.FC = () => {
                         </div>
                     </div>
                 </section>
+
+                <SupportedBy />
             </div>
         </div>
     );

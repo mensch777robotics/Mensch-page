@@ -69,23 +69,18 @@ export const Fleet: React.FC = () => {
     const [showVideo, setShowVideo] = useState(false);
 
     return (
-        <div className="flex flex-col">
-            {/* Hero */}
-            <section className="relative pt-32 pb-20 px-6 overflow-hidden opacity-0 animate-fade-in-up">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-black blur-[120px] rounded-full -z-10"></div>
-                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-soft-light pointer-events-none"></div>
-                <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 text-center relative z-10">
-                    <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-6 text-white drop-shadow-2xl">
-                        The <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-slate-200 to-slate-500">Fleet</span>
-                    </h1>
-                    <p className="text-xl text-slate-400 font-body max-w-2xl mx-auto mb-12 font-light tracking-wide">
-                        Advanced robotics for specialized applications. Engineered for compassion, education, and innovation.
-                    </p>
-                </div>
+        <div className="flex flex-col pt-24 md:pt-28">
+            {/* Products */}
+            <section className="w-full px-4 sm:px-6 md:px-10 lg:px-16 pb-12 text-center">
+                <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-slate-900 mb-4">
+                    Products
+                </h1>
+                <p className="text-lg text-slate-600 max-w-2xl mx-auto font-light">
+                    Advanced robotics for specialized applications. Engineered for compassion, education, and innovation.
+                </p>
             </section>
 
-            {/* Robots List */}
-            <div className="flex flex-col gap-0">
+            <div className="flex flex-col gap-0 bg-[#050505]">
                 {robots.map((bot, idx) => (
                     <section key={bot.id} className={`relative py-24 border-t border-white/5 opacity-0 animate-fade-in-up ${idx % 2 === 0 ? 'bg-gradient-to-b from-transparent to-[#0a0a0c]' : 'bg-[#08080a]'}`} style={{animationDelay: `${(idx + 1) * 200}ms`}}>
                         <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16">
