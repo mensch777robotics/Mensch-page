@@ -54,13 +54,6 @@ export const ProductResearchEducation: React.FC = () => {
                                     Request Information
                                     <span className="material-symbols-outlined text-lg">arrow_forward</span>
                                 </Link>
-                                <a 
-                                    href="#features"
-                                    className="flex items-center gap-2 px-8 py-3 rounded-lg border border-slate-200 text-slate-900 font-bold uppercase tracking-wider text-sm hover:bg-slate-50 transition-colors"
-                                >
-                                    Learn More
-                                    <span className="material-symbols-outlined text-lg">expand_more</span>
-                                </a>
                             </div>
                         </div>
 

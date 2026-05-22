@@ -54,13 +54,6 @@ export const ProductReceptionGuidance: React.FC = () => {
                                     Request Information
                                     <span className="material-symbols-outlined text-lg">arrow_forward</span>
                                 </Link>
-                                <a 
-                                    href="#features"
-                                    className="flex items-center gap-2 px-8 py-3 rounded-lg border border-slate-200 text-slate-900 font-bold uppercase tracking-wider text-sm hover:bg-slate-50 transition-colors"
-                                >
-                                    Learn More
-                                    <span className="material-symbols-outlined text-lg">expand_more</span>
-                                </a>
                             </div>
                         </div>
 
@@ -175,7 +168,7 @@ export const ProductReceptionGuidance: React.FC = () => {
                         {products.filter((p) => p.id !== product.id).map((relatedProduct) => (
                             <Link 
                                 key={relatedProduct.id}
-                                to={"/contact"}
+                                to={`/products/${relatedProduct.slug}`}
                                 className="group flex flex-col rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all bg-white"
                             >
                                 <div className="relative h-56 overflow-hidden bg-slate-100">
