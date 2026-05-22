@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
                     {/* Brand */}
                     <div className="lg:col-span-4 flex flex-col gap-5">
                         <Link to="/" className="inline-flex hover:opacity-90 transition-opacity h-14 md:h-16 w-fit">
-                            <Logo imgClassName="h-full w-auto max-h-14 md:max-h-16" />
+                            <Logo onDark imgClassName="h-full w-auto max-h-14 md:max-h-16" />
                         </Link>
                         <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
                             Mensch Robotics is a fast-growing physical AI startup building semi-humanoid service robots

@@ -4,7 +4,6 @@ const partners = [
     { src: 'kerala-startup-mission-cropped (1).svg', alt: 'Kerala Startup Mission' },
     { src: 'IHFC Logo.png', alt: 'IHFC' },
     { src: 'DPIIT-startup india.png', alt: 'Startup India' },
-    { src: 'Make in India.png', alt: 'Make in India' },
 ];
 
 export const SupportedBy: React.FC = () => {
