@@ -1,7 +1,7 @@
 import React from 'react';
 import logoTransparent from '../MENSCH_Transperant.png';
 
-const logoWhite = `${import.meta.env.BASE_URL}Mensch Logo White.png`;
+const logoWhite = `${import.meta.env.BASE_URL}Mensch logo white croped.png`;
 
 export const Logo: React.FC<{
     className?: string;

@@ -94,11 +94,14 @@ export const AboutUs: React.FC = () => {
                 <div className="max-w-6xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                         <div className="order-2 md:order-1">
-                            <p className="text-slate-600 text-lg md:text-xl leading-relaxed">
-                                <span className="text-slate-900 font-bold">Bibin Thomas</span> is the Founder and CEO of
-                                Mensch Robotics, and leads the company with Insight, Integrity and Inspiration. Holding a
-                                B.Tech degree in Robotics and Automation, Bibin bridges deep technical expertise with a
-                                fluid persona and clarity required for dynamic situations.
+                            <h2 className="text-slate-900 text-3xl md:text-4xl font-bold mb-6">Founder &amp; CEO</h2>
+                            <h3 className="text-slate-900 text-2xl font-bold mb-2">Bibin Thomas</h3>
+                            <p className="text-primary font-semibold mb-6">Founder &amp; CEO, Mensch Robotics</p>
+                            <p className="text-slate-600 text-lg leading-relaxed">
+                                Bibin Thomas is a creator on a mission to revolutionize service robotics. The mission offers
+                                real potential for efficiency in the education, medical, and hospitality sectors. Holding a
+                                B.Tech degree in Robotics and Automation, Bibin bridges deep technical expertise with real
+                                world knowledge with clarity.
                             </p>
                         </div>
                         <div className="order-1 md:order-2 flex justify-center md:justify-end">
