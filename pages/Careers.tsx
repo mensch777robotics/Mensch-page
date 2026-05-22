@@ -50,11 +50,11 @@ export const Careers: React.FC = () => {
                         <div className="inline-block w-full md:w-auto max-w-none md:max-w-2xl md:bg-black/25 md:backdrop-blur-xl md:border md:border-white/10 rounded-[2rem] md:p-8">
                             <div className="flex flex-col gap-6">
                                 <h1 className="text-slate-900 md:text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tighter md:drop-shadow-lg">
-                                    Join Our <br/>
-                                    <span className="text-slate-600 md:text-slate-200">Team</span>
+                                    Spark a <br/>
+                                    <span className="text-slate-600 md:text-slate-200">difference</span>
                                 </h1>
                                 <p className="text-slate-600 md:text-slate-200 text-base sm:text-lg md:text-xl font-light max-w-lg leading-relaxed md:drop-shadow-md">
-                                    Be part of a mission to revolutionize robotics and create a more human-centered future through innovation and collaboration.
+                                    Are you fired up for an intense run, speed over perfection.
                                 </p>
                             </div>
                         </div>
