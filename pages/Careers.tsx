@@ -1,24 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import heroImage from '../public/Robo in forest.png';
-
-const positions = [
-    {
-        title: 'Robotics Engineer',
-        description:
-            'CAD design, fabrication and assembly of robots. Hands-on experience with hardware like Jetson Nano, Raspberry Pi, etc. Basic hands-on experience in ROS hardware projects.',
-    },
-    {
-        title: 'Software Engineer',
-        description:
-            'Curious & adaptable, good communication skills. Experience in fast iteration and app deployment from scratch.',
-    },
-    {
-        title: 'Operations Manager Intern',
-        description:
-            'Fundraising, strategy, compliance, marketing, etc. Highly adaptable pragmatist and people person.',
-    },
-];
+import { careerPositions } from '../data/careerPositions';
 
 export const Careers: React.FC = () => {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -61,35 +44,49 @@ export const Careers: React.FC = () => {
                 </section>
 
                 {/* Intro */}
-                <section className="w-full px-4 sm:px-6 md:px-10 lg:px-16">
-                    <p className="mx-auto max-w-3xl text-center text-slate-800 text-lg md:text-xl leading-relaxed">
-                        Mensch Robotics is a fast-growing physical AI startup building semi-humanoid service robots for
-                        hotels, schools, banks and clinics. We&apos;re looking for talented individuals to join our ambitious
-                        journey. If you&apos;re ready to handle the startup chaos, work with a sense of ownership and
-                        contribute to shape the future of service robotics, we want to hear from you.
-                    </p>
+                <section className="w-full px-4 sm:px-6 md:px-10 lg:px-16 flex justify-center">
+                    <div className="w-full max-w-6xl mx-auto rounded-2xl border border-slate-200 bg-slate-50 px-8 py-10 md:px-14 md:py-12 shadow-sm">
+                        <p className="text-center text-slate-800 text-lg md:text-xl leading-relaxed">
+                            Mensch Robotics is a fast-growing physical AI startup building semi-humanoid service robots for
+                            hotels, schools, banks and clinics. We&apos;re looking for talented individuals to join our ambitious
+                            journey. If you&apos;re ready to handle the startup chaos, work with a sense of ownership and
+                            contribute to shape the future of service robotics, we want to hear from you.
+                        </p>
+                    </div>
                 </section>
 
                 {/* Current Openings */}
                 <section className="w-full px-4 sm:px-6 md:px-10 lg:px-16 pb-8">
-                    <div className="mx-auto max-w-4xl flex flex-col gap-10 md:gap-14">
+                    <div className="mx-auto max-w-6xl flex flex-col gap-10 md:gap-12">
                         <h2 className="text-4xl md:text-5xl font-bold text-slate-900 text-center tracking-tight">
                             Current Openings
                         </h2>
 
-                        <div className="flex flex-col divide-y divide-slate-200 border-t border-slate-200">
-                            {positions.map((position) => (
-                                <div
-                                    key={position.title}
-                                    className="flex flex-col gap-3 py-8 md:py-10 md:flex-row md:items-start md:justify-between md:gap-12"
+                        <div className="flex flex-col gap-4">
+                            {careerPositions.map((position) => (
+                                <Link
+                                    key={position.slug}
+                                    to={`/careers/${position.slug}`}
+                                    className="group flex flex-col md:flex-row md:items-center md:justify-between gap-4 p-6 md:p-8 rounded-2xl border border-slate-200 bg-white hover:border-primary/40 hover:shadow-md transition-all duration-300"
                                 >
-                                    <h3 className="text-slate-900 text-xl md:text-2xl font-bold shrink-0 md:min-w-[240px]">
-                                        {position.title}
-                                    </h3>
-                                    <p className="text-slate-700 text-base md:text-lg leading-relaxed md:text-right md:max-w-xl">
-                                        {position.description}
-                                    </p>
-                                </div>
+                                    <div className="flex flex-col gap-2 min-w-0">
+                                        <h3 className="text-slate-900 text-xl md:text-2xl font-bold group-hover:text-primary transition-colors">
+                                            {position.title}
+                                        </h3>
+                                        <div className="flex flex-wrap gap-3 text-sm text-slate-600">
+                                            <span>{position.department}</span>
+                                            <span className="text-slate-300">|</span>
+                                            <span>{position.type}</span>
+                                        </div>
+                                        <p className="text-slate-600 text-base leading-relaxed mt-1 md:hidden">
+                                            {position.teaser}
+                                        </p>
+                                    </div>
+                                    <span className="inline-flex items-center gap-2 text-primary font-semibold shrink-0 group-hover:gap-3 transition-all">
+                                        View role
+                                        <span className="material-symbols-outlined">arrow_forward</span>
+                                    </span>
+                                </Link>
                             ))}
                         </div>
                     </div>

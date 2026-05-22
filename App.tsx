@@ -7,6 +7,7 @@ import { Fleet } from './pages/Fleet';
 import { Contact } from './pages/Contact';
 import { AboutUs } from './pages/AboutUs';
 import { Careers } from './pages/Careers';
+import { CareerRole } from './pages/CareerRole';
 
 // Scroll to top helper
 const ScrollToTop = () => {
@@ -38,6 +39,7 @@ const App: React.FC = () => {
                     <Route path="/about-us" element={<AboutUs />} />
                     <Route path="/fleet" element={<Fleet />} />
                     <Route path="/careers" element={<Careers />} />
+                    <Route path="/careers/:slug" element={<CareerRole />} />
                     <Route path="/contact" element={<Contact />} />
                 </Routes>
                 <Footer />

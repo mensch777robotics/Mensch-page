@@ -34,6 +34,7 @@ export const Navbar: React.FC = () => {
 
     const isActive = (path: string) => {
         if (path.startsWith('/#') && location.pathname === '/') return false;
+        if (path === '/careers') return location.pathname === path || location.pathname.startsWith('/careers/');
         return location.pathname === path;
     }
 
