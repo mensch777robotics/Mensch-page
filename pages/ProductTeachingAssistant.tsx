@@ -174,14 +174,14 @@ export const ProductTeachingAssistant: React.FC = () => {
                         {products.filter((p) => p.id !== product.id).map((relatedProduct) => (
                             <Link 
                                 key={relatedProduct.id}
-                                to={`/products/${relatedProduct.slug}`}
+                                to={"/contact"}
                                 className="group flex flex-col rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all bg-white"
                             >
                                 <div className="relative h-56 overflow-hidden bg-slate-100">
                                     <img 
                                         src={relatedProduct.image}
                                         alt={relatedProduct.name}
-                                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                                     />
                                 </div>
                                 <div className="flex-1 flex flex-col gap-3 p-6">
