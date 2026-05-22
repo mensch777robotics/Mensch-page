@@ -4,6 +4,9 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
 import { Fleet } from './pages/Fleet';
+import { ProductReceptionGuidance } from './pages/ProductReceptionGuidance';
+import { ProductTeachingAssistant } from './pages/ProductTeachingAssistant';
+import { ProductResearchEducation } from './pages/ProductResearchEducation';
 import { Contact } from './pages/Contact';
 import { AboutUs } from './pages/AboutUs';
 import { Careers } from './pages/Careers';
@@ -38,6 +41,9 @@ const App: React.FC = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="/about-us" element={<AboutUs />} />
                     <Route path="/fleet" element={<Fleet />} />
+                    <Route path="/products/reception-guidance" element={<ProductReceptionGuidance />} />
+                    <Route path="/products/teaching-assistant" element={<ProductTeachingAssistant />} />
+                    <Route path="/products/research-education" element={<ProductResearchEducation />} />
                     <Route path="/careers" element={<Careers />} />
                     <Route path="/careers/:slug" element={<CareerRole />} />
                     <Route path="/contact" element={<Contact />} />
