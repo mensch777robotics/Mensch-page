@@ -89,7 +89,8 @@ export const CareerApplicationModal: React.FC<CareerApplicationModalProps> = ({
                             Apply for {roleTitle}
                         </h2>
                         <p className="text-slate-600 text-sm mt-1">
-                            Fill out the form below to submit your application. We&apos;ll review it and get back to you.
+                            Fill out the form below to submit your application. Upload your resume to Google Drive or
+                            similar and paste a shareable link below. We&apos;ll review it and get back to you.
                         </p>
                     </div>
                     <button
@@ -102,7 +103,7 @@ export const CareerApplicationModal: React.FC<CareerApplicationModalProps> = ({
                     </button>
                 </div>
 
-                <form className="px-6 py-6 flex flex-col gap-4" onSubmit={handleSubmit} encType="multipart/form-data">
+                <form className="px-6 py-6 flex flex-col gap-4" onSubmit={handleSubmit}>
                     <div className="flex flex-col gap-2">
                         <label className="text-sm font-semibold text-slate-800">
                             Full Name <span className="text-primary">*</span>
@@ -158,14 +159,18 @@ export const CareerApplicationModal: React.FC<CareerApplicationModalProps> = ({
 
                     <div className="flex flex-col gap-2">
                         <label className="text-sm font-semibold text-slate-800">
-                            Resume <span className="text-slate-500 font-normal">(PDF or Word, max 5MB)</span>
+                            Resume link <span className="text-primary">*</span>
                         </label>
                         <input
-                            className="w-full border border-slate-200 rounded-xl px-4 py-3 text-slate-900 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-primary/10 file:text-primary file:font-semibold file:text-sm hover:file:bg-primary/20"
-                            type="file"
-                            name="resume"
-                            accept=".pdf,.doc,.docx"
+                            className="w-full border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                            type="url"
+                            name="resumeLink"
+                            placeholder="Paste your Google Drive, Dropbox, or other resume link"
+                            required
                         />
+                        <p className="text-slate-500 text-xs">
+                            Upload your resume to your own Drive and share a viewable link with us.
+                        </p>
                     </div>
 
                     <div className="flex flex-col-reverse sm:flex-row gap-3 pt-2">
