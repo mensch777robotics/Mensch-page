@@ -132,61 +132,91 @@ export const Home: React.FC = () => {
                             {[
                                 {
                                     img: `${import.meta.env.BASE_URL}deployments/Team at TN Global summit.jpg`,
-                                    alt: 'Team at TN Global Summit'
+                                    alt: 'Team at TN Global Summit',
+                                    title: 'TN Global Startup Summit 2025'
                                 },
                                 {
                                     img: `${import.meta.env.BASE_URL}deployments/Educational.jpeg`,
-                                    alt: 'Educational deployment'
+                                    alt: 'Educational deployment',
+                                    title: 'St Thomas School',
+                                    subtitle: 'Kalyan, Mumbai'
                                 },
                                 {
                                     img: `${import.meta.env.BASE_URL}deployments/Robi_childrens.jpeg`,
-                                    alt: 'Robot with children'
+                                    alt: 'Robot with children',
+                                    title: 'Alif Islamic School',
+                                    subtitle: 'Malappuram, Kerala'
                                 },
                                 {
                                     img: `${import.meta.env.BASE_URL}deployments/with Chairman.jpg`,
-                                    alt: 'With Chairman'
+                                    alt: 'With Chairman',
+                                    title: 'St Joseph College of Engineering',
+                                    subtitle: 'OMR, Chennai, Tamilnadu'
                                 },
                                 {
                                     img: `${import.meta.env.BASE_URL}deployments/St Joseph Deployed_2.jpg`,
-                                    alt: 'Deployment at St Joseph'
+                                    alt: 'Deployment at St Joseph',
+                                    title: 'St Joseph College of Engineering',
+                                    subtitle: 'OMR, Chennai, Tamilnadu'
                                 }
                             ].map((deployment, idx) => (
-                                <div key={idx} className="flex-shrink-0 h-[250px] md:h-[300px] rounded-[1rem] overflow-hidden border border-white/10 min-w-[350px] md:min-w-[450px]">
+                                <div key={idx} className="relative flex-shrink-0 h-[300px] md:h-[380px] rounded-[1rem] overflow-hidden border border-white/10 min-w-[420px] md:min-w-[540px]">
                                     <img 
                                         src={deployment.img}
                                         alt={deployment.alt}
                                         className="w-full h-full object-cover"
                                     />
+                                    {deployment.title && (
+                                        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 text-left">
+                                            <p className="text-white text-xl font-bold leading-snug">{deployment.title}</p>
+                                            <p className="text-slate-200 text-base leading-relaxed">{deployment.subtitle}</p>
+                                        </div>
+                                    )}
                                 </div>
                             ))}
                             {[
                                 {
                                     img: `${import.meta.env.BASE_URL}deployments/Team at TN Global summit.jpg`,
-                                    alt: 'Team at TN Global Summit'
+                                    alt: 'Team at TN Global Summit',
+                                    title: 'TN Global Startup Summit 2025'
                                 },
                                 {
                                     img: `${import.meta.env.BASE_URL}deployments/Educational.jpeg`,
-                                    alt: 'Educational deployment'
+                                    alt: 'Educational deployment',
+                                    title: 'St Thomas School',
+                                    subtitle: 'Kalyan, Mumbai'
                                 },
                                 {
                                     img: `${import.meta.env.BASE_URL}deployments/Robi_childrens.jpeg`,
-                                    alt: 'Robot with children'
+                                    alt: 'Robot with children',
+                                    title: 'Alif Islamic School',
+                                    subtitle: 'Malappuram, Kerala'
                                 },
                                 {
                                     img: `${import.meta.env.BASE_URL}deployments/with Chairman.jpg`,
-                                    alt: 'With Chairman'
+                                    alt: 'With Chairman',
+                                    title: 'St Joseph College of Engineering',
+                                    subtitle: 'OMR, Chennai, Tamilnadu'
                                 },
                                 {
                                     img: `${import.meta.env.BASE_URL}deployments/St Joseph Deployed_2.jpg`,
-                                    alt: 'Deployment at St Joseph'
+                                    alt: 'Deployment at St Joseph',
+                                    title: 'St Joseph College of Engineering',
+                                    subtitle: 'OMR, Chennai, Tamilnadu'
                                 }
                             ].map((deployment, idx) => (
-                                <div key={`dup-${idx}`} className="flex-shrink-0 h-[250px] md:h-[300px] rounded-[1rem] overflow-hidden border border-white/10 min-w-[350px] md:min-w-[450px]">
+                                <div key={`dup-${idx}`} className="relative flex-shrink-0 h-[300px] md:h-[380px] rounded-[1rem] overflow-hidden border border-white/10 min-w-[420px] md:min-w-[540px]">
                                     <img 
                                         src={deployment.img}
                                         alt={deployment.alt}
                                         className="w-full h-full object-cover"
                                     />
+                                    {deployment.title && (
+                                        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 text-left">
+                                            <p className="text-white text-xl font-bold leading-snug">{deployment.title}</p>
+                                            <p className="text-slate-200 text-base leading-relaxed">{deployment.subtitle}</p>
+                                        </div>
+                                    )}
                                 </div>
                             ))}
                         </div>
