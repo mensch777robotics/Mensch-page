@@ -18,14 +18,12 @@ const whyMenschReasons = [
 ];
 
 const placesOfApplication = [
-    { title: 'Administrative Assistant', location: 'Hotels', icon: 'key' },
-    { title: 'Medical Assistant', location: 'Clinics', icon: 'local_hospital' },
-    { title: 'Consultant', location: 'Banks', icon: 'account_balance' },
-    { title: 'Tour Guide', location: 'Museums', icon: 'museum' },
-    { title: 'Robot Concierge', location: 'Business centres', icon: 'business_center' },
-    { title: 'Promoter', location: 'Forums and conferences', icon: 'groups' },
-    { title: 'Educational Platform', location: 'Colleges and schools', icon: 'school' },
-    { title: 'Security', location: 'Restricted areas and Industrial facilities', icon: 'shield' },
+    { title: 'Administrative Assistant', location: 'Office', image: `${import.meta.env.BASE_URL}Administrative Assistant.jpeg` },
+    { title: 'Medical Assistant', location: 'Clinics', image: `${import.meta.env.BASE_URL}Medical Assistant.jpeg` },
+    { title: 'Consultant', location: 'Banks', image: `${import.meta.env.BASE_URL}Consultent Bank.jpeg` },
+    { title: 'Tour Guide', location: 'Museums', image: `${import.meta.env.BASE_URL}Tour Guide.jpeg` },
+    { title: 'Educational Platform', location: 'Colleges and schools', image: `${import.meta.env.BASE_URL}Educational Platform.jpeg` },
+    { title: 'Public Support', location: 'Airport Assistance', image: `${import.meta.env.BASE_URL}Airport Assistance.jpeg` },
 ];
 
 export const Home: React.FC = () => {
@@ -71,23 +69,35 @@ export const Home: React.FC = () => {
 
                 {/* Places of Application */}
                 <section className="w-full px-4 sm:px-6 md:px-10 lg:px-16 py-16 md:py-24">
-                    <div className="max-w-6xl mx-auto">
+                    <div className="max-w-[100rem] mx-auto">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 md:mb-16 tracking-tight">
                             Places of Application
                         </h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                             {placesOfApplication.map((place) => (
                                 <div
                                     key={place.title}
-                                    className="flex flex-col items-center text-center gap-4 p-8 bg-white border border-primary/30 rounded-xl hover:border-primary/60 hover:shadow-md transition-all duration-300"
+                                    className="relative flex min-h-[320px] flex-col items-center justify-end overflow-hidden text-left bg-white border border-primary/30 rounded-xl hover:border-primary/60 hover:shadow-md transition-all duration-300"
                                 >
-                                    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white">
-                                        <span className="material-symbols-outlined text-3xl">{place.icon}</span>
+                                    {place.image && (
+                                        <img
+                                            src={place.image}
+                                            alt={place.title}
+                                            className="absolute inset-0 h-full w-full object-cover object-center"
+                                        />
+                                    )}
+                                    <div
+                                        className={`relative z-10 flex flex-col gap-2 w-full p-6 text-left ${
+                                            place.image ? 'bg-gradient-to-t from-black/80 via-black/40 to-transparent pt-16' : 'flex-1 justify-center'
+                                        }`}
+                                    >
+                                        <h3 className={`text-xl font-bold leading-snug ${place.image ? 'text-white' : 'text-slate-900'}`}>
+                                            {place.title}
+                                        </h3>
+                                        <p className={`text-base leading-relaxed ${place.image ? 'text-slate-200' : 'text-slate-600'}`}>
+                                            Location: {place.location}
+                                        </p>
                                     </div>
-                                    <h3 className="text-slate-900 text-lg font-bold leading-snug">{place.title}</h3>
-                                    <p className="text-slate-600 text-sm leading-relaxed">
-                                        Location: {place.location}
-                                    </p>
                                 </div>
                             ))}
                         </div>
@@ -125,8 +135,8 @@ export const Home: React.FC = () => {
                                     alt: 'Team at TN Global Summit'
                                 },
                                 {
-                                    img: `${import.meta.env.BASE_URL}deployments/Founder at TN Startup Summit.jpg`,
-                                    alt: 'Founder at TN Startup Summit'
+                                    img: `${import.meta.env.BASE_URL}deployments/Educational.jpeg`,
+                                    alt: 'Educational deployment'
                                 },
                                 {
                                     img: `${import.meta.env.BASE_URL}deployments/Robi_childrens.jpeg`,
@@ -155,8 +165,8 @@ export const Home: React.FC = () => {
                                     alt: 'Team at TN Global Summit'
                                 },
                                 {
-                                    img: `${import.meta.env.BASE_URL}deployments/Founder at TN Startup Summit.jpg`,
-                                    alt: 'Founder at TN Startup Summit'
+                                    img: `${import.meta.env.BASE_URL}deployments/Educational.jpeg`,
+                                    alt: 'Educational deployment'
                                 },
                                 {
                                     img: `${import.meta.env.BASE_URL}deployments/Robi_childrens.jpeg`,
