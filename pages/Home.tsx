@@ -138,7 +138,7 @@ export const Home: React.FC = () => {
                                 {
                                     img: `${import.meta.env.BASE_URL}deployments/Educational.jpeg`,
                                     alt: 'Educational deployment',
-                                    title: 'St Thomas English School',
+                                    title: 'St. Thomas English School',
                                     subtitle: 'Kalyan, Mumbai'
                                 },
                                 {
@@ -150,13 +150,13 @@ export const Home: React.FC = () => {
                                 {
                                     img: `${import.meta.env.BASE_URL}deployments/with Chairman.jpg`,
                                     alt: 'With Chairman',
-                                    title: 'St Joseph College of Engineering',
+                                    title: 'St. Joseph College of Engineering',
                                     subtitle: 'OMR, Chennai, Tamilnadu'
                                 },
                                 {
-                                    img: `${import.meta.env.BASE_URL}deployments/St Joseph Deployed_2.jpg`,
+                                    img: `${import.meta.env.BASE_URL}deployments/St. Joseph Deployed_2.jpg`,
                                     alt: 'Deployment at St Joseph',
-                                    title: 'St Joseph College of Engineering',
+                                    title: 'St. Joseph College of Engineering',
                                     subtitle: 'OMR, Chennai, Tamilnadu'
                                 }
                             ].map((deployment, idx) => (
@@ -183,7 +183,7 @@ export const Home: React.FC = () => {
                                 {
                                     img: `${import.meta.env.BASE_URL}deployments/Educational.jpeg`,
                                     alt: 'Educational deployment',
-                                    title: 'St Thomas English School',
+                                    title: 'St. Thomas English School',
                                     subtitle: 'Kalyan, Mumbai'
                                 },
                                 {
@@ -195,13 +195,13 @@ export const Home: React.FC = () => {
                                 {
                                     img: `${import.meta.env.BASE_URL}deployments/with Chairman.jpg`,
                                     alt: 'With Chairman',
-                                    title: 'St Joseph College of Engineering',
+                                    title: 'St. Joseph College of Engineering',
                                     subtitle: 'OMR, Chennai, Tamilnadu'
                                 },
                                 {
-                                    img: `${import.meta.env.BASE_URL}deployments/St Joseph Deployed_2.jpg`,
+                                    img: `${import.meta.env.BASE_URL}deployments/St. Joseph Deployed_2.jpg`,
                                     alt: 'Deployment at St Joseph',
-                                    title: 'St Joseph College of Engineering',
+                                    title: 'St. Joseph College of Engineering',
                                     subtitle: 'OMR, Chennai, Tamilnadu'
                                 }
                             ].map((deployment, idx) => (

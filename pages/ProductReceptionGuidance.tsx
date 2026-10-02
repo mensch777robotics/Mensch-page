@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { RotatingModelViewer } from '../components/RotatingModelViewer';
 import { products } from '../data/products';
 
 export const ProductReceptionGuidance: React.FC = () => {
@@ -52,7 +53,7 @@ export const ProductReceptionGuidance: React.FC = () => {
             </section>
 
             {/* Highlights Section - placeholder layout, add images manually */}
-            <section className="w-full py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-16 bg-slate-50">
+            <section className="w-full py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-16 bg-white">
                 <div className="max-w-[90rem] mx-auto grid md:grid-cols-[1fr_1.4fr] gap-6 items-stretch">
                     {/* Large image placeholder - left */}
                     <div className="relative overflow-hidden rounded-2xl border-2 border-dashed border-slate-300 bg-white min-h-[600px]">
@@ -100,9 +101,9 @@ export const ProductReceptionGuidance: React.FC = () => {
             </section>
 
             {/* Features Section */}
-            <section id="features" className="w-full pt-10 pb-18 md:pt-12 md:pb-24 px-4 sm:px-6 md:px-10 lg:px-16 bg-white">
+            <section id="features" className="w-full pt-16 pb-24 md:pt-20 md:pb-32 px-4 sm:px-6 md:px-10 lg:px-16 bg-slate-50">
                 <div className="max-w-6xl mx-auto">
-                    <div className="text-center mb-16 md:mb-20">
+                    <div className="text-center mb-20 md:mb-24">
                         <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
                             Key Features
                         </h2>
@@ -111,8 +112,8 @@ export const ProductReceptionGuidance: React.FC = () => {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-[minmax(0,0.82fr)_minmax(10rem,14rem)_minmax(0,1fr)] items-center gap-10 md:gap-20">
-                        <div className="flex flex-col gap-8 md:gap-10 md:justify-self-start md:pl-0">
+                    <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.82fr)_minmax(22rem,30rem)_minmax(0,1fr)] items-stretch gap-14 lg:gap-16">
+                        <div className="flex h-full flex-col justify-between gap-10 md:gap-12 md:justify-self-start md:pl-0 lg:py-6">
                             {keyFeatureItems.slice(0, 3).map((item, idx) => (
                                 <div key={idx} className="flex items-center justify-start gap-4 md:gap-5">
                                     <div className="flex items-center justify-center w-16 h-16 md:w-18 md:h-18 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm overflow-hidden shrink-0">
@@ -129,9 +130,14 @@ export const ProductReceptionGuidance: React.FC = () => {
                             ))}
                         </div>
 
-                        <div className="hidden md:block" aria-hidden="true" />
+                        <div className="flex h-full min-h-[34rem] items-stretch justify-center lg:px-2">
+                            <RotatingModelViewer
+                                modelUrl={new URL('../3D_image/tripo_pbr_model_89199f3e-ca85-43bf-949c-a77c287e132f_meshopt.glb', import.meta.url).href}
+                                alt="SOVI Greet 3D model"
+                            />
+                        </div>
 
-                        <div className="flex flex-col gap-8 md:gap-10 md:justify-self-end md:ml-auto md:pr-28 md:translate-x-6 md:w-fit">
+                        <div className="flex h-full flex-col justify-between gap-10 md:gap-12 lg:justify-self-end lg:ml-auto lg:pr-0 lg:py-6">
                             {keyFeatureItems.slice(3).map((item, idx) => (
                                 <div key={idx} className="flex items-center justify-start gap-4 md:gap-6">
                                     <div className="flex items-center justify-center w-16 h-16 md:w-18 md:h-18 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm overflow-hidden shrink-0">
@@ -153,32 +159,17 @@ export const ProductReceptionGuidance: React.FC = () => {
             </section>
 
             {/* Use Cases Section */}
-            <section className="w-full py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-16 bg-slate-50">
+            <section className="w-full py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-16 bg-white">
                 <div className="max-w-6xl mx-auto">
                     <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-12 text-center">
                         Perfect For
                     </h2>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {[
-                            { icon: "store", title: "Hotels & Resorts", desc: "Greet guests and enhance their stay" },
-                            { icon: "business", title: "Corporate Offices", desc: "Professional front desk operations" },
-                            { icon: "local_mall", title: "Malls & Retail", desc: "Customer guidance and information" },
-                            { icon: "apartment", title: "Hospitals & Clinics", desc: "Patient check-in and navigation" }
-                        ].map((useCase, idx) => (
-                            <div key={idx} className="flex flex-col gap-3 p-6 rounded-xl bg-white border border-slate-200 hover:shadow-md transition-shadow">
-                                <div className={`w-10 h-10 rounded-lg ${product.bgAccent}/10 flex items-center justify-center`}>
-                                    <span className={`material-symbols-outlined ${product.accent}`}>
-                                        {useCase.icon}
-                                    </span>
-                                </div>
-                                <h3 className="font-bold text-slate-900">
-                                    {useCase.title}
-                                </h3>
-                                <p className="text-sm text-slate-600">
-                                    {useCase.desc}
-                                </p>
-                            </div>
-                        ))}
+                    <div className="mx-auto w-full max-w-[741px] overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/80 shadow-sm">
+                        <img
+                            src={`${import.meta.env.BASE_URL}Perfect_for.png`}
+                            alt="Perfect for SOVI Greet use cases"
+                            className="h-full w-full object-contain"
+                        />
                     </div>
                 </div>
             </section>
