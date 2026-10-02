@@ -9,31 +9,36 @@ export const ProductReceptionGuidance: React.FC = () => {
     return (
         <div className="flex flex-col">
             {/* Hero Section */}
-            <section className="relative w-full h-[calc(100vh-5rem)] overflow-hidden">
-                <img
-                    src={heroImage}
-                    alt={product.name}
-                    className="absolute inset-0 h-full w-full object-cover"
-                />
-                <div className="relative z-10 h-full px-28 sm:px-40 md:px-52 lg:px-72 flex items-start pt-20 md:pt-28">
-                    <div className="flex flex-col gap-4 max-w-xl">
-                        <div className="flex items-center gap-3">
-                            <span className="flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-sm text-blue-500 text-sm font-bold">
-                                {product.id}
-                            </span>
-                            <span className="text-blue-500 font-bold tracking-widest uppercase text-sm">
-                                {product.category}
-                            </span>
+            <section className="relative w-full flex flex-col md:block min-h-0 md:min-h-[calc(100vh-5rem)] overflow-hidden">
+                <div className="relative h-[48vh] w-full md:absolute md:inset-0 md:h-full overflow-hidden bg-slate-50">
+                    <img
+                        src={heroImage}
+                        alt={product.name}
+                        className="absolute inset-0 h-full w-full object-cover object-[78%_center] md:object-center"
+                    />
+                </div>
+
+                <div className="relative z-10 w-full px-4 py-10 sm:px-6 md:px-10 lg:px-16 md:absolute md:inset-x-0 md:top-0 md:h-full md:flex md:items-start md:pt-20">
+                    <div className="inline-block w-full md:w-auto max-w-none md:max-w-xl bg-white/85 md:bg-transparent backdrop-blur-none md:backdrop-blur-0 rounded-[2rem] md:rounded-none p-6 md:p-0">
+                        <div className="flex flex-col gap-4">
+                            <div className="flex items-center gap-3">
+                                <span className="flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-sm text-blue-500 text-sm font-bold">
+                                    {product.id}
+                                </span>
+                                <span className="text-blue-500 font-bold tracking-widest uppercase text-sm">
+                                    {product.category}
+                                </span>
+                            </div>
+                            <h1 className="text-4xl sm:text-5xl md:text-8xl font-bold text-slate-900 tracking-tight">
+                                {product.name}
+                            </h1>
+                            <p className="text-2xl sm:text-3xl md:text-4xl text-slate-700 font-light">
+                                {product.tagline}
+                            </p>
+                            <p className="text-base sm:text-lg md:text-2xl text-slate-600 leading-relaxed">
+                                {product.shortDescription}
+                            </p>
                         </div>
-                        <h1 className="text-7xl md:text-8xl font-bold text-slate-900 tracking-tight">
-                            {product.name}
-                        </h1>
-                        <p className="text-4xl text-slate-700 font-light">
-                            {product.tagline}
-                        </p>
-                        <p className="text-2xl text-slate-600 leading-relaxed">
-                            {product.shortDescription}
-                        </p>
                     </div>
                 </div>
             </section>
@@ -42,10 +47,12 @@ export const ProductReceptionGuidance: React.FC = () => {
             <section className="w-full py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-16 bg-slate-50">
                 <div className="max-w-[90rem] mx-auto grid md:grid-cols-[1fr_1.4fr] gap-6 items-stretch">
                     {/* Large image placeholder - left */}
-                    <div className="flex items-center justify-center rounded-2xl border-2 border-dashed border-slate-300 bg-white min-h-[600px]">
-                        <p className="text-slate-400 text-sm font-semibold uppercase tracking-widest">
-                            Add robot image here
-                        </p>
+                    <div className="relative overflow-hidden rounded-2xl border-2 border-dashed border-slate-300 bg-white min-h-[600px]">
+                        <img
+                            src={`${import.meta.env.BASE_URL}Full_Body.jpeg`}
+                            alt="Full body robot"
+                            className="absolute inset-0 h-full w-full object-cover object-center"
+                        />
                     </div>
 
                     {/* 2x3 grid of highlight boxes - right */}
