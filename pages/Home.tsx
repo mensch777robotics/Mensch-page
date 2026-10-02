@@ -138,7 +138,7 @@ export const Home: React.FC = () => {
                                 {
                                     img: `${import.meta.env.BASE_URL}deployments/Educational.jpeg`,
                                     alt: 'Educational deployment',
-                                    title: 'St Thomas School',
+                                    title: 'St Thomas English School',
                                     subtitle: 'Kalyan, Mumbai'
                                 },
                                 {
@@ -183,7 +183,7 @@ export const Home: React.FC = () => {
                                 {
                                     img: `${import.meta.env.BASE_URL}deployments/Educational.jpeg`,
                                     alt: 'Educational deployment',
-                                    title: 'St Thomas School',
+                                    title: 'St Thomas English School',
                                     subtitle: 'Kalyan, Mumbai'
                                 },
                                 {

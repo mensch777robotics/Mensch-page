@@ -5,6 +5,14 @@ import { products } from '../data/products';
 export const ProductReceptionGuidance: React.FC = () => {
     const product = products[0]; // Reception & Guidance Robot
     const heroImage = `${import.meta.env.BASE_URL}SOVI Greet.jpeg`;
+    const keyFeatureItems = [
+        { name: 'Smart Visitor-checking', image: `${import.meta.env.BASE_URL}Reception_icon.jpg` },
+        { name: 'Multi Language Welcoming', image: `${import.meta.env.BASE_URL}Multilang.jpg` },
+        { name: 'Promotions', image: `${import.meta.env.BASE_URL}Promotions_icon.jpg` },
+        { name: 'Intelligent Q&A', image: `${import.meta.env.BASE_URL}qa_icon.jpg` },
+        { name: 'Voice  First AI', image: `${import.meta.env.BASE_URL}Voiceai.jpg` },
+        { name: 'Instant Knowledge Sync', image: `${import.meta.env.BASE_URL}Knowledge_sync.jpg` },
+    ];
 
     return (
         <div className="flex flex-col">
@@ -92,36 +100,55 @@ export const ProductReceptionGuidance: React.FC = () => {
             </section>
 
             {/* Features Section */}
-            <section id="features" className="w-full py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-16 bg-white">
+            <section id="features" className="w-full pt-10 pb-18 md:pt-12 md:pb-24 px-4 sm:px-6 md:px-10 lg:px-16 bg-white">
                 <div className="max-w-6xl mx-auto">
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-16 md:mb-20">
                         <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
                             Key Features
                         </h2>
-                        <p className="text-lg text-slate-600">
-                            Elevate your customer experience with intelligent hospitality solutions
+                        <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
+                            SOVI-Greet is an intelligent reception robot that transforms the way organisations welcome and assist their visitors. Combining conversational AI with a friendly, expressive presence, it delivers a seamless front-desk experience that is professional, engaging and always available.
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {product.features.map((feature, idx) => (
-                            <div key={idx} className="flex flex-col gap-4 p-6 rounded-xl border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all bg-slate-50">
-                                <div className="flex items-center gap-3">
-                                    <div className={`flex items-center justify-center w-10 h-10 rounded-lg ${product.bgAccent}/10`}>
-                                        <span className={`material-symbols-outlined ${product.accent} text-lg`}>
-                                            check_circle
-                                        </span>
+                    <div className="grid grid-cols-1 md:grid-cols-[minmax(0,0.82fr)_minmax(10rem,14rem)_minmax(0,1fr)] items-center gap-10 md:gap-20">
+                        <div className="flex flex-col gap-8 md:gap-10 md:justify-self-start md:pl-0">
+                            {keyFeatureItems.slice(0, 3).map((item, idx) => (
+                                <div key={idx} className="flex items-center justify-start gap-4 md:gap-5">
+                                    <div className="flex items-center justify-center w-16 h-16 md:w-18 md:h-18 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm overflow-hidden shrink-0">
+                                        <img
+                                            src={item.image}
+                                            alt={item.name}
+                                            className="w-full h-full object-cover"
+                                        />
                                     </div>
-                                    <h3 className="text-lg font-bold text-slate-900">
-                                        {feature.title}
-                                    </h3>
+                                    <p className="text-base md:text-lg font-semibold text-slate-800 text-left max-w-[11rem]">
+                                        {item.name}
+                                    </p>
                                 </div>
-                                <p className="text-slate-600 leading-relaxed">
-                                    {feature.desc}
-                                </p>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
+
+                        <div className="hidden md:block" aria-hidden="true" />
+
+                        <div className="flex flex-col gap-8 md:gap-10 md:justify-self-end md:ml-auto md:pr-28 md:translate-x-6 md:w-fit">
+                            {keyFeatureItems.slice(3).map((item, idx) => (
+                                <div key={idx} className="flex items-center justify-start gap-4 md:gap-6">
+                                    <div className="flex items-center justify-center w-16 h-16 md:w-18 md:h-18 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm overflow-hidden shrink-0">
+                                        <img
+                                            src={item.image}
+                                            alt={item.name}
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                    <p className="text-base md:text-lg font-semibold text-slate-800 text-left max-w-[11rem]">
+                                        {item.name}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
+
                 </div>
             </section>
 
