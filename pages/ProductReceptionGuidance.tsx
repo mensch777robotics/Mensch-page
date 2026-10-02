@@ -49,7 +49,7 @@ export const ProductReceptionGuidance: React.FC = () => {
                     {/* Large image placeholder - left */}
                     <div className="relative overflow-hidden rounded-2xl border-2 border-dashed border-slate-300 bg-white min-h-[600px]">
                         <img
-                            src={`${import.meta.env.BASE_URL}Full_Body.jpeg`}
+                            src={`${import.meta.env.BASE_URL}Full_body.jpeg`}
                             alt="Full body robot"
                             className="absolute inset-0 h-full w-full object-cover object-center"
                         />
