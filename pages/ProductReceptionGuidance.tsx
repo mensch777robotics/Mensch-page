@@ -28,7 +28,7 @@ export const ProductReceptionGuidance: React.FC = () => {
                 </div>
 
                 <div className="relative z-10 w-full px-4 py-10 sm:px-6 md:px-10 lg:px-16 md:absolute md:inset-x-0 md:top-0 md:h-full md:flex md:items-start md:pt-20">
-                    <div className="inline-block w-full md:w-auto max-w-none md:max-w-xl bg-white/85 md:bg-transparent backdrop-blur-none md:backdrop-blur-0 rounded-[2rem] md:rounded-none p-6 md:p-0">
+                    <div className="inline-block w-full md:w-auto max-w-none md:max-w-xl bg-white/20 backdrop-blur-2xl rounded-[2rem] border border-white/30 ring-1 ring-white/40 shadow-2xl shadow-black/10 p-6 md:p-8">
                         <div className="flex flex-col gap-4">
                             <div className="flex items-center gap-3">
                                 <span className="flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-sm text-blue-500 text-sm font-bold">

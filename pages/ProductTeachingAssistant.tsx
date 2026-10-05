@@ -4,71 +4,40 @@ import { products } from '../data/products';
 
 export const ProductTeachingAssistant: React.FC = () => {
     const product = products[1]; // Teaching Assistant Robot
+    const heroImage = `${import.meta.env.BASE_URL}Sovi Teach.jpeg`;
 
     return (
-        <div className="flex flex-col pt-24 md:pt-28">
+        <div className="flex flex-col">
             {/* Hero Section */}
-            <section className="relative w-full py-16 md:py-20 px-4 sm:px-6 md:px-10 lg:px-16 bg-gradient-to-b from-slate-50 to-white">
-                <div className="max-w-6xl mx-auto">
-                    <div className="flex flex-col md:flex-row gap-12 items-center">
-                        {/* Content */}
-                        <div className="flex-1 flex flex-col gap-6">
+            <section className="relative w-full flex flex-col md:block min-h-0 md:min-h-[calc(100vh-5rem)] overflow-hidden bg-gradient-to-b from-slate-50 to-white">
+                <div className="relative h-[48vh] w-full md:absolute md:inset-0 md:h-full overflow-hidden bg-slate-50">
+                    <img
+                        src={heroImage}
+                        alt={product.name}
+                        className="absolute inset-0 h-full w-full object-cover object-center"
+                    />
+                </div>
+
+                <div className="relative z-10 w-full px-4 py-10 sm:px-6 md:px-10 lg:px-16 md:absolute md:inset-x-0 md:top-0 md:h-full md:flex md:items-start md:pt-20">
+                    <div className="inline-block w-full md:w-auto max-w-none md:max-w-xl bg-white/20 backdrop-blur-2xl rounded-[2rem] border border-white/30 ring-1 ring-white/40 shadow-2xl shadow-black/10 p-6 md:p-8">
+                        <div className="flex flex-col gap-4">
                             <div className="flex items-center gap-3">
-                                <span className={`flex items-center justify-center w-10 h-10 rounded-full ${product.bgAccent}/10 ${product.accent} text-sm font-bold`}>
+                                <span className="flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-sm text-emerald-500 text-sm font-bold">
                                     {product.id}
                                 </span>
-                                <span className={`${product.accent} font-bold tracking-widest uppercase text-xs`}>
+                                <span className="text-emerald-500 font-bold tracking-widest uppercase text-sm">
                                     {product.category}
                                 </span>
                             </div>
-                            <h1 className="text-5xl md:text-6xl font-bold text-slate-900 tracking-tight">
+                            <h1 className="text-4xl sm:text-5xl md:text-8xl font-bold text-slate-900 tracking-tight">
                                 {product.name}
                             </h1>
-                            <p className="text-2xl text-slate-600 font-light">
+                            <p className="text-2xl sm:text-3xl md:text-4xl text-slate-700 font-light">
                                 {product.tagline}
                             </p>
-                            <p className="text-lg text-slate-600 leading-relaxed">
+                            <p className="text-base sm:text-lg md:text-2xl text-slate-600 leading-relaxed">
                                 {product.shortDescription}
                             </p>
-
-                            {/* Specs */}
-                            <div className="grid grid-cols-2 gap-6 py-6 border-y border-slate-200">
-                                {product.specs.map((spec, idx) => (
-                                    <div key={idx}>
-                                        <p className="text-xs text-slate-500 uppercase tracking-widest font-bold mb-2">
-                                            {spec.label}
-                                        </p>
-                                        <p className="text-2xl font-bold text-slate-900">
-                                            {spec.value}
-                                        </p>
-                                    </div>
-                                ))}
-                            </div>
-
-                            {/* CTA */}
-                            <div className="flex flex-wrap gap-4 pt-4">
-                                <Link 
-                                    to="/contact"
-                                    className={`flex items-center gap-2 px-8 py-3 rounded-lg ${product.bgAccent} text-white font-bold uppercase tracking-wider text-sm hover:opacity-90 transition-opacity`}
-                                >
-                                    Request Information
-                                    <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                                </Link>
-                            </div>
-                        </div>
-
-                        {/* Image */}
-                        <div className="flex-1">
-                            <div className={`relative group rounded-2xl overflow-hidden`}>
-                                <div className={`absolute -inset-1 bg-gradient-to-r ${product.gradient} rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000`}></div>
-                                <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-slate-100 border border-slate-200 shadow-lg">
-                                    <img 
-                                        alt={product.name}
-                                        className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                        src={product.image}
-                                    />
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -90,8 +59,8 @@ export const ProductTeachingAssistant: React.FC = () => {
                         {product.features.map((feature, idx) => (
                             <div key={idx} className="flex flex-col gap-4 p-6 rounded-xl border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all bg-slate-50">
                                 <div className="flex items-center gap-3">
-                                    <div className={`flex items-center justify-center w-10 h-10 rounded-lg ${product.bgAccent}/10`}>
-                                        <span className={`material-symbols-outlined ${product.accent} text-lg`}>
+                                    <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-emerald-500/10">
+                                        <span className="material-symbols-outlined text-emerald-500 text-lg">
                                             check_circle
                                         </span>
                                     </div>
