@@ -18,7 +18,7 @@ export const ProductReceptionGuidance: React.FC = () => {
     return (
         <div className="flex flex-col">
             {/* Hero Section */}
-            <section className="relative w-full flex flex-col md:block min-h-0 md:min-h-[calc(100vh-5rem)] overflow-hidden">
+            <section className="relative w-full flex flex-col md:block min-h-0 md:min-h-[calc(100vh-5rem)] overflow-hidden bg-gradient-to-b from-slate-50 to-white">
                 <div className="relative h-[48vh] w-full md:absolute md:inset-0 md:h-full overflow-hidden bg-slate-50">
                     <img
                         src={heroImage}
@@ -56,12 +56,20 @@ export const ProductReceptionGuidance: React.FC = () => {
             <section className="w-full py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-16 bg-white">
                 <div className="max-w-[90rem] mx-auto grid md:grid-cols-[1fr_1.4fr] gap-6 items-stretch">
                     {/* Large image placeholder - left */}
-                    <div className="relative overflow-hidden rounded-2xl border-2 border-dashed border-slate-300 bg-white min-h-[600px]">
+                    <div className="relative overflow-hidden rounded-2xl bg-white min-h-[600px]">
                         <img
                             src={`${import.meta.env.BASE_URL}Full_body.jpeg`}
                             alt="Full body robot"
                             className="absolute inset-0 h-full w-full object-cover object-center"
                         />
+                        <div className="absolute bottom-10 left-6 z-10 text-left drop-shadow-md">
+                            <p className="text-xl md:text-2xl font-semibold text-blue-950">
+                                Height : 5 feet
+                            </p>
+                            <p className="text-xl md:text-2xl font-semibold text-blue-950">
+                                Weight : 50 Kg
+                            </p>
+                        </div>
                     </div>
 
                     {/* 2x3 grid of highlight boxes - right */}
@@ -101,7 +109,7 @@ export const ProductReceptionGuidance: React.FC = () => {
             </section>
 
             {/* Features Section */}
-            <section id="features" className="w-full py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-16 bg-white">
+            <section id="features" className="w-full py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-16 bg-slate-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="mb-12 md:mb-16 text-center">
                         <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
@@ -174,7 +182,7 @@ export const ProductReceptionGuidance: React.FC = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="w-full py-16 md:py-20 px-4 sm:px-6 md:px-10 lg:px-16 bg-white">
+            <section className="w-full py-16 md:py-20 px-4 sm:px-6 md:px-10 lg:px-16 bg-slate-50">
                 <div className="max-w-4xl mx-auto text-center">
                     <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
                         Transform Your Reception Experience

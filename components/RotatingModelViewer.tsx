@@ -49,6 +49,11 @@ export const RotatingModelViewer: React.FC<RotatingModelViewerProps> = ({ modelU
         let animationFrame = 0;
         let resizeObserver: ResizeObserver | null = null;
         let isDragging = false;
+        let gestureLocked = false;
+        let isHorizontalGesture = false;
+        let activePointerId: number | null = null;
+        let gestureStartX = 0;
+        let gestureStartY = 0;
         let lastPointerX = 0;
 
         const fitModelToFrame = (object: THREE.Object3D) => {
@@ -118,14 +123,53 @@ export const RotatingModelViewer: React.FC<RotatingModelViewerProps> = ({ modelU
             renderer.render(scene, camera);
         };
 
+        const resetPointerState = (event: PointerEvent) => {
+            isDragging = false;
+            gestureLocked = false;
+            isHorizontalGesture = false;
+            activePointerId = null;
+
+            if (container.hasPointerCapture(event.pointerId)) {
+                container.releasePointerCapture(event.pointerId);
+            }
+        };
+
         const onPointerDown = (event: PointerEvent) => {
             isDragging = true;
+            gestureLocked = false;
+            isHorizontalGesture = false;
+            activePointerId = event.pointerId;
+            gestureStartX = event.clientX;
+            gestureStartY = event.clientY;
             lastPointerX = event.clientX;
-            container.setPointerCapture(event.pointerId);
         };
 
         const onPointerMove = (event: PointerEvent) => {
-            if (!isDragging || !modelRoot) {
+            if (!isDragging || !modelRoot || activePointerId !== event.pointerId) {
+                return;
+            }
+
+            if (!gestureLocked) {
+                const totalDeltaX = event.clientX - gestureStartX;
+                const totalDeltaY = event.clientY - gestureStartY;
+
+                if (Math.abs(totalDeltaX) < 6 && Math.abs(totalDeltaY) < 6) {
+                    return;
+                }
+
+                gestureLocked = true;
+                isHorizontalGesture = Math.abs(totalDeltaX) >= Math.abs(totalDeltaY);
+
+                if (isHorizontalGesture && !container.hasPointerCapture(event.pointerId)) {
+                    container.setPointerCapture(event.pointerId);
+                }
+
+                if (!isHorizontalGesture) {
+                    return;
+                }
+            }
+
+            if (!isHorizontalGesture) {
                 return;
             }
 
@@ -135,15 +179,17 @@ export const RotatingModelViewer: React.FC<RotatingModelViewerProps> = ({ modelU
         };
 
         const onPointerUp = (event: PointerEvent) => {
-            isDragging = false;
-            if (container.hasPointerCapture(event.pointerId)) {
-                container.releasePointerCapture(event.pointerId);
+            if (activePointerId !== null && activePointerId !== event.pointerId) {
+                return;
             }
+
+            resetPointerState(event);
         };
 
         resizeObserver = new ResizeObserver(onResize);
         resizeObserver.observe(container);
-        container.style.touchAction = 'none';
+        container.style.touchAction = 'pan-y';
+        container.style.webkitUserSelect = 'none';
         container.addEventListener('pointerdown', onPointerDown);
         container.addEventListener('pointermove', onPointerMove);
         container.addEventListener('pointerup', onPointerUp);
