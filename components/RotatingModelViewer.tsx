@@ -12,6 +12,7 @@ type RotatingModelViewerProps = {
 export const RotatingModelViewer: React.FC<RotatingModelViewerProps> = ({ modelUrl, alt, className }) => {
     const containerRef = useRef<HTMLDivElement | null>(null);
     const initialRotationY = -Math.PI / 2;
+    const framingFill = 1.12;
 
     useEffect(() => {
         const container = containerRef.current;
@@ -25,7 +26,7 @@ export const RotatingModelViewer: React.FC<RotatingModelViewerProps> = ({ modelU
         camera.position.set(0, 0.18, 3.1);
 
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setPixelRatio(1);
         renderer.outputColorSpace = THREE.SRGBColorSpace;
         renderer.setClearColor(0x000000, 0);
         container.appendChild(renderer.domElement);
@@ -50,23 +51,19 @@ export const RotatingModelViewer: React.FC<RotatingModelViewerProps> = ({ modelU
         let isDragging = false;
         let lastPointerX = 0;
 
-        const fitModelToFrame = (object: THREE.Object3D, width: number) => {
+        const fitModelToFrame = (object: THREE.Object3D) => {
             const box = new THREE.Box3().setFromObject(object);
             const center = box.getCenter(new THREE.Vector3());
             const size = box.getSize(new THREE.Vector3());
-            const isMobile = width < 640;
-            const targetFill = isMobile ? 1.0812 : width < 1024 ? 1.1628 : 1.2036;
             const cameraHeight = 2 * Math.tan(THREE.MathUtils.degToRad(camera.fov * 0.5));
-            const cameraWidth = cameraHeight * camera.aspect;
             const heightDistance = size.y / cameraHeight;
-            const widthDistance = size.x / cameraWidth;
-            const distance = Math.max(heightDistance, widthDistance) / targetFill;
+            const distance = heightDistance / framingFill;
 
             object.position.x -= center.x;
             object.position.y -= center.y;
             object.position.z -= center.z;
 
-            camera.position.set(0, isMobile ? 0.12 : 0.08, distance + Math.max(size.z, 0.15));
+            camera.position.set(0, 0.1, distance + Math.max(size.z, 0.15));
             camera.lookAt(0, 0, 0);
         };
 
@@ -78,14 +75,13 @@ export const RotatingModelViewer: React.FC<RotatingModelViewerProps> = ({ modelU
                 return;
             }
 
-            const isMobile = width < 640;
-            camera.fov = isMobile ? 34 : 30;
+            camera.fov = 30;
             camera.aspect = width / height;
             camera.updateProjectionMatrix();
             renderer.setSize(width, height, false);
 
             if (modelRoot) {
-                fitModelToFrame(modelRoot, width);
+                fitModelToFrame(modelRoot);
             }
         };
 
