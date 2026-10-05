@@ -42,7 +42,7 @@ export const products: Product[] = [
         name: "SOVI Teach",
         tagline: "Your Partner in Modern Education",
         shortDescription: "Personalized AI tutor adapting to each student's learning pace with visual explanations and progress tracking.",
-        image: "/deployments/Robi_childrens.jpeg",
+        image: "/SOVI_teach.jpeg",
         specs: [
             { label: "Focus", value: "K-12 Education" },
             { label: "Display", value: "10\" Touch Screen" }
@@ -59,11 +59,11 @@ export const products: Product[] = [
     {
         id: "03",
         slug: "research-education",
-        category: "Research & Development Platform",
-        name: "Educational & Research Robot",
+        category:         "Educational & Development Platform",
+                name: "MAX",
         tagline: "Build. Learn. Innovate.",
         shortDescription: "Modular platform for hands-on STEM and AI learning, empowering students to explore and create.",
-        image: "/MAX_Robot.png",
+        image: "/max.jpeg",
         specs: [
             { label: "OS", value: "Ubuntu/ROS2" }
         ],
