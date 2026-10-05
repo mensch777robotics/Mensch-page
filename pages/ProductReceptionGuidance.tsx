@@ -101,9 +101,9 @@ export const ProductReceptionGuidance: React.FC = () => {
             </section>
 
             {/* Features Section */}
-            <section id="features" className="w-full pt-16 pb-24 md:pt-20 md:pb-32 px-4 sm:px-6 md:px-10 lg:px-16 bg-slate-50">
-                <div className="max-w-6xl mx-auto">
-                    <div className="text-center mb-20 md:mb-24">
+            <section id="features" className="w-full py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-16 bg-white">
+                <div className="max-w-7xl mx-auto">
+                    <div className="mb-12 md:mb-16 text-center">
                         <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
                             Key Features
                         </h2>
@@ -112,47 +112,46 @@ export const ProductReceptionGuidance: React.FC = () => {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.82fr)_minmax(22rem,30rem)_minmax(0,1fr)] items-stretch gap-14 lg:gap-16">
-                        <div className="flex h-full flex-col justify-between gap-10 md:gap-12 md:justify-self-start md:pl-0 lg:py-6">
-                            {keyFeatureItems.slice(0, 3).map((item, idx) => (
-                                <div key={idx} className="flex items-center justify-start gap-4 md:gap-5">
-                                    <div className="flex items-center justify-center w-16 h-16 md:w-18 md:h-18 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm overflow-hidden shrink-0">
-                                        <img
-                                            src={item.image}
-                                            alt={item.name}
-                                            className="w-full h-full object-cover"
-                                        />
-                                    </div>
-                                    <p className="text-base md:text-lg font-semibold text-slate-800 text-left max-w-[11rem]">
-                                        {item.name}
-                                    </p>
-                                </div>
-                            ))}
-                        </div>
+                    <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(14rem,1fr)_minmax(28rem,36rem)_minmax(14rem,1fr)] lg:grid-rows-3 lg:gap-x-10 lg:gap-y-16 items-center">
+                        {keyFeatureItems.slice(0, 3).map((item, idx) => (
+                            <div
+                                key={item.name}
+                                className={`flex items-center gap-4 md:gap-5 ${idx === 0 ? 'lg:col-start-1 lg:row-start-1' : idx === 1 ? 'lg:col-start-1 lg:row-start-2' : 'lg:col-start-1 lg:row-start-3'} lg:justify-self-start`}
+                            >
+                                <img
+                                    src={item.image}
+                                    alt={item.name}
+                                    className="h-14 w-14 md:h-16 md:w-16 shrink-0 object-contain"
+                                />
+                                <p className="max-w-[12rem] text-base md:text-lg font-semibold leading-tight text-slate-800 text-left">
+                                    {item.name}
+                                </p>
+                            </div>
+                        ))}
 
-                        <div className="flex h-full min-h-[34rem] items-stretch justify-center lg:px-2">
+                        <div className="lg:col-start-2 lg:row-start-1 lg:row-span-3 flex h-full min-h-[42rem] md:min-h-[48rem] items-center justify-center overflow-visible">
                             <RotatingModelViewer
                                 modelUrl={new URL('../3D_image/tripo_pbr_model_89199f3e-ca85-43bf-949c-a77c287e132f_meshopt.glb', import.meta.url).href}
                                 alt="SOVI Greet 3D model"
+                                className="h-full w-full"
                             />
                         </div>
 
-                        <div className="flex h-full flex-col justify-between gap-10 md:gap-12 lg:justify-self-end lg:ml-auto lg:pr-0 lg:py-6">
-                            {keyFeatureItems.slice(3).map((item, idx) => (
-                                <div key={idx} className="flex items-center justify-start gap-4 md:gap-6">
-                                    <div className="flex items-center justify-center w-16 h-16 md:w-18 md:h-18 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm overflow-hidden shrink-0">
-                                        <img
-                                            src={item.image}
-                                            alt={item.name}
-                                            className="w-full h-full object-cover"
-                                        />
-                                    </div>
-                                    <p className="text-base md:text-lg font-semibold text-slate-800 text-left max-w-[11rem]">
-                                        {item.name}
-                                    </p>
-                                </div>
-                            ))}
-                        </div>
+                        {keyFeatureItems.slice(3).map((item, idx) => (
+                            <div
+                                key={item.name}
+                                className={`flex items-center gap-4 md:gap-5 ${idx === 0 ? 'lg:col-start-3 lg:row-start-1' : idx === 1 ? 'lg:col-start-3 lg:row-start-2' : 'lg:col-start-3 lg:row-start-3'} lg:justify-self-end lg:flex-row-reverse lg:text-right`}
+                            >
+                                <img
+                                    src={item.image}
+                                    alt={item.name}
+                                    className="h-14 w-14 md:h-16 md:w-16 shrink-0 object-contain"
+                                />
+                                <p className="max-w-[12rem] text-base md:text-lg font-semibold leading-tight text-slate-800 text-left lg:text-right">
+                                    {item.name}
+                                </p>
+                            </div>
+                        ))}
                     </div>
 
                 </div>

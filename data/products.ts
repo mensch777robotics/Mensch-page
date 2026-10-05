@@ -21,7 +21,7 @@ export const products: Product[] = [
         name: "SOVI Greet",
         tagline: "First Impressions, Powered by AI",
         shortDescription: "Intelligent host delivering exceptional customer experiences with autonomous navigation and personalized interactions.",
-        image: "/Robot Guide1.png",
+        image: "/Robot Guide1.jpeg",
         specs: [
             { label: "Height", value: "5 feet" },
             { label: "Battery", value: "12 Hr" }

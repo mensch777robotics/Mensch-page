@@ -6,9 +6,10 @@ import { MeshoptDecoder } from 'three/examples/jsm/libs/meshopt_decoder.module.j
 type RotatingModelViewerProps = {
     modelUrl: string;
     alt: string;
+    className?: string;
 };
 
-export const RotatingModelViewer: React.FC<RotatingModelViewerProps> = ({ modelUrl, alt }) => {
+export const RotatingModelViewer: React.FC<RotatingModelViewerProps> = ({ modelUrl, alt, className }) => {
     const containerRef = useRef<HTMLDivElement | null>(null);
     const initialRotationY = -Math.PI / 2;
 
@@ -21,7 +22,7 @@ export const RotatingModelViewer: React.FC<RotatingModelViewerProps> = ({ modelU
 
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 1000);
-        camera.position.set(0, 0.38, 3.05);
+        camera.position.set(0, 0.18, 3.1);
 
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -49,16 +50,24 @@ export const RotatingModelViewer: React.FC<RotatingModelViewerProps> = ({ modelU
         let isDragging = false;
         let lastPointerX = 0;
 
-        const fitModelToFrame = (object: THREE.Object3D) => {
+        const fitModelToFrame = (object: THREE.Object3D, width: number) => {
             const box = new THREE.Box3().setFromObject(object);
             const center = box.getCenter(new THREE.Vector3());
             const size = box.getSize(new THREE.Vector3());
+            const isMobile = width < 640;
+            const targetFill = isMobile ? 1.0812 : width < 1024 ? 1.1628 : 1.2036;
+            const cameraHeight = 2 * Math.tan(THREE.MathUtils.degToRad(camera.fov * 0.5));
+            const cameraWidth = cameraHeight * camera.aspect;
+            const heightDistance = size.y / cameraHeight;
+            const widthDistance = size.x / cameraWidth;
+            const distance = Math.max(heightDistance, widthDistance) / targetFill;
 
             object.position.x -= center.x;
             object.position.y -= center.y;
             object.position.z -= center.z;
-            object.position.y += size.y * 0.17;
-            object.scale.multiplyScalar(1.45);
+
+            camera.position.set(0, isMobile ? 0.12 : 0.08, distance + Math.max(size.z, 0.15));
+            camera.lookAt(0, 0, 0);
         };
 
         const onResize = () => {
@@ -69,19 +78,24 @@ export const RotatingModelViewer: React.FC<RotatingModelViewerProps> = ({ modelU
                 return;
             }
 
+            const isMobile = width < 640;
+            camera.fov = isMobile ? 34 : 30;
             camera.aspect = width / height;
             camera.updateProjectionMatrix();
             renderer.setSize(width, height, false);
+
+            if (modelRoot) {
+                fitModelToFrame(modelRoot, width);
+            }
         };
 
         const loader = new GLTFLoader();
         loader.setMeshoptDecoder(MeshoptDecoder);
         loader.load(
             modelUrl,
-            (gltf) => {
+            (gltf: { scene: THREE.Group }) => {
                 modelRoot = gltf.scene;
                 modelRoot.rotation.y = initialRotationY;
-                fitModelToFrame(modelRoot);
                 scene.add(modelRoot);
                 onResize();
             },
@@ -102,7 +116,7 @@ export const RotatingModelViewer: React.FC<RotatingModelViewerProps> = ({ modelU
             animationFrame = window.requestAnimationFrame(animate);
 
             if (modelRoot) {
-                modelRoot.rotation.y += 0.014;
+                modelRoot.rotation.y += 0.009;
             }
 
             renderer.render(scene, camera);
@@ -150,12 +164,12 @@ export const RotatingModelViewer: React.FC<RotatingModelViewerProps> = ({ modelU
             container.removeEventListener('pointercancel', onPointerUp);
             renderer.dispose();
 
-            scene.traverse((child) => {
+            scene.traverse((child: THREE.Object3D) => {
                 if (child instanceof THREE.Mesh) {
                     child.geometry.dispose();
 
                     if (Array.isArray(child.material)) {
-                        child.material.forEach((material) => material.dispose());
+                        child.material.forEach((material: THREE.Material) => material.dispose());
                     } else {
                         child.material.dispose();
                     }
@@ -168,15 +182,9 @@ export const RotatingModelViewer: React.FC<RotatingModelViewerProps> = ({ modelU
         };
     }, [modelUrl]);
 
-    const rotate = (direction: number) => {
-        targetRotationY.current += direction * rotationStepY;
-    };
-
     return (
-        <div className="flex h-full w-full flex-col items-center gap-3">
-            <div className="relative h-full min-h-[22rem] w-full overflow-hidden md:min-h-[28rem]">
-                <div ref={containerRef} className="absolute inset-0" aria-label={alt} role="img" />
-            </div>
+        <div className={className ?? 'h-full w-full'}>
+            <div ref={containerRef} className="h-full w-full" aria-label={alt} role="img" />
         </div>
     );
 };
