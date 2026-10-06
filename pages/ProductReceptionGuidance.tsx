@@ -38,12 +38,7 @@ export const ProductReceptionGuidance: React.FC = () => {
                             <h1 className="text-4xl sm:text-5xl md:text-8xl font-bold text-slate-900 tracking-tight">
                                 {product.name}
                             </h1>
-                            {product.subtitle && (
-                                <p className="text-3xl sm:text-4xl md:text-5xl                                 text-slate-900 font-light mb-2">
-                                    {product.subtitle}
-                                </p>
-                            )}
-                                                            <p className="text-3xl sm:text-4xl md:text-5xl text-slate-700 font-light">
+                            <p className="text-3xl sm:text-4xl md:text-5xl text-slate-700 font-light">
                                 {product.tagline}
                             </p>
                             <p className="text-base sm:text-lg md:text-2xl text-slate-600 leading-relaxed">

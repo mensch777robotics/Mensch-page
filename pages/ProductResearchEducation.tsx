@@ -38,11 +38,6 @@ export const ProductResearchEducation: React.FC = () => {
                             <h1 className="text-4xl sm:text-5xl md:text-8xl font-bold text-slate-900 md:text-white tracking-tight">
                                 {product.name}
                             </h1>
-                            {product.subtitle && (
-                                <p className="text-2xl sm:text-3xl md:text-4xl text-slate-900 md:text-white font-light">
-                                    {product.subtitle}
-                                </p>
-                            )}
                             <p className="text-2xl sm:text-3xl md:text-4xl text-slate-700 md:text-white font-light">
                                 {product.tagline}
                             </p>

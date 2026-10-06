@@ -48,11 +48,11 @@ export const Fleet: React.FC = () => {
                                         <h3 className="text-3xl md:text-4xl font-bold text-slate-900 group-hover:text-primary transition-colors mb-2 line-clamp-2">
                                             {product.name}
                                         </h3>
-                                        {product.subtitle && (
-                                            <p className="text-slate-900 text-base                                             font-light mb-2">
-                                                {product.subtitle}
-                                            </p>
-                                        )}
+                                                                                    {product.subtitle && (
+                                                                                        <p className="text-slate-900 text-base font-light mb-2">
+                                                                                            {product.subtitle}
+                                                                                        </p>
+                                                                                    )}
                                                                                     <p className="text-slate-600 text-base font-light">
                                             {product.tagline}
                                         </p>

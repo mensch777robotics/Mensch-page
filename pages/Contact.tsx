@@ -70,29 +70,30 @@ export const Contact: React.FC = () => {
                     </div>
 
                     {/* Right Column: Form */}
-                    <div className="w-full bg-[#0f0f0f] border border-white/10 rounded-[32px] p-6 md:p-10 shadow-xl">
-                        <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div className="w-full flex flex-col gap-6 lg:self-start lg:-mt-24">
+                    <div className="w-full bg-[#0f0f0f] border border-white/10 rounded-2xl p-5 md:p-6 shadow-xl">
+                        <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="flex flex-col gap-2">
                                     <label className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">First Name</label>
-                                    <input className="w-full bg-black border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" type="text" name="firstName" required />
+                                    <input className="w-full bg-black border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" type="text" name="firstName" required />
                                 </div>
                                 <div className="flex flex-col gap-2">
                                     <label className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Last Name</label>
-                                    <input className="w-full bg-black border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" type="text" name="lastName" required />
+                                    <input className="w-full bg-black border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" type="text" name="lastName" required />
                                 </div>
                             </div>
                             <div className="flex flex-col gap-2">
                                 <label className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Email</label>
-                                <input className="w-full bg-black border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" type="email" name="email" required />
+                                <input className="w-full bg-black border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" type="email" name="email" required />
                             </div>
                             <div className="flex flex-col gap-2">
                                 <label className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Message</label>
-                                <textarea className="w-full bg-black border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none" rows={4} name="message" required></textarea>
+                                <textarea className="w-full bg-black border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none" rows={3} name="message" required></textarea>
                             </div>
                             <button 
                                 disabled={status === 'submitting'}
-                                className="mt-4 w-full bg-white hover:bg-slate-200 text-black font-bold text-sm tracking-[0.05em] uppercase rounded-xl py-4 flex items-center justify-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="mt-2 w-full bg-white hover:bg-slate-200 text-black font-bold text-sm tracking-[0.05em] uppercase rounded-lg py-3 flex items-center justify-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                                 {status === 'submitting' ? 'Sending...' : 'Send Message'}
                                 <span className="material-symbols-outlined text-[18px]">send</span>
@@ -105,8 +106,19 @@ export const Contact: React.FC = () => {
                             )}
                         </form>
                     </div>
+                    <div className="w-full h-[320px] rounded-2xl overflow-hidden border border-white/10">
+                        <iframe
+                            title="Mensch Robotics Location"
+                            src={`https://www.google.com/maps?q=${encodeURIComponent('Mensch Robotics ' + COMPANY_OFFICE)}&output=embed`}
+                            className="block w-full h-full border-0"
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                        ></iframe>
+                    </div>
+                </div>
                 </div>
             </main>
+
         </div>
     );
 };
