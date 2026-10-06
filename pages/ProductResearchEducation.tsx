@@ -1,9 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { RotatingModelViewer } from '../components/RotatingModelViewer';
 import { products } from '../data/products';
 
 export const ProductResearchEducation: React.FC = () => {
     const product = products[2]; // Educational & Research Robot
+    const keyFeatureItems = [
+        { name: 'Intelligent Conversational AI', image: `${import.meta.env.BASE_URL}Conversational AI.jpg` },
+        { name: 'Personalized Face Recognition', image: `${import.meta.env.BASE_URL}Face Recognition.jpg` },
+        { name: 'Multi User Secured Cloud Backend', image: `${import.meta.env.BASE_URL}Multi-User.jpg` },
+        { name: 'Adaptive Learning Modes', image: `${import.meta.env.BASE_URL}Adaptive Learning Mode.jpg` },
+        { name: 'Multilingual Voice & Wake Word', image: `${import.meta.env.BASE_URL}Multilang.jpg` },
+        { name: 'Real Time Knowleadge Access', image: `${import.meta.env.BASE_URL}Knowledge_sync.jpg` },
+    ];
+
+
     const heroImage = `${import.meta.env.BASE_URL}Educational & Research Robot.jpeg`;
 
     return (
@@ -14,7 +25,7 @@ export const ProductResearchEducation: React.FC = () => {
                     <img
                         src={heroImage}
                         alt={product.name}
-                        className="absolute inset-0 h-full w-full object-cover object-center"
+                        className="absolute inset-0 h-full w-full object-cover object-right md:object-center"
                     />
                 </div>
 
@@ -29,13 +40,13 @@ export const ProductResearchEducation: React.FC = () => {
                                     {product.category}
                                 </span>
                             </div>
-                            <h1 className="text-4xl sm:text-5xl md:text-8xl font-bold text-white tracking-tight">
+                            <h1 className="text-4xl sm:text-5xl md:text-8xl font-bold text-slate-900 md:text-white tracking-tight">
                                 {product.name}
                             </h1>
-                            <p className="text-2xl sm:text-3xl md:text-4xl text-white font-light">
+                            <p className="text-2xl sm:text-3xl md:text-4xl text-slate-700 md:text-white font-light">
                                 {product.tagline}
                             </p>
-                            <p className="text-base sm:text-lg md:text-2xl text-white/90 leading-relaxed max-w-3xl">
+                            <p className="text-base sm:text-lg md:text-2xl text-slate-600 md:text-white/90 leading-relaxed max-w-3xl">
                                 {product.shortDescription}
                             </p>
                         </div>
@@ -44,33 +55,88 @@ export const ProductResearchEducation: React.FC = () => {
             </section>
 
             {/* Features Section */}
-            <section id="features" className="w-full py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-16 bg-white">
-                <div className="max-w-6xl mx-auto">
-                    <div className="text-center mb-16">
+            <section id="features" className="w-full py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-16 bg-slate-50">
+                <div className="max-w-7xl mx-auto">
+                    <div className="mb-12 md:mb-16 text-center">
                         <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
                             Key Features
                         </h2>
-                        <p className="text-lg text-slate-600">
-                            Empower students to learn through hands-on innovation
+                        <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
+                            Designed to enhance learning outcomes and support educators
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {product.features.map((feature, idx) => (
-                            <div key={idx} className="flex flex-col gap-4 p-6 rounded-xl border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all bg-slate-50">
-                                <div className="flex items-center gap-3">
-                                    <div className={`flex items-center justify-center w-10 h-10 rounded-lg ${product.bgAccent}/10`}>
-                                        <span className={`material-symbols-outlined ${product.accent} text-lg`}>
-                                            check_circle
-                                        </span>
-                                    </div>
-                                    <h3 className="text-lg font-bold text-slate-900">
-                                        {feature.title}
-                                    </h3>
-                                </div>
-                                <p className="text-slate-600 leading-relaxed">
-                                    {feature.desc}
+                    <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(14rem,1fr)_minmax(28rem,36rem)_minmax(14rem,1fr)] lg:grid-rows-3 lg:gap-x-10 lg:gap-y-16 items-center">
+                        {keyFeatureItems.slice(0, 3).map((item, idx) => (
+                            <div
+                                key={item.name}
+                                className={`flex items-center gap-4 md:gap-5 ${idx === 0 ? 'lg:col-start-1 lg:row-start-1' : idx === 1 ? 'lg:col-start-1 lg:row-start-2' : 'lg:col-start-1 lg:row-start-3'} lg:justify-self-start`}
+                            >
+                                <img
+                                    src={item.image}
+                                    alt={item.name}
+                                    className="h-14 w-14 md:h-16 md:w-16 shrink-0 object-contain"
+                                />
+                                <p className="max-w-[12rem] text-base md:text-lg font-semibold leading-tight text-slate-800 text-left">
+                                    {item.name}
                                 </p>
+                            </div>
+                        ))}
+
+                        <div className="lg:col-start-2 lg:row-start-1 lg:row-span-3 flex h-full min-h-[42rem] md:min-h-[48rem] items-center justify-center overflow-visible">
+                            <RotatingModelViewer
+                                modelUrl={new URL('../3D_image/humanoid+robot+3d+model_Low_poly.glb', import.meta.url).href}
+                                alt="SOVI Teach 3D model"
+                                className="h-full w-full"
+                            />
+                        </div>
+
+                        {keyFeatureItems.slice(3).map((item, idx) => (
+                            <div
+                                key={item.name}
+                                className={`flex items-center gap-4 md:gap-5 ${idx === 0 ? 'lg:col-start-3 lg:row-start-1' : idx === 1 ? 'lg:col-start-3 lg:row-start-2' : 'lg:col-start-3 lg:row-start-3'} lg:justify-self-end lg:flex-row-reverse lg:text-right`}
+                            >
+                                <img
+                                    src={item.image}
+                                    alt={item.name}
+                                    className="h-14 w-14 md:h-16 md:w-16 shrink-0 object-contain"
+                                />
+                                <p className="max-w-[12rem] text-base md:text-lg font-semibold leading-tight text-slate-800 text-left lg:text-right">
+                                    {item.name}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Robot Parts Section */}
+            <section className="w-full py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-16 bg-white">
+                <div className="max-w-[90rem] mx-auto grid md:grid-cols-[1fr_1.4fr] gap-6 items-stretch">
+                    <div className="relative overflow-hidden rounded-2xl bg-white min-h-[600px]">
+                        <img
+                            src={`${import.meta.env.BASE_URL}MAX_fullbody.jpeg`}
+                            alt="MAX full body"
+                            className="absolute inset-0 h-full w-full object-cover object-center"
+                        />
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        {[
+                            { title: 'Arm', image: `${import.meta.env.BASE_URL}MAX_arm.jpeg` },
+                            { title: 'Base', image: `${import.meta.env.BASE_URL}MAX_Base.jpeg` },
+                            { title: 'Display', image: `${import.meta.env.BASE_URL}MAX_Display.jpeg` },
+                            { title: 'Voice', image: `${import.meta.env.BASE_URL}MAX_voice.jpeg` },
+                        ].map((part) => (
+                            <div
+                                key={part.title}
+                                className="relative rounded-xl bg-white min-h-[250px] overflow-hidden"
+                            >
+                                <img
+                                    src={part.image}
+                                    alt={part.title}
+                                    className="absolute inset-0 h-full w-full object-cover"
+                                />
                             </div>
                         ))}
                     </div>

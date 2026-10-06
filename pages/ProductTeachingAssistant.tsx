@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 import { RotatingModelViewer } from '../components/RotatingModelViewer';
 import { products } from '../data/products';
@@ -23,7 +23,7 @@ export const ProductTeachingAssistant: React.FC = () => {
                     <img
                         src={heroImage}
                         alt={product.name}
-                        className="absolute inset-0 h-full w-full object-cover object-center"
+                        className="absolute inset-0 h-full w-full object-cover object-[78%_center] md:object-center"
                     />
                 </div>
 
