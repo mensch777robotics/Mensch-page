@@ -6,12 +6,10 @@ import { products } from '../data/products';
 export const ProductResearchEducation: React.FC = () => {
     const product = products[2]; // Educational & Research Robot
     const keyFeatureItems = [
-        { name: 'Intelligent Conversational AI', image: `${import.meta.env.BASE_URL}Conversational AI.jpg` },
-        { name: 'Personalized Face Recognition', image: `${import.meta.env.BASE_URL}Face Recognition.jpg` },
-        { name: 'Multi User Secured Cloud Backend', image: `${import.meta.env.BASE_URL}Multi-User.jpg` },
-        { name: 'Adaptive Learning Modes', image: `${import.meta.env.BASE_URL}Adaptive Learning Mode.jpg` },
-        { name: 'Multilingual Voice & Wake Word', image: `${import.meta.env.BASE_URL}Multilang.jpg` },
-        { name: 'Real Time Knowleadge Access', image: `${import.meta.env.BASE_URL}Knowledge_sync.jpg` },
+        { name: 'Modular Design', image: `${import.meta.env.BASE_URL}Modular%20Design.jpg` },
+        { name: 'STEM & AI Focus', image: `${import.meta.env.BASE_URL}STEM_AI.jpg` },
+        { name: 'Multiple Variants', image: `${import.meta.env.BASE_URL}max_multiple.jpg` },
+        { name: 'Research Platform', image: `${import.meta.env.BASE_URL}Research%20Platform.jpg` },
     ];
 
 
@@ -67,10 +65,11 @@ export const ProductResearchEducation: React.FC = () => {
                     </div>
 
                     <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(14rem,1fr)_minmax(28rem,36rem)_minmax(14rem,1fr)] lg:grid-rows-3 lg:gap-x-10 lg:gap-y-16 items-center">
-                        {keyFeatureItems.slice(0, 3).map((item, idx) => (
+                        <div className="lg:col-start-1 lg:row-start-1 lg:row-span-3 flex flex-col justify-center gap-10 lg:gap-32">
+{keyFeatureItems.slice(0, 2).map((item) => (
                             <div
                                 key={item.name}
-                                className={`flex items-center gap-4 md:gap-5 ${idx === 0 ? 'lg:col-start-1 lg:row-start-1' : idx === 1 ? 'lg:col-start-1 lg:row-start-2' : 'lg:col-start-1 lg:row-start-3'} lg:justify-self-start`}
+                                className={`flex items-center gap-4 md:gap-5 lg:self-start`}
                             >
                                 <img
                                     src={item.image}
@@ -82,6 +81,7 @@ export const ProductResearchEducation: React.FC = () => {
                                 </p>
                             </div>
                         ))}
+</div>
 
                         <div className="lg:col-start-2 lg:row-start-1 lg:row-span-3 flex h-full min-h-[42rem] md:min-h-[48rem] items-center justify-center overflow-visible">
                             <RotatingModelViewer
@@ -91,10 +91,11 @@ export const ProductResearchEducation: React.FC = () => {
                             />
                         </div>
 
-                        {keyFeatureItems.slice(3).map((item, idx) => (
+                        <div className="lg:col-start-3 lg:row-start-1 lg:row-span-3 flex flex-col justify-center gap-10 lg:gap-32">
+{keyFeatureItems.slice(2).map((item) => (
                             <div
                                 key={item.name}
-                                className={`flex items-center gap-4 md:gap-5 ${idx === 0 ? 'lg:col-start-3 lg:row-start-1' : idx === 1 ? 'lg:col-start-3 lg:row-start-2' : 'lg:col-start-3 lg:row-start-3'} lg:justify-self-end lg:flex-row-reverse lg:text-right`}
+                                className={`flex items-center gap-4 md:gap-5 lg:self-end lg:flex-row-reverse lg:text-right`}
                             >
                                 <img
                                     src={item.image}
@@ -106,6 +107,7 @@ export const ProductResearchEducation: React.FC = () => {
                                 </p>
                             </div>
                         ))}
+</div>
                     </div>
                 </div>
             </section>
@@ -115,7 +117,7 @@ export const ProductResearchEducation: React.FC = () => {
                 <div className="max-w-[90rem] mx-auto grid md:grid-cols-[1fr_1.4fr] gap-6 items-stretch">
                     <div className="relative overflow-hidden rounded-2xl bg-white min-h-[600px]">
                         <img
-                            src={`${import.meta.env.BASE_URL}MAX_fullbody.jpeg`}
+                            src={`${import.meta.env.BASE_URL}MAX_body.jpeg`}
                             alt="MAX full body"
                             className="absolute inset-0 h-full w-full object-cover object-center"
                         />
