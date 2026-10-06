@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { RotatingModelViewer } from '../components/RotatingModelViewer';
 import { products } from '../data/products';
@@ -224,11 +224,11 @@ export const ProductTeachingAssistant: React.FC = () => {
                                 to={`/products/${relatedProduct.slug}`}
                                 className="group flex flex-col rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all bg-white"
                             >
-                                <div className="relative h-56 overflow-hidden bg-slate-100">
+                                <div className="relative overflow-hidden bg-slate-100">
                                     <img 
                                         src={relatedProduct.image}
                                         alt={relatedProduct.name}
-                                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                                        className="w-full h-80 object-cover object-top block"
                                     />
                                 </div>
                                 <div className="flex-1 flex flex-col gap-3 p-6">

@@ -60,7 +60,7 @@ export const ProductResearchEducation: React.FC = () => {
                             Key Features
                         </h2>
                         <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
-                            Designed to enhance learning outcomes and support educators
+                            Modular platform for hands-on STEM and AI learning, empowering students to explore and create.
                         </p>
                     </div>
 
@@ -268,11 +268,11 @@ export const ProductResearchEducation: React.FC = () => {
                                 to={`/products/${relatedProduct.slug}`}
                                 className="group flex flex-col rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all bg-slate-50"
                             >
-                                <div className="relative h-56 overflow-hidden bg-slate-100">
+                                <div className="relative overflow-hidden bg-slate-100">
                                     <img 
                                         src={relatedProduct.image}
                                         alt={relatedProduct.name}
-                                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                                        className="w-full h-80 object-cover object-top block"
                                     />
                                 </div>
                                 <div className="flex-1 flex flex-col gap-3 p-6">
