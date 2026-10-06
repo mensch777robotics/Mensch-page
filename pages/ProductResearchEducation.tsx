@@ -31,16 +31,18 @@ export const ProductResearchEducation: React.FC = () => {
                     <div className="inline-block w-full md:w-auto max-w-none md:max-w-3xl lg:max-w-4xl bg-white/20 backdrop-blur-2xl rounded-[2rem] border border-white/30 ring-1 ring-white/40 shadow-2xl shadow-black/10 p-6 md:p-10">
                         <div className="flex flex-col gap-5 md:gap-6">
                             <div className="flex items-center gap-3">
-                                <span className={`flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-sm ${product.accent} text-sm font-bold`}>
-                                    {product.id}
-                                </span>
-                                <span className={`${product.accent} font-bold tracking-widest uppercase text-sm`}>
+                                <span className={`${product.accent} font-bold tracking-widest uppercase text-base md:text-lg`}>
                                     {product.category}
                                 </span>
                             </div>
                             <h1 className="text-4xl sm:text-5xl md:text-8xl font-bold text-slate-900 md:text-white tracking-tight">
                                 {product.name}
                             </h1>
+                            {product.subtitle && (
+                                <p className="text-2xl sm:text-3xl md:text-4xl text-slate-900 md:text-white font-light">
+                                    {product.subtitle}
+                                </p>
+                            )}
                             <p className="text-2xl sm:text-3xl md:text-4xl text-slate-700 md:text-white font-light">
                                 {product.tagline}
                             </p>
@@ -86,7 +88,7 @@ export const ProductResearchEducation: React.FC = () => {
                         <div className="lg:col-start-2 lg:row-start-1 lg:row-span-3 flex h-full min-h-[42rem] md:min-h-[48rem] items-center justify-center overflow-visible">
                             <RotatingModelViewer
                                 modelUrl={new URL('../3D_image/humanoid+robot+3d+model_Low_poly.glb', import.meta.url).href}
-                                alt="SOVI Teach 3D model"
+                                alt="SOVI-Teach 3D model"
                                 className="h-full w-full"
                             />
                         </div>

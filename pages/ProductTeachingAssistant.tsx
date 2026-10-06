@@ -31,17 +31,19 @@ export const ProductTeachingAssistant: React.FC = () => {
                     <div className="inline-block w-full md:w-auto max-w-none md:max-w-xl bg-white/20 backdrop-blur-2xl rounded-[2rem] border border-white/30 ring-1 ring-white/40 shadow-2xl shadow-black/10 p-6 md:p-8">
                         <div className="flex flex-col gap-4">
                             <div className="flex items-center gap-3">
-                                <span className="flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-sm text-emerald-500 text-sm font-bold">
-                                    {product.id}
-                                </span>
-                                <span className="text-emerald-500 font-bold tracking-widest uppercase text-sm">
+                                <span className="text-emerald-500 font-bold tracking-widest uppercase text-base md:text-lg">
                                     {product.category}
                                 </span>
                             </div>
                             <h1 className="text-4xl sm:text-5xl md:text-8xl font-bold text-slate-900 tracking-tight">
                                 {product.name}
                             </h1>
-                            <p className="text-2xl sm:text-3xl md:text-4xl text-slate-700 font-light">
+                            {product.subtitle && (
+                                <p className="text-3xl sm:text-4xl md:text-5xl text-slate-900 font-light mb-2">
+                                    {product.subtitle}
+                                </p>
+                            )}
+                            <p className="text-3xl sm:text-4xl md:text-5xl text-slate-700 font-light">
                                 {product.tagline}
                             </p>
                             <p className="text-base sm:text-lg md:text-2xl text-slate-600 leading-relaxed">
@@ -84,7 +86,7 @@ export const ProductTeachingAssistant: React.FC = () => {
                         <div className="lg:col-start-2 lg:row-start-1 lg:row-span-3 flex h-full min-h-[42rem] md:min-h-[48rem] items-center justify-center overflow-visible">
                             <RotatingModelViewer
                                 modelUrl={new URL('../3D_image/tripo_pbr_model_89199f3e-ca85-43bf-949c-a77c287e132f_meshopt.glb', import.meta.url).href}
-                                alt="SOVI Teach 3D model"
+                                alt="SOVI-Teach 3D model"
                                 className="h-full w-full"
                             />
                         </div>

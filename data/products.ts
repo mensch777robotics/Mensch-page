@@ -3,6 +3,7 @@ export interface Product {
     slug: string;
     category: string;
     name: string;
+    subtitle?: string;
     tagline: string;
     shortDescription: string;
     image: string;
@@ -18,7 +19,8 @@ export const products: Product[] = [
         id: "01",
         slug: "reception-guidance",
         category: "Reception Robot",
-        name: "SOVI Greet",
+        name: "SOVI-Greet",
+        subtitle: "For Office, Banks, Hotels.",
         tagline: "First Impressions, Powered by AI",
         shortDescription: "Intelligent host delivering exceptional customer experiences with autonomous navigation and personalized interactions.",
         image: "/Robot Guide1.jpeg",
@@ -39,7 +41,8 @@ export const products: Product[] = [
         id: "02",
         slug: "teaching-assistant",
         category: "Teaching Robot",
-        name: "SOVI Teach",
+        name: "SOVI-Teach",
+        subtitle: "For Schools & Colleges.",
         tagline: "Your Partner in Modern Education",
         shortDescription: "Personalized AI tutor adapting to each student's learning pace with visual explanations and progress tracking.",
         image: "/SOVI_teach.jpeg",
@@ -61,6 +64,7 @@ export const products: Product[] = [
         slug: "research-education",
         category:         "Educational & Development Platform",
                 name: "MAX",
+        subtitle: "For Colleges and Higher Education Institutions.",
         tagline: "Build. Learn. Innovate.",
         shortDescription: "Modular platform for hands-on STEM and AI learning, empowering students to explore and create.",
         image: "/max.jpeg",
