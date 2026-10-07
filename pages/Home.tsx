@@ -18,16 +18,17 @@ const whyMenschReasons = [
 ];
 
 const placesOfApplication = [
-    { title: 'Administrative Assistant', location: 'Office', image: `${import.meta.env.BASE_URL}Administrative Assistant.jpeg` },
-    { title: 'Medical Assistant', location: 'Clinics', image: `${import.meta.env.BASE_URL}Medical Assistant.jpeg` },
-    { title: 'Consultant', location: 'Banks', image: `${import.meta.env.BASE_URL}Consultent Bank.jpeg` },
-    { title: 'Tour Guide', location: 'Museums', image: `${import.meta.env.BASE_URL}Tour Guide.jpeg` },
-    { title: 'Educational Platform', location: 'Colleges and schools', image: `${import.meta.env.BASE_URL}Educational Platform.jpeg` },
-    { title: 'Public Support', location: 'Airport Assistance', image: `${import.meta.env.BASE_URL}Airport Assistance.jpeg` },
+    { title: 'Administrative Assistant', location: 'Office', image: `${import.meta.env.BASE_URL}Administrative Assistant.jpeg`, route: '/products/reception-guidance' },
+    { title: 'Medical Assistant', location: 'Clinics', image: `${import.meta.env.BASE_URL}Medical Assistant.jpeg`, route: '/products/reception-guidance' },
+    { title: 'Consultant', location: 'Banks', image: `${import.meta.env.BASE_URL}Consultent Bank.jpeg`, route: '/products/reception-guidance' },
+    { title: 'Tour Guide', location: 'Museums', image: `${import.meta.env.BASE_URL}Tour Guide.jpeg`, route: '/products/reception-guidance' },
+    { title: 'Educational Platform', location: 'Colleges and schools', image: `${import.meta.env.BASE_URL}Educational Platform.jpeg`, route: '/products/teaching-assistant' },
+    { title: 'Public Support', location: 'Airport Assistance', image: `${import.meta.env.BASE_URL}Airport Assistance.jpeg`, route: '/products/reception-guidance' },
 ];
 
 export const Home: React.FC = () => {
     const [isLoaded, setIsLoaded] = useState(false);
+    const [isDeploymentsPaused, setIsDeploymentsPaused] = useState(false);
     const heroSrc = `${import.meta.env.BASE_URL}Reception_Hero.png`;
     return (
         <div className="flex flex-col items-center">
@@ -75,30 +76,33 @@ export const Home: React.FC = () => {
                         </h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                             {placesOfApplication.map((place) => (
-                                <div
+                                <Link
                                     key={place.title}
-                                    className="relative flex min-h-[320px] flex-col items-center justify-end overflow-hidden text-left bg-white border border-primary/30 rounded-xl hover:border-primary/60 hover:shadow-md transition-all duration-300"
+                                    to={place.route}
+                                    aria-label={`Learn more about ${place.title}`}
+                                    className="group relative flex min-h-[320px] flex-col items-center justify-end overflow-hidden text-left bg-white border border-slate-200 rounded-2xl hover:border-primary/60 hover:shadow-xl transition-all duration-300"
                                 >
                                     {place.image && (
                                         <img
                                             src={place.image}
                                             alt={place.title}
-                                            className="absolute inset-0 h-full w-full object-cover object-center"
+                                            className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
                                         />
                                     )}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                     <div
                                         className={`relative z-10 flex flex-col gap-2 w-full p-6 text-left ${
                                             place.image ? 'bg-gradient-to-t from-black/80 via-black/40 to-transparent pt-16' : 'flex-1 justify-center'
                                         }`}
                                     >
-                                        <h3 className={`text-xl font-bold leading-snug ${place.image ? 'text-white' : 'text-slate-900'}`}>
+                                        <h3 className={`text-xl font-bold leading-snug group-hover:text-primary transition-colors ${place.image ? 'text-white' : 'text-slate-900'}`}>
                                             {place.title}
                                         </h3>
                                         <p className={`text-base leading-relaxed ${place.image ? 'text-slate-200' : 'text-slate-600'}`}>
                                             Location: {place.location}
                                         </p>
                                     </div>
-                                </div>
+                                </Link>
                             ))}
                         </div>
                     </div>
@@ -122,13 +126,24 @@ export const Home: React.FC = () => {
                         .marquee {
                             animation: scroll 40s linear infinite;
                         }
-                        .marquee:hover {
-                            animation-play-state: paused;
-                        }
                     `}</style>
                     
                     <div className="w-full overflow-hidden">
-                        <div className="marquee flex gap-6 w-fit">
+                        <div
+                            className="marquee flex gap-6 w-fit"
+                            style={{ animationPlayState: isDeploymentsPaused ? 'paused' : 'running' }}
+                            onClick={() => setIsDeploymentsPaused((paused) => !paused)}
+                            onKeyDown={(event) => {
+                                if (event.key === 'Enter' || event.key === ' ') {
+                                    event.preventDefault();
+                                    setIsDeploymentsPaused((paused) => !paused);
+                                }
+                            }}
+                            role="button"
+                            tabIndex={0}
+                            aria-label={isDeploymentsPaused ? 'Resume robotics deployments' : 'Pause robotics deployments'}
+                            aria-pressed={isDeploymentsPaused}
+                        >
                             {[
                                 {
                                     img: `${import.meta.env.BASE_URL}deployments/Team at TN Global summit.jpg`,
@@ -160,7 +175,7 @@ export const Home: React.FC = () => {
                                     subtitle: 'OMR, Chennai, Tamilnadu'
                                 }
                             ].map((deployment, idx) => (
-                                <div key={idx} className="relative flex-shrink-0 h-[300px] md:h-[380px] rounded-[1rem] overflow-hidden border border-white/10 min-w-[420px] md:min-w-[540px]">
+                                <div key={idx} className="relative flex-shrink-0 h-[300px] md:h-[380px] rounded-[1rem] overflow-hidden min-w-[380px] md:min-w-[500px]">
                                     <img 
                                         src={deployment.img}
                                         alt={deployment.alt}
@@ -205,7 +220,7 @@ export const Home: React.FC = () => {
                                     subtitle: 'OMR, Chennai, Tamilnadu'
                                 }
                             ].map((deployment, idx) => (
-                                <div key={`dup-${idx}`} className="relative flex-shrink-0 h-[300px] md:h-[380px] rounded-[1rem] overflow-hidden border border-white/10 min-w-[420px] md:min-w-[540px]">
+                                <div key={`dup-${idx}`} className="relative flex-shrink-0 h-[300px] md:h-[380px] rounded-[1rem] overflow-hidden min-w-[380px] md:min-w-[500px]">
                                     <img 
                                         src={deployment.img}
                                         alt={deployment.alt}
