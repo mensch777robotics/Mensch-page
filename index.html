@@ -74,6 +74,87 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
         }
+        .btn-brochure {
+            position: fixed;
+            right: 16px;
+            bottom: 16px;
+            z-index: 999;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            overflow: hidden;
+            border-radius: 10px;
+            padding: 10px 16px;
+            background: linear-gradient(90deg, #1E5BFF, #8B3DFF, #FF5E7E);
+            background-size: 200% 100%;
+            box-shadow: 0 8px 22px rgba(30, 91, 255, 0.35);
+            color: #ffffff;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background-position 0.5s ease, box-shadow 0.2s ease;
+            animation: brochure-gradient-idle 2.4s ease-in-out infinite;
+        }
+        .btn-brochure::after {
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 30%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.4);
+            content: "";
+            transform: skewX(-25deg);
+            pointer-events: none;
+            animation: brochure-shine-idle 2.4s ease-in-out infinite;
+        }
+        .btn-brochure:hover,
+        .btn-brochure:focus-visible,
+        .btn-brochure:active {
+            background-position: 100% 0;
+            animation: none;
+        }
+        .btn-brochure:hover::after,
+        .btn-brochure:focus-visible::after,
+        .btn-brochure:active::after {
+            left: 130%;
+            transition: left 0.6s ease;
+            animation: none;
+        }
+        @keyframes brochure-gradient-idle {
+            0%, 100% {
+                background-position: 0% 0;
+            }
+            50% {
+                background-position: 100% 0;
+            }
+        }
+        @keyframes brochure-shine-idle {
+            0%, 35% {
+                left: -60%;
+            }
+            65%, 100% {
+                left: 130%;
+            }
+        }
+        .btn-brochure:focus-visible {
+            outline: 3px solid rgba(30, 91, 255, 0.35);
+            outline-offset: 3px;
+        }
+        @media (max-width: 599px) {
+            .btn-brochure {
+                right: 8px;
+                bottom: 8px;
+                left: 8px;
+                width: auto;
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .btn-brochure,
+            .btn-brochure::after {
+                transition: none;
+                animation: none;
+            }
+        }
     </style>
     
 </head>

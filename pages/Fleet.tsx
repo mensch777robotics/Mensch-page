@@ -1,18 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { products } from '../data/products';
+import productBackground from '../public/product_backgrnd.jpg';
 
 export const Fleet: React.FC = () => {
     return (
         <div className="flex flex-col pt-24 md:pt-28">
             {/* Hero Section */}
-            <section className="w-full px-4 sm:px-6 md:px-10 lg:px-16 pb-20 text-center bg-gradient-to-b from-white to-slate-50">
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-slate-900 mb-6">
-                    Products
-                </h1>
-                <p className="text-lg text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">
-                    Innovative robotics solutions designed to enhance education, streamline hospitality, and empower research. Each robot is engineered with precision and compassion.
-                </p>
+            <section className="relative -mt-24 w-full overflow-hidden px-4 pt-24 sm:px-6 md:-mt-28 md:px-10 md:pt-28 lg:px-16 pb-20 text-center">
+                <img
+                    src={productBackground}
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 h-full w-full object-cover opacity-35"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-white/55 to-slate-50/70"></div>
+                <div className="relative">
+                    <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-slate-900 mb-6">
+                        Products
+                    </h1>
+                    <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">
+                        Innovative robotics solutions designed to enhance education, streamline hospitality, and empower research. Each robot is engineered with precision and compassion.
+                    </p>
+                </div>
             </section>
 
             {/* Products Grid */}

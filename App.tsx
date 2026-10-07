@@ -11,6 +11,7 @@ import { Contact } from './pages/Contact';
 import { AboutUs } from './pages/AboutUs';
 import { Careers } from './pages/Careers';
 import { CareerRole } from './pages/CareerRole';
+import { BrochureButton } from './components/BrochureButton';
 
 // Scroll to top helper
 const ScrollToTop = () => {
@@ -49,6 +50,7 @@ const App: React.FC = () => {
                     <Route path="/contact" element={<Contact />} />
                 </Routes>
                 <Footer />
+                <BrochureButton />
             </div>
         </Router>
     );
