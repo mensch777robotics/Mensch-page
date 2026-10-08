@@ -31,7 +31,7 @@ export const ProductTeachingAssistant: React.FC = () => {
                     <div className="inline-block w-full md:w-auto max-w-none md:max-w-xl bg-white/20 backdrop-blur-2xl rounded-[2rem] border border-white/30 ring-1 ring-white/40 shadow-2xl shadow-black/10 p-6 md:p-8">
                         <div className="flex flex-col gap-4">
                             <div className="flex items-center gap-3">
-                                <span className="text-emerald-500 font-bold tracking-widest uppercase text-base md:text-lg">
+                                <span className={`${product.accent} font-bold tracking-widest uppercase text-base md:text-lg`}>
                                     {product.category}
                                 </span>
                             </div>
@@ -172,7 +172,7 @@ export const ProductTeachingAssistant: React.FC = () => {
                     </div>
 
                     <div className="relative group rounded-2xl overflow-hidden shadow-2xl">
-                        <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/20 to-emerald-600/20 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                        <div className={`absolute -inset-1 bg-gradient-to-r ${product.gradient} rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000`}></div>
                         <div className="relative w-full aspect-video bg-black rounded-2xl overflow-hidden border border-slate-200">
                             <iframe 
                                 width="100%" 
@@ -200,7 +200,7 @@ export const ProductTeachingAssistant: React.FC = () => {
                     </p>
                     <Link 
                         to="/contact"
-                        className="inline-flex items-center gap-2 px-10 py-4 rounded-lg bg-emerald-500 text-white font-bold uppercase tracking-wider text-sm hover:bg-emerald-600 transition-colors shadow-md hover:shadow-lg"
+                        className={`inline-flex items-center gap-2 px-10 py-4 rounded-lg ${product.bgAccent} text-white font-bold uppercase tracking-wider text-sm hover:bg-blue-600 transition-colors shadow-md hover:shadow-lg`}
                     >
                         Schedule a Demo
                         <span className="material-symbols-outlined text-lg">arrow_forward</span>

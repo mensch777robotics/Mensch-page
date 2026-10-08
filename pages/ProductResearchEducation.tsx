@@ -160,7 +160,7 @@ export const ProductResearchEducation: React.FC = () => {
                                 level: "Intermediate",
                                 icon: "build",
                                 topics: ["STEM Projects", "Sensor Integration", "Problem Solving"],
-                                color: "bg-purple-50 border-purple-200"
+                                color: "bg-blue-50 border-blue-200"
                             },
                             {
                                 level: "Advanced",
@@ -244,7 +244,7 @@ export const ProductResearchEducation: React.FC = () => {
                     </p>
                     <Link 
                         to="/contact"
-                        className="inline-flex items-center gap-2 px-10 py-4 rounded-lg bg-purple-500 text-white font-bold uppercase tracking-wider text-sm hover:bg-purple-600 transition-colors shadow-md hover:shadow-lg"
+                        className={`inline-flex items-center gap-2 px-10 py-4 rounded-lg ${product.bgAccent} text-white font-bold uppercase tracking-wider text-sm hover:bg-blue-600 transition-colors shadow-md hover:shadow-lg`}
                     >
                         Get Started
                         <span className="material-symbols-outlined text-lg">arrow_forward</span>

@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import heroImage from '../public/Robi_4k.png';
 import bibinImage from '../public/Bibin Generated.jpeg';
+import aparnaImage from '../public/Team/Aparna.jpg';
+import deepakImage from '../public/Team/Deepak.jpg';
+import pavithraImage from '../public/Team/Pavithra.jpg';
+import saheerImage from '../public/Team/Saheer.jpg';
 
 export const AboutUs: React.FC = () => {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -90,26 +94,76 @@ export const AboutUs: React.FC = () => {
             </section>
 
             {/* Founder */}
-            <section className="w-full px-4 sm:px-6 md:px-10 lg:px-16 py-16 md:py-24 opacity-0 animate-fade-in-up [animation-delay:200ms]">
+            <section className="w-full px-4 sm:px-6 md:px-10 lg:px-16 py-16 md:py-24 bg-slate-50 opacity-0 animate-fade-in-up [animation-delay:200ms]">
                 <div className="max-w-6xl mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                        <div className="order-2 md:order-1">
-                            <h2 className="text-slate-900 text-3xl md:text-4xl font-bold mb-6">Founder &amp; CEO</h2>
-                            <h3 className="text-slate-900 text-2xl font-bold mb-2">Bibin Thomas</h3>
-                            <p className="text-primary font-semibold mb-6">Founder &amp; CEO, Mensch Robotics</p>
-                            <p className="text-slate-600 text-lg leading-relaxed">
-                                Bibin Thomas is a creator on a mission to revolutionize service robotics. The mission offers
-                                real potential for efficiency in the education, medical, and hospitality sectors. Holding a
-                                B.Tech degree in Robotics and Automation, Bibin bridges deep technical expertise with real
-                                world knowledge with clarity.
-                            </p>
+                    <h2 className="text-primary text-3xl md:text-5xl font-bold mb-10 text-center">
+                        Meet Our Team
+                    </h2>
+                    <div className="grid w-full max-w-6xl grid-cols-1 gap-8">
+                        <div className="flex h-full justify-center">
+                            <div className="flex w-full max-w-5xl flex-col gap-6 overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-4 shadow-[0_20px_60px_rgba(15,23,42,0.08)] md:flex-row md:items-center md:p-6">
+                                <div className="w-full overflow-hidden rounded-[1.5rem] bg-slate-100 md:w-2/5">
+                                    <div className="h-[360px] sm:h-[420px] md:h-[380px]">
+                                        <img
+                                            src={bibinImage}
+                                            alt="Bibin Thomas, Founder & CEO"
+                                            className="h-full w-full object-cover object-center"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="px-4 pb-4 text-center md:flex-1 md:px-6 md:text-left">
+                                    <h2 className="text-slate-900 text-3xl font-bold">Bibin Thomas</h2>
+                                    <p className="mt-1 text-slate-600 font-medium">Founder &amp; CEO, Mensch Robotics</p>
+                                    <div className="mx-auto mt-5 h-px w-12 bg-primary/40 md:mx-0" />
+                                    <p className="mt-5 text-left text-slate-600 text-base leading-relaxed">
+                                        Bibin Thomas is a creator on a mission to revolutionize service robotics. The mission offers
+                                        real potential for efficiency in the education, medical, and hospitality sectors. Holding a
+                                        B.Tech degree in Robotics and Automation, Bibin bridges deep technical expertise with real
+                                        world knowledge with clarity.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div className="order-1 md:order-2 flex justify-center md:justify-end">
-                            <img
-                                src={bibinImage}
-                                alt="Bibin Thomas, Founder & CEO"
-                                className="w-full max-w-xs sm:max-w-sm md:max-w-[280px] h-auto rounded-[2rem] object-cover"
-                            />
+                        <div className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2">
+                            {[
+                                {
+                                    image: saheerImage,
+                                    name: 'Muhammed Saheer',
+                                    role: 'Robotics & Mechanical Design Engineer',
+                                },
+                                {
+                                    image: aparnaImage,
+                                    name: 'Aparna S',
+                                    role: 'Hardware and Operations Lead',
+                                },
+                                {
+                                    image: pavithraImage,
+                                    name: 'Pavithra A',
+                                    role: 'Robotics Software Associate',
+                                },
+                                {
+                                    image: deepakImage,
+                                    name: 'Deepak Kumar',
+                                    role: 'Software Developer',
+                                },
+                            ].map(({ image, name, role }) => (
+                                <div
+                                    key={name}
+                                    className="flex min-h-[220px] items-center gap-6 rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-[0_12px_35px_rgba(15,23,42,0.06)]"
+                                >
+                                    <div className="aspect-square w-36 shrink-0 overflow-hidden rounded-[1.1rem] bg-slate-100 sm:w-40">
+                                        <img
+                                            src={image}
+                                            alt={name}
+                                            className="h-full w-full object-cover"
+                                        />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-lg font-bold text-slate-900">{name}</h3>
+                                        <p className="mt-1 text-base font-medium text-slate-600">{role}</p>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>

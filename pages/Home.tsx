@@ -80,13 +80,13 @@ export const Home: React.FC = () => {
                                     key={place.title}
                                     to={place.route}
                                     aria-label={`Learn more about ${place.title}`}
-                                    className="group relative flex min-h-[320px] flex-col items-center justify-end overflow-hidden text-left bg-white border border-slate-200 rounded-2xl hover:border-primary/60 hover:shadow-xl transition-all duration-300"
+                                    className="group relative flex min-h-[320px] flex-col items-center justify-end overflow-hidden text-left bg-white border border-slate-200 rounded-2xl lg:min-h-[280px] hover:border-primary/60 hover:shadow-xl transition-all duration-300"
                                 >
                                     {place.image && (
                                         <img
                                             src={place.image}
                                             alt={place.title}
-                                            className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                                            className="absolute inset-0 h-full w-full object-cover object-[center_center] group-hover:scale-110 transition-transform duration-500"
                                         />
                                     )}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

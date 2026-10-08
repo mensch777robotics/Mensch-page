@@ -1,16 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { products } from '../data/products';
-import productBackground from '../public/product_backgrnd.jpg';
+import productBackground from '../public/product_backgrnd.mp4';
 
 export const Fleet: React.FC = () => {
     return (
         <div className="flex flex-col pt-24 md:pt-28">
             {/* Hero Section */}
             <section className="relative -mt-24 w-full overflow-hidden px-4 pt-24 sm:px-6 md:-mt-28 md:px-10 md:pt-28 lg:px-16 pb-20 text-center">
-                <img
+                <video
                     src={productBackground}
-                    alt=""
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
                     aria-hidden="true"
                     className="absolute inset-0 h-full w-full object-cover opacity-35"
                 />

@@ -55,9 +55,9 @@ export const products: Product[] = [
             { title: "Visual Teaching", desc: "Integrates videos and visual aids for better comprehension." },
             { title: "Teacher Support", desc: "Provides progress insights and supports classroom learning." }
         ],
-        accent: "text-emerald-500",
-        bgAccent: "bg-emerald-500",
-        gradient: "from-emerald-500/20 to-emerald-600/20"
+        accent: "text-blue-500",
+        bgAccent: "bg-blue-500",
+        gradient: "from-blue-500/20 to-blue-600/20"
     },
     {
         id: "03",
@@ -76,8 +76,8 @@ export const products: Product[] = [
             { title: "STEM & AI Focus", desc: "Hands-on learning in robotics, coding, and artificial intelligence." },
             { title: "Multiple Variants", desc: "Automatic and autonomous versions for different skill levels." }
         ],
-        accent: "text-purple-500",
-        bgAccent: "bg-purple-500",
-        gradient: "from-purple-500/20 to-purple-600/20"
+        accent: "text-blue-500",
+        bgAccent: "bg-blue-500",
+        gradient: "from-blue-500/20 to-blue-600/20"
     }
 ];
