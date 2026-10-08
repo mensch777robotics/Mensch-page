@@ -171,19 +171,37 @@ export const ProductTeachingAssistant: React.FC = () => {
                         </p>
                     </div>
 
-                    <div className="relative group rounded-2xl overflow-hidden shadow-2xl">
-                        <div className={`absolute -inset-1 bg-gradient-to-r ${product.gradient} rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000`}></div>
-                        <div className="relative w-full aspect-video bg-black rounded-2xl overflow-hidden border border-slate-200">
-                            <iframe 
-                                width="100%" 
-                                height="100%" 
-                                src="https://www.youtube.com/embed/PyGL2phhoyU?rel=0" 
-                                title="Teaching Assistant Robot in Action" 
-                                frameBorder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                allowFullScreen
-                                className="rounded-2xl"
-                            ></iframe>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="relative group w-full max-w-[240px] md:max-w-[360px] mx-auto rounded-2xl overflow-hidden shadow-2xl">
+                            <div className={`absolute -inset-1 bg-gradient-to-r ${product.gradient} rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000`}></div>
+                            <div className="relative w-full aspect-[9/16] bg-black rounded-2xl overflow-hidden">
+                                <iframe 
+                                    width="100%" 
+                                    height="100%" 
+                                    src="https://www.youtube.com/embed/PyGL2phhoyU?rel=0" 
+                                    title="Teaching Assistant Robot in Action" 
+                                    frameBorder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    allowFullScreen
+                                    className="block w-full h-full"
+                                ></iframe>
+                            </div>
+                        </div>
+
+                        <div className="relative group w-full max-w-[240px] md:max-w-[360px] mx-auto rounded-2xl overflow-hidden shadow-2xl">
+                            <div className={`absolute -inset-1 bg-gradient-to-r ${product.gradient} rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000`}></div>
+                            <div className="relative w-full aspect-[9/16] bg-black rounded-2xl overflow-hidden">
+                                <iframe 
+                                    width="100%" 
+                                    height="100%" 
+                                    src="https://www.youtube.com/embed/zhh4LvUGWEw?rel=0" 
+                                    title="Teaching Assistant Robot Short" 
+                                    frameBorder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    allowFullScreen
+                                    className="block w-full h-full"
+                                ></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
