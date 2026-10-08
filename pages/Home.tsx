@@ -32,7 +32,7 @@ export const Home: React.FC = () => {
     const heroSrc = `${import.meta.env.BASE_URL}Reception_Hero.png`;
     return (
         <div className="flex flex-col items-center">
-            <div className="w-full flex flex-col gap-16 md:gap-32 pb-10 px-0">
+            <div className="w-full flex flex-col gap-10 md:gap-16 pb-6 px-0">
                 
                 {/* Hero Section */}
                 <section className="relative w-full flex flex-col md:block min-h-0 md:min-h-[calc(100vh-5rem)] animate-fade-in-up">
@@ -69,12 +69,12 @@ export const Home: React.FC = () => {
                 </section>
 
                 {/* Places of Application */}
-                <section className="w-full px-4 sm:px-6 md:px-10 lg:px-16 py-16 md:py-24">
+                <section className="w-full px-4 sm:px-6 md:px-10 lg:px-16 py-10 md:py-16">
                     <div className="max-w-[100rem] mx-auto">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 md:mb-16 tracking-tight">
+                        <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-8 md:mb-10 tracking-tight">
                             Places of Application
                         </h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                             {placesOfApplication.map((place) => (
                                 <Link
                                     key={place.title}
@@ -109,8 +109,8 @@ export const Home: React.FC = () => {
                 </section>
 
                 {/* Deployments */}
-                <section className="w-full flex flex-col gap-12 py-10 px-4 sm:px-6 md:px-10 lg:px-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
+                <section className="w-full flex flex-col gap-8 py-10 md:py-16">
+                    <h2 className="px-4 sm:px-6 md:px-10 lg:px-16 text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
                         Mensch Robotics in action
                     </h2>
 
@@ -130,7 +130,7 @@ export const Home: React.FC = () => {
                     
                     <div className="w-full overflow-hidden">
                         <div
-                            className="marquee flex gap-6 w-fit"
+                            className="marquee flex gap-4 w-fit"
                             style={{ animationPlayState: isDeploymentsPaused ? 'paused' : 'running' }}
                             onClick={() => setIsDeploymentsPaused((paused) => !paused)}
                             onKeyDown={(event) => {
@@ -175,7 +175,7 @@ export const Home: React.FC = () => {
                                     subtitle: 'OMR, Chennai, Tamilnadu'
                                 }
                             ].map((deployment, idx) => (
-                                <div key={idx} className="relative flex-shrink-0 h-[300px] md:h-[380px] rounded-[1rem] overflow-hidden min-w-[380px] md:min-w-[500px]">
+                                <div key={idx} className="relative flex-shrink-0 h-[280px] md:h-[320px] rounded-2xl overflow-hidden min-w-[320px] md:min-w-[400px]">
                                     <img 
                                         src={deployment.img}
                                         alt={deployment.alt}
@@ -183,7 +183,7 @@ export const Home: React.FC = () => {
                                     />
                                     {deployment.title && (
                                         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 text-left">
-                                            <p className="text-white text-xl font-bold leading-snug">{deployment.title}</p>
+                                            <p className="text-white text-lg font-bold leading-snug">{deployment.title}</p>
                                             <p className="text-slate-200 text-base leading-relaxed">{deployment.subtitle}</p>
                                         </div>
                                     )}
@@ -220,7 +220,7 @@ export const Home: React.FC = () => {
                                     subtitle: 'OMR, Chennai, Tamilnadu'
                                 }
                             ].map((deployment, idx) => (
-                                <div key={`dup-${idx}`} className="relative flex-shrink-0 h-[300px] md:h-[380px] rounded-[1rem] overflow-hidden min-w-[380px] md:min-w-[500px]">
+                                <div key={`dup-${idx}`} className="relative flex-shrink-0 h-[280px] md:h-[320px] rounded-2xl overflow-hidden min-w-[320px] md:min-w-[400px]">
                                     <img 
                                         src={deployment.img}
                                         alt={deployment.alt}
@@ -228,7 +228,7 @@ export const Home: React.FC = () => {
                                     />
                                     {deployment.title && (
                                         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 text-left">
-                                            <p className="text-white text-xl font-bold leading-snug">{deployment.title}</p>
+                                            <p className="text-white text-lg font-bold leading-snug">{deployment.title}</p>
                                             <p className="text-slate-200 text-base leading-relaxed">{deployment.subtitle}</p>
                                         </div>
                                     )}
@@ -240,8 +240,8 @@ export const Home: React.FC = () => {
 
 
                 {/* Why Mensch Robotics */}
-                <section className="w-full px-4 sm:px-6 md:px-10 lg:px-16 py-16 md:py-24 bg-slate-50">
-                    <div className="max-w-6xl mx-auto flex flex-col items-center gap-10 md:gap-14">
+                <section className="w-full px-4 sm:px-6 md:px-10 lg:px-16 py-10 md:py-16 bg-slate-50">
+                    <div className="max-w-6xl mx-auto flex flex-col items-center gap-6 md:gap-8">
                         <div className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-primary/10 border border-primary/25 shadow-sm">
                             <h2 className="text-2xl md:text-3xl font-bold text-primary tracking-tight">
                                 Why Mensch Robotics?

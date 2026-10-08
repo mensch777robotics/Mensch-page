@@ -36,7 +36,7 @@ export const AboutUs: React.FC = () => {
                             The Vision
                         </h1>
                         <p className="text-slate-600 md:text-slate-200 text-lg md:text-2xl font-light leading-relaxed md:drop-shadow-md">
-                            Our vision is simple: to create human-centric robots for societal advancement. we constantly seek innovative ways to leverage the power of physical AI to enhance and uplift critical sectors.
+                            Our vision is simple: to create human-centric robots for societal advancement. In this mission we constantly seek innovative ways to leverage the power of physical AI to enhance and uplift critical sectors.
                         </p>
                     </div>
                 </div>

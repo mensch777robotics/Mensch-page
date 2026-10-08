@@ -40,7 +40,7 @@ export const Navbar: React.FC = () => {
 
     return (
         <>
-        <div className={`w-full ${scrolled ? 'h-16' : 'h-20'}`} aria-hidden="true" />
+        <div className={`w-full ${scrolled ? 'h-16' : 'h-16 sm:h-20'}`} aria-hidden="true" />
         <header 
             className={`fixed top-0 left-0 w-full z-50 border-b border-black/10 bg-white transition-shadow ${
                 scrolled ? 'shadow-sm' : 'shadow-none'
@@ -48,7 +48,7 @@ export const Navbar: React.FC = () => {
         >
             <div
                 className={`w-full px-4 sm:px-6 md:px-10 lg:px-16 flex items-center justify-between transition-[height] duration-300 ${
-                    scrolled ? 'h-16' : 'h-20'
+                    scrolled ? 'h-16' : 'h-16 sm:h-20'
                 }`}
             >
                 
