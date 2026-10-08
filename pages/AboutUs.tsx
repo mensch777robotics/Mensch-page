@@ -96,7 +96,7 @@ export const AboutUs: React.FC = () => {
             {/* Founder */}
             <section className="w-full px-4 sm:px-6 md:px-10 lg:px-16 py-16 md:py-24 bg-slate-50 opacity-0 animate-fade-in-up [animation-delay:200ms]">
                 <div className="max-w-6xl mx-auto">
-                    <h2 className="text-primary text-3xl md:text-5xl font-bold mb-10 text-center">
+                    <h2 className="text-black text-3xl md:text-5xl font-bold mb-10 text-center">
                         Meet Our Team
                     </h2>
                     <div className="grid w-full max-w-6xl grid-cols-1 gap-8">

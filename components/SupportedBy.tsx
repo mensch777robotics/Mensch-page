@@ -10,7 +10,7 @@ export const SupportedBy: React.FC = () => {
     const base = import.meta.env.BASE_URL;
 
     return (
-        <section className="w-full px-4 sm:px-6 md:px-10 lg:px-16 py-14 md:py-16 border-t border-slate-200 bg-white">
+        <section className="w-full px-4 sm:px-6 md:px-10 lg:px-16 py-14 md:py-16 bg-white">
             <div className="max-w-6xl mx-auto">
                 <h2 className="text-slate-900 font-bold text-xs uppercase tracking-widest mb-8 text-center md:text-left">
                     Supported By

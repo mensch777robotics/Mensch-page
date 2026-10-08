@@ -19,7 +19,7 @@ export const Fleet: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-white/55 to-slate-50/70"></div>
                 <div className="relative">
-                    <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-slate-900 mb-6">
+                    <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-black mb-6">
                         Products
                     </h1>
                     <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">
