@@ -14,12 +14,12 @@ export const Careers: React.FC = () => {
                 <section className="relative w-full flex flex-col md:block min-h-0 md:min-h-[calc(100vh-5rem)] animate-fade-in-up">
                     <div className="relative h-[50vh] w-full md:absolute md:inset-0 md:h-full overflow-hidden bg-gray-50">
                         {!isLoaded && (
-                            <div className="absolute inset-0 flex items-center justify-center z-10">
-                                <div className="relative flex items-center justify-center">
-                                    <div className="absolute w-20 h-20 bg-primary/30 rounded-full animate-orb-pulse blur-xl"></div>
-                                    <div className="w-12 h-12 bg-primary rounded-full animate-orb-pulse shadow-[0_0_30px_rgba(19,91,236,0.6)]"></div>
+                                <div className="absolute inset-0 flex items-center justify-center z-10">
+                                    <div className="relative flex items-center justify-center">
+                                        <div className="absolute w-20 h-20 bg-primary/30 rounded-full animate-orb-pulse blur-xl"></div>
+                                        <div className="w-12 h-12 bg-primary rounded-full animate-orb-pulse shadow-[0_0_30px_rgba(19,91,236,0.6)]"></div>
+                                    </div>
                                 </div>
-                            </div>
                         )}
                         <img
                             src={heroImage}
