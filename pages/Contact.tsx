@@ -106,14 +106,19 @@ export const Contact: React.FC = () => {
                             )}
                         </form>
                     </div>
-                    <div className="w-full h-[320px] rounded-2xl overflow-hidden border border-white/10">
+                    <h2 className="text-3xl md:text-4xl font-medium tracking-[-0.03em] leading-[0.9] text-white">
+                        Find Us
+                    </h2>
+                    <div className="w-full rounded-2xl overflow-hidden border border-white/10 bg-[#0f0f0f]">
+                        <div className="h-[280px] overflow-hidden">
                         <iframe
-                            title="Mensch Robotics Location"
-                            src={`https://www.google.com/maps?q=${encodeURIComponent('Mensch Robotics ' + COMPANY_OFFICE)}&output=embed`}
-                            className="block w-full h-full border-0"
+                            title="Mensch Robotics Pvt Ltd location"
+                            src={`https://www.google.com/maps?q=${encodeURIComponent('Mensch Robotics Pvt Ltd')}&output=embed`}
+                            className="block w-full h-full border-0 [filter:invert(0.9)_hue-rotate(180deg)_brightness(0.85)_contrast(1.1)]"
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
                         ></iframe>
+                        </div>
                     </div>
                 </div>
                 </div>
