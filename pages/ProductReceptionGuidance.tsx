@@ -60,10 +60,10 @@ export const ProductReceptionGuidance: React.FC = () => {
                             className="absolute inset-0 h-full w-full object-cover object-center"
                         />
                         <div className="absolute bottom-10 left-6 z-10 max-w-[12rem] text-left drop-shadow-md">
-                            <p className="text-xl md:text-2xl font-semibold leading-tight text-blue-950">
+                            <p className="text-base sm:text-xl md:text-2xl font-semibold leading-tight text-blue-950">
                                 Height : 5 feet
                             </p>
-                            <p className="text-xl md:text-2xl font-semibold leading-tight text-blue-950">
+                            <p className="text-base sm:text-xl md:text-2xl font-semibold leading-tight text-blue-950">
                                 Weight : 50 Kg
                             </p>
                         </div>
