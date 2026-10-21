@@ -81,10 +81,10 @@ export const Footer: React.FC = () => {
                             <li className="flex items-start gap-3">
                                 <span className="material-symbols-outlined text-primary text-lg shrink-0">mail</span>
                                 <a
-                                    href="mailto:menschrobotics11@gmail.com"
+                                    href="mailto:info@menschrobotics.com"
                                     className="hover:text-white transition-colors break-all"
                                 >
-                                    menschrobotics11@gmail.com
+                                    info@menschrobotics.com
                                 </a>
                             </li>
                         </ul>

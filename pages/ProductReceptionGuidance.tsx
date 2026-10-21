@@ -178,8 +178,51 @@ export const ProductReceptionGuidance: React.FC = () => {
                 </div>
             </section>
 
+            {/* Discover SOVI Greet Section */}
+            <section className="w-full py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-16 bg-slate-50">
+                <div className="max-w-7xl mx-auto text-center">
+                    <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+                        Discover SOVI Greet
+                    </h2>
+                    <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
+                        Watch how SOVI Greet transforms reception experiences with intelligent, interactive assistance.
+                    </p>
+                    <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {[
+                            {
+                                id: '21WMlb2X-OM',
+                                title: 'SOVI Greet Reception Experience',
+                            },
+                            {
+                                id: 'I3WUp-RlSt8',
+                                title: 'SOVI Greet Interactive Assistance',
+                            },
+                        ].map((video) => (
+                            <div
+                                key={video.id}
+                                className="relative group w-full max-w-[600px] mx-auto rounded-2xl overflow-hidden shadow-2xl"
+                            >
+                                <div className={`absolute -inset-1 bg-gradient-to-r ${product.gradient} rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000`}></div>
+                                <div className="relative w-full aspect-video bg-black rounded-2xl overflow-hidden">
+                                    <iframe
+                                        width="100%"
+                                        height="100%"
+                                        src={`https://www.youtube.com/embed/${video.id}?rel=0`}
+                                        title={video.title}
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen
+                                        className="block w-full h-full"
+                                    ></iframe>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* CTA Section */}
-            <section className="w-full py-16 md:py-20 px-4 sm:px-6 md:px-10 lg:px-16 bg-slate-50">
+            <section className="w-full py-16 md:py-20 px-4 sm:px-6 md:px-10 lg:px-16 bg-white">
                 <div className="max-w-4xl mx-auto text-center">
                     <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
                         Transform Your Reception Experience

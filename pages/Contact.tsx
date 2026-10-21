@@ -51,7 +51,7 @@ export const Contact: React.FC = () => {
                         <div className="flex flex-col gap-8">
                             {[
                                 {icon: "call", title: "Call Us", val: "+91 7907362027", link: "tel:+917907362027"},
-                                {icon: "mail", title: "Email Us", val: "menschrobotics11@gmail.com", link: "mailto:menschrobotics11@gmail.com"},
+                                {icon: "mail", title: "Email Us", val: "info@menschrobotics.com", link: "mailto:info@menschrobotics.com"},
                                 {icon: "location_on", title: "Office", val: COMPANY_OFFICE, link: "#"}
                             ].map((item) => (
                                 <div key={item.title} className="flex items-center gap-6 group">
